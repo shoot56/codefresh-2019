@@ -1,0 +1,80 @@
+// Force full width.
+.flickity-viewport {
+  @apply w-full;
+
+  transition: height 0.2s;
+}
+
+// Styled dots.
+.flickity-page-dots {
+  @apply text-left;
+
+  bottom: -30px;
+
+  @screen md {
+    bottom: -35px;
+  }
+
+  .dot {
+    @apply bg-primary;
+
+    width: 7px;
+    height: 7px;
+    border-radius: 10px;
+    opacity: 0.3;
+    transition: all 0.2s linear;
+    will-change: transform;
+
+    @screen lg {
+      width: 10px;
+      height: 10px;
+    }
+
+    &.is-selected {
+      @apply bg-primary;
+    }
+  }
+
+  @at-root .staff-testimonial-carousel & {
+    @apply text-center lg:text-left;
+  }
+}
+
+.flickity-prev-next-button {
+  @apply bg-white rounded-xl;
+
+  box-shadow: 0 15px 25px rgba(38, 46, 79, 0.15);
+
+  .flickity-button-icon {
+    fill: $dark;
+    left: 30%;
+    width: 40%;
+  }
+
+  &:hover .flickity-button-icon {
+    fill: $primary;
+  }
+
+  &.previous {
+    left: -22px;
+  }
+
+  &.next {
+    right: -22px;
+  }
+}
+
+// Hide disabled button.
+.flickity-button:disabled {
+  display: none;
+}
+
+.codefresh-reviews {
+  .flickity-prev-next-button {
+    @apply hidden;
+
+    @screen md {
+      @apply block;
+    }
+  }
+}

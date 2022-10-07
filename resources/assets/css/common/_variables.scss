@@ -1,0 +1,81 @@
+// Colors
+$green: #19a99b;
+$green-dark: #0a2540;
+$green-darken: #0a2540;
+$dark: #0a2540;
+$light: #f9fcfd;
+$red: #fd5e74;
+$primary: $green;
+$white: #fff;
+$black: #000;
+$orange: #f2994a;
+$border-radius: 4px;
+$line-height-base: 1;
+
+// Transitions
+$transition-speed: 0.2s;
+
+// Gradients
+$bg-grad-t-b: linear-gradient(to bottom, $light 0%, $white 100%);
+$bg-grad-b-t: linear-gradient(to top, $light 0%, $white 100%);
+
+// Shadow
+$box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.11), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.09);
+$box-shadow-secondary: 0 2px 4px 0 rgba(0, 25, 85, 0.03), 0 0 2px 0 rgba(0, 25, 85, 0.15);
+$box-shadow-secondary-hover: 0 2px 4px 0 rgba($primary, 0.08), 0 0 2px 0 $primary;
+
+$fa-font-path: "../fonts"; // FontAwesome path
+
+// Other
+$spacer: theme("margin.4");
+$spacer-lg: theme("margin.8");
+$header-offset: 74px;
+$skewY: -6deg;
+
+// Hamburger
+$hamburger-padding-x           : 0;
+$hamburger-padding-y           : 0;
+$hamburger-layer-width         : 27px;
+$hamburger-layer-height        : 3px;
+$hamburger-layer-spacing       : 6px;
+$hamburger-layer-color         : #19a99b;
+$hamburger-layer-border-radius : 0;
+$hamburger-hover-opacity       : 0.7;
+$hamburger-active-layer-color  : $hamburger-layer-color;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter   : false;
+$hamburger-hover-filter       : opacity(50%);
+$hamburger-active-hover-filter: $hamburger-hover-filter;
+
+// Types (Remove or comment out what you don’t need)
+$hamburger-types: (
+  slider,
+);
+
+// Tooltips
+$zindex-tooltip:                    1070;
+$tooltip-font-size:                 14px;
+$tooltip-max-width:                 210px;
+$tooltip-color:                     $white;
+$tooltip-bg:                        $dark;
+$tooltip-border-radius:             $border-radius;
+$tooltip-opacity:                   1;
+$tooltip-padding-y:                 1rem;
+$tooltip-padding-x:                 1rem;
+$tooltip-margin:                    0;
+
+$tooltip-arrow-width:               0.8rem;
+$tooltip-arrow-height:              0.4rem;
+$tooltip-arrow-color:               $tooltip-bg;
+
+// Form tooltips must come after regular tooltips
+$form-feedback-tooltip-padding-y:     $tooltip-padding-y;
+$form-feedback-tooltip-padding-x:     $tooltip-padding-x;
+$form-feedback-tooltip-font-size:     $tooltip-font-size;
+$form-feedback-tooltip-line-height:   $line-height-base;
+$form-feedback-tooltip-opacity:       $tooltip-opacity;
+$form-feedback-tooltip-border-radius: $tooltip-border-radius;

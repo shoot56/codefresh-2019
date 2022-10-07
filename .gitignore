@@ -1,0 +1,29 @@
+/node_modules
+/.idea
+/.vscode
+#
+.cache-loader
+# dist
+node_modules
+npm-debug.log
+yarn-error.log
+compilation-stats.json
+# /vendor (TailPress)
+resources/assets/config-local.json
+.DS_Store
+# Configuration
+wp-config.php
+# Uploads
+/wp-content/uploads/
+# Log files
+*.log
+# htaccess
+/.htaccess
+# Cache
+/wp-content/cache
+/wp-content/advanced-cache.php
+# Plugins
+/wp-content/mu-plugins/kinsta-mu-plugins.php
+/wp-content/mu-plugins/kinsta-mu-plugins/
+# Backup
+backup.sql

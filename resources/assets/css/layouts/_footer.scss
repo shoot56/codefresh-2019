@@ -1,0 +1,49 @@
+.footer {
+  &-badges img {
+    height: 50px;
+    width: auto;
+  }
+
+  &-widgets {
+    @apply flex flex-wrap mb-10 pt-10;
+  }
+
+  &-sidebar {
+    @apply w-full text-center;
+
+    @screen md {
+      @apply text-left w-auto;
+    }
+
+    @screen lg {
+      @apply mr-10;
+
+      width: 230px;
+    }
+
+    ul {
+      @apply list-none p-0 mb-12;
+    }
+
+    li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    a {
+      @apply text-dark;
+
+      &:hover {
+        @apply text-primary;
+      }
+    }
+  }
+}
+
+.social-media {
+  .social-media__item {
+    font-size: 18px;
+
+    @include link-color($dark, $primary);
+  }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1390px" height="438px" viewBox="0 0 1390 438" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>5cdcf505fcbd74399e79a262_socialproof_bg_flip copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="55.633%" y1="52.3658361%" x2="38.103%" y2="48.2886257%" id="linearGradient-1">
+            <stop stop-color="#F5FCFA" stop-opacity="0.7" offset="0%"></stop>
+            <stop stop-color="#F5FCFA" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="homw-copy-9" transform="translate(0.000000, -1458.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="5cdcf505fcbd74399e79a262_socialproof_bg_flip-copy" transform="translate(-50.000000, 1458.000000)">
+                <path d="M0,98.0841131 C85.2619999,71.8609234 145.5,32.0017836 258,17.5009754 C383.624062,1.30852717 518.1274,13.1291836 625.5,32.0017836 C708,46.5025919 852.904715,62.4906315 938.512179,48.3475971 C1012.8044,36.0739307 1101.22193,1.98951966e-13 1174.5,1.98951966e-13 C1332.21693,1.98951966e-13 1354.47744,45.1345911 1440,76.9428043 L1440,377.134228 C1316.88839,328.232425 1193.45432,344.551641 1160.66333,350.227067 C1077.91747,364.548621 1017.492,420.453369 879.047,430.579238 C688.161998,444.541124 607.301092,386.168118 354.863093,377.134228 C235.082093,372.848109 90.2500002,419.147893 0,437.024358 L0,98.0841131 Z" id="Path" transform="translate(720.000000, 218.512179) rotate(180.000000) translate(-720.000000, -218.512179) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

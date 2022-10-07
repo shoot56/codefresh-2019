@@ -1,0 +1,21 @@
+@component('components.hero-wrapper', ['class' => 'hero--pricing'])
+
+  <div class="md:text-center">
+    <h2 class="text-xl">Start with unlimited builds free, no strings and no credit card required. Includes:</h2>
+
+    <ul class="list-none p-0">
+      <li class="inline-block md:mx-3 text-body-light">
+        <span class="iconFix"><i class="fa fa-badge-check mr-2 text-primary"></i></span>Unlimited Builds
+      </li>
+      <li class="inline-block md:mx-3 text-body-light">
+        <span class="iconFix"><i class="fa fa-badge-check mr-2 text-primary"></i></span>Unlimited Private Repos
+      </li>
+      <li class="inline-block md:mx-3 text-body-light">
+        <span class="iconFix"><i class="fa fa-badge-check mr-2 text-primary"></i></span>1 Small Runtime
+      </li>
+    </ul>
+  </div>
+
+  @include('partials.content-pricing-plans')
+
+@endcomponent

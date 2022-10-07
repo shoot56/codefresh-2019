@@ -1,0 +1,35 @@
+aside.sidebar {
+  @apply relative w-full flex flex-col;
+
+  @screen lg {
+    @apply ml-auto;
+
+    width: 330px;
+    min-width: 330px;
+    max-width: 330px;
+  }
+
+  ul {
+    @apply list-none p-0;
+
+    li {
+      @apply mb-2;
+
+      a {
+        @apply text-body-light block;
+
+        &:hover {
+          @apply text-primary;
+        }
+      }
+    }
+  }
+}
+
+body.single-careers aside.sidebar {
+  @screen lg {
+    width: 290px;
+    min-width: 290px;
+    max-width: 290px;
+  }
+}

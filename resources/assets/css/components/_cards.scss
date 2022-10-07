@@ -1,0 +1,47 @@
+// Home page features
+.cf-home-feature {
+  &__img-wrap {
+    position: relative;
+    flex: 0 0 190px;
+    overflow: hidden;
+    background-image: url("../images/cf-pattern.svg");
+    background-size: 100px;
+    background-position: center 38%;
+    min-height: 60px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    height: auto;
+    transform: translateY(-50%);
+    max-width: 100%;
+    left: 0;
+    width: 35%;
+
+    @screen md {
+      width: 85%;
+    }
+
+    &--2 {
+      top: 76%;
+
+      @screen sm {
+        top: 50%;
+      }
+    }
+  }
+
+  &__shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: auto;
+    display: none;
+
+    @screen md {
+      display: block;
+    }
+  }
+}

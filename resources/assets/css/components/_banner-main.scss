@@ -1,0 +1,35 @@
+.cta-banner {
+  @apply bg-oxford-blue pt-10 px-4 mx-auto text-white rounded-lg;
+
+  padding-bottom: 16rem;
+  background-image: url("../images/cf-banner-pipelines.svg");
+  background-repeat: no-repeat;
+  background-position: center 310px;
+  background-size: 280px;
+
+  @screen md {
+    @apply py-16 px-10 text-white bg-oxford-blue;
+
+    background-position: right center;
+    background-size: 50%;
+  }
+
+  @screen lg {
+    @apply px-20;
+
+    background-position: right center;
+    background-size: auto;
+  }
+
+  .createAcct::after {
+    @apply text-light;
+  }
+
+  &__title {
+    @apply text-xl font-normal mb-4;
+
+    @screen lg {
+      @apply text-2xl;
+    }
+  }
+}

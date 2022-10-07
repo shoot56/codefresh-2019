@@ -1,0 +1,77 @@
+.hero-notification-wrap {
+  @apply -mx-4 text-center;
+
+  font-size: 0;
+  margin-bottom: 20px;
+
+  @media (min-width: 576px) {
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  @screen lg {
+    text-align: inherit;
+  }
+}
+
+.hero-notification {
+  &#{&}--green {
+    background: rgba($primary, 0.13);
+
+    > span:first-child {
+      background: $primary;
+    }
+
+    > span:last-child {
+      color: $primary;
+    }
+  }
+
+  &#{&}--orange {
+    background: rgba($orange, 0.18);
+
+    > span:first-child {
+      background: $orange;
+    }
+
+    > span:last-child {
+      color: $orange;
+    }
+  }
+
+  span {
+    transition: all 0.3s cubic-bezier(0, 0, 0.25, 1);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.65);
+    width: 30px;
+    height: 100%;
+    left: 40px;
+    top: 0;
+    opacity: 0.5;
+    filter: blur(20px);
+    transform: translateX(-100px) skewX(-15deg);
+  }
+
+  &:hover {
+    &::after {
+      transform: translateX(550px);
+      opacity: 1;
+      transition: 0.5s;
+
+      @media (min-width: 576px) {
+        transform: translateX(380px) skewX(-15deg);
+      }
+    }
+
+    .iconFix {
+      margin-left: 10px;
+    }
+  }
+}

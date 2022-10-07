@@ -1,0 +1,400 @@
+.header {
+  @apply absolute top-0 left-0 z-70 w-full;
+
+  ul {
+    @apply list-none p-0 mb-0;
+  }
+
+  .container {
+    @apply flex relative;
+  }
+}
+
+/*
+body .header,
+body.template-feature .header,
+body.template-integration .header,
+body.page-template-template-integration .header,
+body.single-meet-a-codefresher .header,
+body.post-type-archive-meet-a-codefresher .header,
+body.page-features-single .header
+*/
+
+body .header {
+  .logo {
+    svg,
+    path {
+      fill: $white;
+    }
+  }
+
+  .main-menu__link {
+    @apply text-white;
+    font-size: 15px;
+  }
+
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    background-color: #ffffff;
+  }
+}
+
+.main-menu {
+  @apply hidden justify-center lg:flex lg:flex-wrap lg:flex-1;
+
+  .has-dropdown {
+    @apply relative;
+  }
+
+  > ul {
+    @apply flex flex-wrap items-center;
+
+    > li {
+      @apply relative;
+
+      a[href*="/courses/get-gitops-certified/"],
+      &.main-menu__item--badge {
+        @apply relative;
+
+        &::after {
+          @apply bg-red text-white absolute font-bold;
+
+          top: -14px;
+          right: 0;
+          font-size: 9px;
+          min-width: 18px;
+          min-height: 18px;
+          text-align: center;
+          padding: 0 8px;
+          letter-spacing: 1.1px;
+          line-height: 18px;
+          border-radius: 4px;
+          content: attr(data-badge);
+        }
+      }
+
+      > a {
+        @apply block relative py-1 px-1 text-dark-alt font-display font-medium transition duration-200 xl:px-3;
+
+        &.nav-item-login {
+          @apply px-4;
+        }
+
+        &.nav-item-signup {
+          @apply px-6;
+        }
+      }
+
+    > ul {
+      transform: translate(-50%, 0px);
+    }
+
+      &:hover {
+        > ul {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  // Change opacity on items not hovered
+  &:hover li.main-menu__item > a:not(:hover) {
+    opacity: 0.5;
+  }
+
+  .new-link {
+    font-size: 15px;
+  }
+
+}
+
+.doc-search {
+  padding: 15px 26px 0 60px;
+
+  form {
+    position: relative;
+    display: flex;
+
+    .fa-search {
+      margin-left: -35px;
+    }
+
+    input[type="text"] {
+      @apply bg-white;
+
+      font-size: 14px;
+      border-radius: 4px;
+      border: 0;
+      padding: 7px 8px;
+      outline: none;
+      width: 100%;
+      transition: all 0.2s;
+      margin-left: 10px;
+
+      &:focus {
+        background: #f4f5f7;
+      }
+
+      @include placeholder-style($dark, italic);
+    }
+
+    input[type="submit"] {
+      display: none;
+    }
+  }
+}
+
+// ******************************************
+// * Dropdown
+// ******************************************
+.dropdown {
+  @apply list-none p-0;
+
+  @screen lg {
+    @apply bg-white shadow-lg z-999;
+
+    left: 50%;
+    position: absolute;
+    top: 100%;
+    margin-top: 15px;
+    width: auto;
+    opacity: 0;
+    display: block !important;
+    visibility: hidden;
+    will-change: transform, opacity;
+    border-radius: 5px;
+    transition: opacity 0.2s linear,
+      visibility 0.2s linear;
+
+    &::before {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 0;
+      width: 0;
+      border-bottom: 7px solid #fff;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+    }
+
+    &::after {
+      content: "";
+      height: 20px;
+      left: 0;
+      right: 0;
+      bottom: 100%;
+      position: absolute;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+  }
+
+  &__miniList {
+    padding: 0 26px 0 60px;
+  }
+
+  &__singlelineList {
+    .dropdown__item {
+      padding-bottom: 0;
+
+      &:last-child {
+        padding-bottom: 15px;
+      }
+    }
+  }
+
+  .noicons {
+    padding-bottom: 16px;
+    padding-top: 16px;
+
+    .dropdown__item {
+      @apply border-nk-gray2;
+      padding: 0px 24px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: auto;
+    height: auto;
+    white-space: nowrap;
+    font-size: 15px;
+  }
+
+  &__icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    float: left;
+    margin: 0 0 0 0px;
+    position: relative;
+  }
+
+  &__desc {
+    display: block;
+    overflow: hidden;
+    height: auto;
+    line-height: 1.1;
+  }
+
+  &__title {
+
+    transition: margin-top 0.25s ease;
+    max-height: 19px;
+    overflow: hidden;
+    display: block;
+    margin: 5px 0 5px;
+
+    &#{&}--sm {
+      @apply text-dark;
+
+      text-transform: uppercase;
+      font-size: 11px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__summary {
+    @apply pb-2 text-xs;
+  }
+
+  &__sub {
+    @apply text-gray-700;
+
+    font-size: 12px;
+    white-space: pre-wrap;
+  }
+
+  &__col {
+    @apply inline-block p-0;
+
+    width: 150px;
+
+    li .dropdown__col-link {
+      @apply whitespace-nowrap;
+
+      font-size: 13px;
+    }
+  }
+}
+
+.dropdown a[href="javascript:void(0);"] {
+  display: none;
+}
+
+// ******************************************
+// * Mobile
+// ******************************************
+.hamburger {
+  line-height: 0;
+  z-index: 1000;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+.menu-mobile {
+  @apply bg-white rounded-lg shadow-md;
+
+  position: absolute;
+  top: -6px;
+  right: 0;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+  overflow: hidden;
+  width: calc(100% - 15px);
+  transition: transform 0.3s linear, opacity 0.3s linear, visibility 0.3s linear;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @screen lg {
+    display: none !important;
+  }
+
+  &-primary {
+    padding: 15px 15px 5px 15px;
+
+    &__item {
+      padding: 15px 15px 5px 0;
+    }
+
+    &__link {
+      @apply font-display;
+
+      font-size: 15px;
+    }
+
+    &__icon {
+      @apply inline-block mr-3 align-bottom text-primary w-6;
+
+      svg {
+        /* stylelint-disable-line */
+        @apply inline-block #{!important};
+      }
+    }
+  }
+
+  &-secodary {
+    @apply bg-oxford-blue-50 text-primary;
+
+    margin-top: 10px;
+    padding: 15px;
+
+    &__item {
+      margin-bottom: 12px;
+    }
+
+    &__link {
+      padding-left: 0;
+      display: block;
+    }
+  }
+
+
+  // Signup button
+  &__signup {
+    @apply bg-white;
+
+    padding: 10px;
+
+    .signup-mobile {
+      @apply text-primary;
+    }
+  }
+
+  // Schedule demo button
+  &__schedule-demo {
+    @apply bg-white;
+
+    padding: 10px;
+
+    .schedule-demo-mobile {
+      @apply text-primary;
+    }
+  }
+
+  // Login button
+  &__login {
+    @apply bg-primary;
+
+    padding: 10px;
+
+    .login-mobile {
+      @apply text-white;
+    }
+  }
+}

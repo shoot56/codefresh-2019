@@ -1,0 +1,3 @@
+@component('components.hero-wrapper', ['class' => 'hero--s-container-academy mb-4'])
+  <h1>{!! App::title() !!}</h1>
+@endcomponent

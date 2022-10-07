@@ -1,0 +1,42 @@
+/** Demo */
+.customer-logo {
+  transform: scale(0.7);
+
+  @screen lg {
+    transform: scale(1);
+  }
+}
+
+/** Main */
+.customers-blur-layer {
+  transition: 1s cubic-bezier(0.19, 1, 0.22, 0.8);
+  will-change: transform;
+  filter: blur(0);
+}
+
+.customers-link-layer {
+  @apply relative block w-full mx-auto;
+
+  max-width: 1050px;
+
+  &:hover .customers-blur-layer {
+    @apply opacity-50;
+
+    filter: blur(10px);
+    transform: scale(0.95);
+  }
+
+  .customers__btn {
+    @apply absolute opacity-0 top-0 z-100;
+
+    transform: translate(-50%, 70px);
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+    left: 50%;
+  }
+
+  &:hover .customers__btn {
+    @apply opacity-100;
+
+    transform: translate(-50%, 40px);
+  }
+}

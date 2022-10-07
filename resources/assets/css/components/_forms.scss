@@ -1,0 +1,293 @@
+/**
+ * Gravity Forms
+ */
+input[type="email"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="week"],
+input[type="url"],
+select,
+textarea {
+  @apply w-full py-2 px-2 leading-normal bg-white border border-oxford-blue-200 rounded #{!important};
+  @apply transition-colors duration-150;
+
+  @screen lg {
+    @apply text-sm #{!important};
+  }
+
+  &:active,
+  &:focus {
+    @apply border-primary outline-none #{!important};
+  }
+
+  @include placeholder-style(theme("colors.oxford-blue.400"));
+}
+
+button,
+input[type="submit"] {
+  &:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  &.btn-loading {
+    span {
+      @apply hidden;
+    }
+
+    i {
+      @apply block #{!important};
+    }
+  }
+}
+
+.gform_wrapper {
+  @apply my-0 #{!important};
+
+  form {
+    margin-bottom: 0;
+  }
+
+  ul {
+    @apply list-none p-0;
+  }
+
+  li {
+    @apply mb-3 pr-0 #{!important};
+
+    .gfield {
+      @apply mt-2 mb-0 #{!important};
+    }
+
+    .gfield_label {
+      @apply text-xs mb-2 #{!important};
+    }
+  }
+
+  .top_label div.ginput_container {
+    @apply mt-0 #{!important};
+  }
+
+  .gfield_required {
+    @apply text-red;
+
+    padding-left: 1px;
+    font-size: 12px;
+  }
+
+  .gfield_description {
+    @apply mt-0 pt-1.5 text-xs font-normal text-oxford-blue-300 #{!important};
+
+    &.validation_message {
+      @apply text-red #{!important};
+    }
+  }
+
+  textarea {
+    min-height: 150px;
+  }
+
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='32' viewBox='0 0 20 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5627 17.9997H17.4377C18.7752 17.9997 19.4439 19.6185 18.5002 20.5622L11.0627 27.9997C10.4752 28.5872 9.5252 28.5872 8.94395 27.9997L1.5002 20.5622C0.556449 19.6185 1.2252 17.9997 2.5627 17.9997ZM18.5002 11.4372L11.0627 3.99971C10.4752 3.41221 9.5252 3.41221 8.94395 3.99971L1.5002 11.4372C0.556449 12.381 1.2252 13.9997 2.5627 13.9997H17.4377C18.7752 13.9997 19.4439 12.381 18.5002 11.4372Z' fill='%23546679'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) center;
+    background-size: 8px;
+    cursor: pointer;
+  }
+
+  /** Address */
+  .gfield .address_country,
+  .gfield .address_state,
+  .gfield .address_city {
+    @apply mt-0 pr-0 w-full #{!important};
+
+    > select {
+      @apply ml-0 mb-0 #{!important};
+    }
+  }
+
+  .button {
+    @apply block w-full btn btn-primary #{!important};
+  }
+
+  .name_first,
+  .name_last {
+    @apply pt-0;
+
+    label {
+      @apply font-bold tracking-normal text-xs mb-2 #{!important};
+    }
+
+    input {
+      @apply my-0 #{!important};
+    }
+  }
+
+  .gfield_error {
+    @apply mr-0 mt-4 pb-0 max-w-full w-full pt-0 border-none bg-transparent md:max-w-full lg:max-w-full #{!important};
+
+    .gfield_label {
+      @apply mt-0 text-red #{!important};
+    }
+
+    input,
+    select,
+    textarea {
+      @apply border-red #{!important};
+    }
+  }
+
+  .gform_page_footer {
+    @apply flex flex-wrap mb-0 border-none #{!important};
+
+    .button {
+      @apply max-w-sm mx-auto #{!important};
+
+      &.gform_previous_button {
+        @apply mt-4 font-normal text-sm text-oxford-blue-400 bg-light #{!important};
+      }
+
+      &.gform_next_button,
+      &.gform_button {
+        @apply order-first;
+      }
+    }
+  }
+
+  /** Steps */
+  .gf_progressbar_wrapper {
+    .gf_progressbar {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      width: 100% !important;
+
+      &::after {
+        height: 7px !important;
+        box-shadow: none !important;
+        margin-top: -7px !important;
+      }
+
+      .gf_progressbar_percentage {
+        @apply bg-primary;
+
+        height: 7px;
+
+        span {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
+.label {
+  @apply block mb-1.5 font-display text-sm;
+}
+
+.field-message {
+  @apply absolute left-0 text-2xs font-normal;
+  bottom: -18px;
+
+  &.field-message--error {
+    @apply text-red;
+  }
+}
+
+.has-error {
+  input,
+  input:focus {
+    @apply border-red #{!important};
+  }
+}
+
+.validation_error {
+  @apply text-sm font-normal text-left bg-red bg-opacity-10 p-4 rounded border-none #{!important};
+}
+
+.gf_left_half,
+.gf_right_half {
+  width: 100% !important;
+}
+
+@screen lg {
+  .gf_left_half,
+  .gf_right_half {
+    width: 48.5% !important;
+  }
+
+  .gf_left_half {
+    margin-right: 3% !important;
+  }
+}
+
+// Footer
+.gform_footer {
+  @apply relative py-0 mr-2 #{!important};
+}
+
+/** Demo Page */
+.gform_wrapper.cf__form__request-demo_wrapper {
+  .gfield_label {
+    font-size: 14px;
+  }
+}
+
+/** Trade show */
+.form-dropdown-country .address_country,
+.form-dropdown-country .address_state {
+  width: 100% !important;
+  padding: 0 !important;
+
+  select {
+    margin-bottom: 0 !important;
+  }
+}
+
+// ******************************************
+// * Form solo
+// ******************************************
+.form-solo {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/**
+ * Sign up Process
+ * Gravity Form ID: 90
+ */
+
+#gform_wrapper_90 {
+  .gform_heading {
+    @apply text-center;
+  }
+
+  .gform_title {
+    @apply text-center mt-0 mx-auto bg-clip-text text-transparent bg-gradient-to-r from-green-light to-blue;
+  }
+
+  .gform_description {
+    @apply text-sm text-center text-oxford-blue-400;
+  }
+
+  .gf-verification-code input {
+    @apply text-3xl text-center font-bold tracking-widest #{!important};
+  }
+}
+
+// Step 3
+#gform_page_90_3 {
+  // Hide back button
+  .gform_previous_button {
+    @apply hidden #{!important};
+  }
+}

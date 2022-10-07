@@ -1,0 +1,90 @@
+.modal {
+  position: fixed;
+  z-index: 9;
+  transition: all 400ms ease-in-out;
+
+  &.position-bottom-right {
+    bottom: 0;
+    left: -100%;
+
+    &.modal--show {
+      left: 0;
+    }
+  }
+
+  &.w-380 {
+    max-width: 380px;
+  }
+
+  &-header .close {
+    @apply text-gray-400;
+
+    appearance: none;
+    border: 0;
+    background: transparent;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    &::before {
+      width: 12px;
+      height: 12px;
+      top: 10px;
+      right: 10px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+#newsletter {
+  .modal-content {
+    @apply bg-white shadow-lg rounded-lg;
+
+    padding: 45px 42px;
+
+    .modal-body {
+      .popup-title {
+        @apply font-display;
+
+        font-weight: bold;
+        font-size: 27px;
+        line-height: 1.43;
+        letter-spacing: -0.4px;
+        margin-bottom: 10px;
+      }
+
+      .popup-text {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+
+      .gfield input {
+        @apply bg-white;
+      }
+
+      .gform_footer {
+        margin-top: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  .btn {
+    height: 43px;
+    font-size: 14px;
+  }
+
+  .hs-form {
+    .hs-form-field > label {
+      display: none;
+    }
+
+    .hs-button.primary {
+      width: 100%;
+    }
+  }
+}

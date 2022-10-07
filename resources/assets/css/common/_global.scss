@@ -1,0 +1,424 @@
+@layer base {
+  html {
+    @apply overflow-x-hidden font-body;
+  }
+
+  body {
+    @apply text-body;
+    max-width: 100vw;
+  }
+
+  a {
+    @apply text-primary border-b border-transparent hover:text-primary-dark;
+  }
+
+  p {
+    @apply mb-6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mb-6 font-display font-bold;
+  }
+
+  article :where(ol:not([class])),
+  article :where(ul:not([class])) {
+    @apply mb-6;
+  }
+
+  h1 {
+    @apply text-4xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-lg;
+  }
+
+  ol,
+  ul {
+    @apply pl-4;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+}
+
+body.home,
+body.page-case-studies,
+body.single-events {
+  .wrap {
+    padding-top: 58px;
+
+    @screen lg {
+      padding-top: 73px;
+    }
+  }
+}
+
+body.no-hero,
+body.category {
+  .wrap {
+    padding-top: $header-offset;
+  }
+}
+
+body.category-meet-a-codefresher {
+  .wrap {
+    @apply pt-0;
+  }
+}
+
+// 2 col layout
+@screen lg {
+  body.sidebar-primary {
+    .content {
+      @apply flex;
+    }
+
+    .main {
+      @apply w-4/6;
+
+      @at-root body.single-careers .main {
+        @apply w-2/3 ml-0 #{!important};
+      }
+    }
+  }
+}
+
+body.page-webcasts-on-demand-data,
+body.post-type-archive-container-academy {
+  @apply bg-oxford-blue-50;
+}
+
+.font-weight--heavy {
+  @apply font-bold;
+}
+
+.iconFix {
+  width: 1.25em;
+  display: inline-block;
+}
+
+.iconBox {
+  @apply bg-white shadow-md;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+
+  i {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 17px;
+  }
+
+  img {
+    vertical-align: top;
+    width: 20px;
+    display: inline-block;
+  }
+}
+
+.cf-list {
+  ul {
+    @apply list-styled font-display font-bold;
+
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+
+  &--light {
+    li {
+      &::before {
+        background: rgba($light, 0.3) !important;
+      }
+
+      &::after {
+        background: $light !important;
+      }
+    }
+  }
+
+  li {
+    @apply text-base;
+  }
+}
+
+.helper {
+  @apply inline-block h-full align-middle;
+}
+
+.title-top {
+  @apply text-primary tracking-wider text-xs uppercase;
+
+  &--lg {
+    @apply text-base;
+  }
+
+  &--bg-primary {
+    @apply bg-light rounded-lg inline-block py-2 px-3 mb-3 font-display font-bold;
+  }
+}
+
+.cf-tag {
+  @apply inline-block px-6 py-3 rounded-xl;
+
+  &#{&}--primary {
+    @apply bg-light text-primary;
+  }
+}
+
+// Custom pagination
+.custom-pagination {
+  margin: 30px auto;
+  display: table;
+
+  span,
+  a {
+    margin: 0 15px;
+  }
+
+  a.page-numbers {
+    @apply text-primary;
+  }
+}
+
+// Animations
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  transition-property: opacity;
+  transition-duration: 0.2s;
+}
+
+.bs-tooltip-top {
+  padding: $tooltip-arrow-height 0;
+
+  .arrow {
+    bottom: 0;
+
+    &::before {
+      top: 0;
+      border-width: $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
+      border-top-color: $tooltip-arrow-color;
+    }
+  }
+}
+
+.calendly-inline-widget.main-calendly {
+  @apply fixed min-w-full w-full #{!important};
+
+  // Hide scrollbar for IE, Edge and Firefox.
+  -ms-overflow-style: none; // IE and Edge
+  // stylelint-disable-next-line
+  scrollbar-width: none; // Firefox
+
+  // Hide scrollbar for Chrome, Safari and Opera
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 650px) {
+    min-height: 1200px !important;
+
+    .cf-calendly {
+      @apply pt-16 pb-0 -mb-10;
+    }
+  }
+
+  @screen lg {
+    @apply min-h-screen overflow-hidden #{!important};
+  }
+}
+
+// ******************************************
+// * Background elements
+// ******************************************
+.bg-el {
+  position: absolute;
+  z-index: 0;
+
+  &#{&}--circuit {
+    top: 50%;
+    right: 0;
+    transform: translate(8%, -50%) rotate(0);
+    width: 180px;
+    opacity: 0.1;
+    z-index: 0;
+
+    @screen md {
+      transform: translate(0, -50%) rotate(45deg);
+      width: 500px;
+    }
+  }
+}
+
+.icon-anim {
+  svg {
+    transition: 0.2s ease;
+  }
+
+  @screen lg {
+    &:hover {
+      svg {
+        @apply ml-3;
+      }
+    }
+  }
+}
+
+.wrapper-wave {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  overflow-x: hidden;
+
+  &::before {
+    content: "";
+    padding-top: 100%;
+  }
+
+  .bg-wrapper-wave {
+    @apply bg-oxford-blue-50;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    &::before {
+      content: "";
+      padding-top: 100%;
+    }
+  }
+
+  .wave {
+    display: block;
+    margin-top: -1px;
+
+    svg {
+      width: 123%;
+      fill: #fff;
+    }
+  }
+}
+
+.cf-title-line {
+  @apply relative mb-8 pb-5;
+
+  &::before {
+    @apply absolute w-16 bg-primary rounded;
+
+    content: "";
+    bottom: 0;
+    height: 4px;
+  }
+
+  &#{&}--l {
+    &::before {
+      left: 0;
+    }
+  }
+
+  &#{&}--r {
+    &::before {
+      right: 0;
+    }
+  }
+
+  &#{&}--c {
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &#{&}--c-l {
+    @apply mb-0;
+
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+
+      @screen lg {
+        left: -30px;
+        transform: translateX(0);
+      }
+    }
+
+    @screen lg {
+      @apply mb-8;
+    }
+  }
+}
+
+.icon-box {
+  @apply bg-light p-3 rounded-lg inline-block;
+}
+
+.header-offset {
+  padding-top: $header-offset;
+}
+
+.pattern-square {
+  background: url(../images/pattern-fade.svg) no-repeat top left;
+}
+
+.pattern-square-dark {
+  background: url(../images/pattern-fade-dark.svg) no-repeat top left;
+}
+
+.zoom-wrap {
+  padding-bottom: 960px;
+
+  @screen md {
+    padding-bottom: 1050px;
+  }
+}

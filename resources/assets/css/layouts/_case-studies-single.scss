@@ -1,0 +1,121 @@
+.cs-header-info {
+  @apply relative;
+
+  &::before {
+    content: "";
+    left: -200%;
+    width: 200%;
+
+    @apply absolute top-0 h-full bg-oxford-blue-50;
+  }
+}
+
+.cs-header-image {
+  height: 200px;
+
+  @screen lg {
+    height: 330px;
+  }
+}
+
+.cs-info-list {
+  @apply relative bg-white;
+
+  background-clip: padding-box;
+  border: solid 3px transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -3px;
+    border-radius: inherit;
+
+    @apply bg-gradient-to-r from-green-light to-blue;
+  }
+}
+
+.feature-content-block,
+body.single-case-studies {
+  blockquote {
+    @apply relative bg-oxford-blue-50;
+
+    margin: 1.5em 10px 1.5em 0;
+    padding: 1rem 2rem;
+    quotes: "\201C""\201D""\2018""\2019";
+
+    &::before {
+      @apply text-dark-heading;
+
+      font-size: 4em;
+      line-height: 0.1em;
+      margin-right: 0.15em;
+      vertical-align: -0.45em;
+      content: open-quote;
+    }
+
+    &::after {
+      @apply absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-green-light to-blue rounded-xl text-transparent;
+
+      content: close-quote;
+    }
+
+    p {
+      @apply inline text-xl;
+    }
+  }
+}
+
+.feature-content-block {
+  a {
+    @apply text-primary;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+    &:hover {
+      @apply text-dark;
+    }
+  }
+
+  li {
+    @apply my-3 leading-normal text-base #{!important};
+  }
+
+  ul {
+    @apply list-styled my-16;
+  }
+
+  ol {
+    @apply mb-8;
+
+    li {
+      @apply relative pl-3 mt-4;
+    }
+  }
+
+  figure {
+    @apply my-12;
+  }
+}
+
+body.single-case-studies {
+  article {
+    ul {
+      li {
+        @apply my-4 text-gray-600 leading-relaxed;
+      }
+    }
+  }
+}

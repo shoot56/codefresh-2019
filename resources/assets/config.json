@@ -1,0 +1,18 @@
+{
+  "entry": {
+    "main": ["./scripts/main.js", "./styles/main.scss"],
+    "customizer": ["./scripts/customizer.js"],
+    "features-single": ["./scripts/pages/features-single.js"],
+    "single-event": ["./scripts/pages/single-event.js"],
+    "case-studies": ["./scripts/pages/case-studies.js"],
+    "home": ["./scripts/pages/home.js"],
+    "contact-us": ["./scripts/pages/contact-us.js"],
+    "pricing": ["./scripts/pages/pricing.js"],
+    "search-events": ["./scripts/search-events.js"]
+  },
+  "publicPath": "/wp-content/themes/codefresh-2019",
+  "devUrl": "http://codefresh.lndo.site/",
+  "proxyUrl": "http://localhost:3000",
+  "cacheBusting": "[name]_[hash:8]",
+  "watch": ["app/**/*.php", "config/**/*.php", "resources/views/**/*.php"]
+}

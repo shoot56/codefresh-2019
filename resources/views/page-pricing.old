@@ -1,0 +1,20 @@
+{{--
+  Template Name: Pricing
+--}}
+
+@extends('layouts.app')
+
+@section('hero')
+  @include('partials.hero-pricing')
+@endsection
+
+@section('content')
+  @include('partials.content-faq')
+  @include('partials.section-testimonials')
+  @include('partials.customers', ['class' => 'mb-6 lg:mb-16 mt-16'])
+  @include('partials.infra', ['wave' => true])
+@endsection
+
+@section('before_footer')
+  @include('partials.new.cta-banner')
+@endsection

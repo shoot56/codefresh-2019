@@ -1,0 +1,98 @@
+.animation-container {
+  @apply -mx-12;
+
+  canvas {
+    width: 600px !important;
+    height: 320px !important;
+
+    @screen md {
+      width: 860px !important;
+      height: 500px !important;
+    }
+  }
+}
+
+.hero-animated-pipeline {
+  @screen lg {
+    svg {
+      width: 900px;
+      height: auto;
+    }
+  }
+}
+
+.cf-grad {
+  background: #0a2540
+    linear-gradient(20deg, #071544 0%, #08223f 50%, #092440 90%);
+}
+
+.hero-gradient {
+  @apply absolute left-0 w-full -z-1 overflow-hidden;
+
+  top: -220px;
+  height: calc(100% + 220px);
+  transform: skewY($skewY);
+  background: #0a2540
+    linear-gradient(20deg, #071544 0%, #08223f 50%, #092440 90%);
+
+  &::before {
+    @apply absolute;
+
+    top: -50%;
+    left: -130%;
+    width: 500%;
+    height: 170%;
+    background-image: url(../images/pattern.svg);
+    background-size: 140px;
+    transform: rotate(45deg);
+    content: "";
+
+    @screen md {
+      left: -50%;
+      width: 200%;
+      height: 350%;
+      background-size: 240px;
+    }
+  }
+}
+
+.hero-pipes {
+  @apply absolute top-0 left-0 w-full h-full overflow-hidden;
+  background: #0a2540
+    linear-gradient(20deg, #071544 0%, #08223f 50%, #092440 90%);
+
+  &::before {
+    @apply absolute top-0 left-0 h-full w-full bg-repeat;
+    background-image: url(../images/pattern.svg);
+    background-size: 140px;
+    content: "";
+
+    @screen md {
+      background-size: 240px;
+    }
+  }
+}
+
+.pattern-circuit {
+  @apply absolute top-0 left-0 overflow-hidden w-full h-full;
+
+  &::after {
+    @apply absolute;
+
+    top: -50%;
+    left: -130%;
+    width: 500%;
+    height: 170%;
+    background-image: url(../images/pattern.svg);
+    background-size: 140px;
+    transform: rotate(45deg);
+    content: "";
+
+    @screen md {
+      left: -50%;
+      width: 200%;
+      height: 350%;
+      background-size: 240px;
+    }
+  }
+}

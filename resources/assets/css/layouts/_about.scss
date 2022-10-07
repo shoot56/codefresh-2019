@@ -1,0 +1,40 @@
+.team-grid {
+  @include grid(2, 1, auto, auto, $spacer, $spacer);
+
+  @screen md {
+    @include grid(3, 1, auto, auto, $spacer, $spacer);
+  }
+
+  @screen lg {
+    @include grid(3, 1, auto, auto, $spacer, $spacer);
+  }
+
+  @screen xl {
+    @include grid(3, 1, auto, auto, $spacer-lg, $spacer-lg);
+  }
+}
+
+.team-join-icon {
+  @include centered();
+}
+
+.about-img {
+  @apply absolute max-w-none;
+
+  // right: 0;
+  bottom: -4rem;
+  width: 130%;
+
+  @screen lg {
+    right: -50px;
+  }
+}
+
+.about-map {
+  background: url("../images/about/map.svg") no-repeat center center;
+  background-size: contain;
+
+  @screen md {
+    background-size: 830px;
+  }
+}

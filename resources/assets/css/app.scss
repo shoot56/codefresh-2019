@@ -1,0 +1,78 @@
+@tailwind base;
+
+/** helpers */
+@import "common/mixins";
+
+/** Import variables */
+@import "common/variables";
+@import "common/helpers";
+
+@mixin fontFace($family, $src, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $family;
+    font-display: block;
+    font-style: $style;
+    font-weight: $weight;
+    src: url("#{$src}.woff2") format("woff2"),
+      url("#{$src}.woff") format("woff"), url("#{$src}.ttf") format("truetype");
+  }
+}
+body {
+  position: relative;
+}
+
+@include fontFace("lato", "../fonts/lato-300", 300);
+@include fontFace("lato", "../fonts/lato-regular", 400);
+@include fontFace("lato", "../fonts/lato-700", 700);
+@include fontFace("lato", "../fonts/lato-900", 900);
+@include fontFace("maven-pro", "../fonts/maven-pro-400", 400);
+@include fontFace("maven-pro", "../fonts/maven-pro-500", 500);
+@include fontFace("maven-pro", "../fonts/maven-pro-600", 600);
+@include fontFace("maven-pro", "../fonts/maven-pro-700", 700);
+@include fontFace("maven-pro", "../fonts/maven-pro-900", 900);
+@include fontFace("yaro-bl-bold", "../fonts/yaro-bl-bold-subset", 700);
+.argo-font {
+  @apply font-bold text-nk-orange-argo;
+  font-family: 'yaro-bl-bold';
+}
+
+/**
+ * Import npm dependencies
+ */
+@import "~hamburgers/_sass/hamburgers/hamburgers";
+@import "~video.js/src/css/vjs";
+@import "~flickity/css/flickity";
+@import "~bootstrap/scss/vendor/rfs";
+@import "~bootstrap/scss/tooltip";
+
+@tailwind components;
+
+/** Import theme styles */
+@import "common/global";
+@import "common/typograph";
+@import "common/images";
+
+/** Layouts */
+@import "layouts/index";
+
+/** Import other */
+@import "other/prism";
+@import "other/twentytwenty";
+@import "other/flickity";
+@import "other/splide";
+@import "other/ion-rangeslider/base";
+@import "other/ion-rangeslider/round";
+
+/** Components */
+@import "components/index";
+
+@tailwind utilities;
+
+/** Custom Utilities */
+@import "common/util";
+
+/* Bugfixes */
+:where(.lazyloaded:not([width="300"])) {
+  width: auto;
+}
+

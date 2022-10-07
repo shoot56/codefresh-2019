@@ -1,0 +1,89 @@
+@layer components {
+  .btn {
+    @apply inline-block px-6 py-3 font-display font-bold text-center leading-none cursor-pointer transition-all duration-200 focus:outline-none;
+
+    border-radius: 50px;
+    text-transform: capitalize;
+  }
+
+  .btn-link {
+    @apply p-0 bg-transparent text-left leading-normal tracking-normal;
+  }
+
+  .btn-primary {
+    @apply bg-nk-orange-argo text-white;
+
+    &:hover {
+      @apply bg-nk-orange-burnt text-white;
+    }
+  }
+
+  .btn-secondary {
+    @apply bg-white text-nk-orange-argo;
+
+    &:hover {
+      @apply bg-oxford-blue-50 text-nk-orange-burnt;
+    }
+  }
+
+  .btn-sm {
+    @apply px-3 py-2 text-sm;
+  }
+
+  .btn-lg {
+    @apply py-4 text-lg;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border border-gray-300 text-nk-orange-argo;
+
+    &:hover {
+      @apply text-nk-orange-burnt;
+    }
+  }
+
+  .btn-outline-light {
+    @apply bg-transparent border border-gray-400 text-nk-orange-argo;
+
+    i {
+      @apply text-body-light;
+
+      transition: 0.2s ease;
+    }
+  }
+
+  .btn-outline-primary {
+    @apply bg-transparent border border-nk-orange-argo text-nk-orange-argo;
+
+    i {
+      @apply text-nk-orange-argo;
+
+      transition: 0.2s ease;
+    }
+
+    &:hover {
+      @apply text-nk-orange-burnt;
+    }
+  }
+}
+
+.new-link {
+  @apply inline-block font-display font-bold leading-none;
+
+  &#{&}-primary {
+    @apply text-white;
+
+    &:hover {
+      @apply text-white;
+    }
+  }
+
+  &#{&}-nk-orange {
+    @apply text-nk-orange-argo;
+
+    &:hover {
+      @apply text-nk-orange-burnt;
+    }
+  }
+
+}

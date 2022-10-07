@@ -1,0 +1,209 @@
+/* stylelint-disable no-descending-specificity */
+
+.table-row-accent {
+  th {
+    @apply font-bold font-display bg-primary;
+
+    @screen md {
+      @apply bg-oxford-blue-50 text-dark;
+
+      background: linear-gradient(to right, #cbf7ec, $light);
+    }
+  }
+}
+
+//
+// Basic table styles
+//
+$table-border-width: 1px;
+$table-border-color: lighten($dark, 60%);
+$table-striped-order: odd;
+$table-accent-bg: theme("colors.light");
+$table-hover-color: theme("colors.primary.DEFAULT");
+$table-hover-bg: theme("colors.light");
+
+table,
+.table {
+  width: 100%;
+  margin-bottom: theme("margin.16");
+  background-color: #fff;
+
+  thead th {
+    @apply text-xs tracking-wider align-middle px-3 py-3;
+  }
+
+  th,
+  td {
+    @apply font-display;
+
+    padding: theme("padding.3");
+    vertical-align: middle;
+    border-top: $table-border-width solid $table-border-color;
+    font-size: theme("fontSize.sm");
+    white-space: nowrap;
+
+    @screen md {
+      font-size: theme("fontSize.sm");
+    }
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+}
+
+//
+// Condensed table w/ half padding
+//
+.table-sm {
+  th,
+  td {
+    padding: theme("padding.2");
+  }
+}
+
+// Border versions
+//
+// Add or remove borders all around the table and between all the columns.
+.table-bordered {
+  border: $table-border-width solid $table-border-color;
+
+  th,
+  td {
+    border: $table-border-width solid $table-border-color;
+  }
+
+  thead {
+    th,
+    td {
+      border-bottom-width: 2 * $table-border-width;
+    }
+  }
+}
+
+.table-borderless {
+  th,
+  td,
+  thead th,
+  tbody + tbody {
+    border: 0;
+  }
+}
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.table-striped {
+  tbody tr:nth-of-type(#{$table-striped-order}) {
+    background-color: $table-accent-bg;
+
+    @screen md {
+      td.cf-cell::before {
+        background-color: #cbf7ec !important;
+      }
+    }
+  }
+}
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+.table-hover {
+  tbody tr {
+    @include hover() {
+      color: $table-hover-color;
+      background-color: $table-hover-bg;
+    }
+  }
+}
+
+// Responsive tables
+.table-responsive {
+  display: block !important;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent double border on horizontal scroll due to use of `display: block;`
+  > .table-bordered {
+    border: 0;
+  }
+
+  @screen md {
+    display: table !important;
+  }
+}
+
+// Responsive tables comparison
+.table-responsive-custom {
+  display: block !important;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent double border on horizontal scroll due to use of `display: block;`
+  > .table-bordered {
+    border: 0;
+  }
+
+  td {
+    @apply relative z-0;
+
+    &::before {
+      content: "";
+      opacity: 0.07;
+      z-index: -1;
+
+      @apply absolute top-0 left-0 w-full h-full;
+
+      @screen md {
+        background-color: $primary;
+      }
+    }
+
+    &::after {
+      content: attr(title);
+      position: absolute;
+      left: 10px;
+      z-index: 20;
+
+      @screen md {
+        content: "" !important;
+      }
+    }
+
+    &.cf-cell {
+      @screen md {
+        box-shadow: 0 20px 30px -15px rgba($dark, 0.3);
+      }
+
+      &::after {
+        content: url(../images/logo-sm.svg);
+        line-height: 1.8;
+      }
+    }
+  }
+
+  @screen md {
+    display: table !important;
+  }
+}
+
+.highlight-cell {
+  @apply font-bold;
+
+  &::before {
+    background-color: $light !important;
+    opacity: 1 !important;
+
+    @screen md {
+      background-color: #d4f9f0 !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .feature-cell {
+    @apply bg-primary;
+  }
+}

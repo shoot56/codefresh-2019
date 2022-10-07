@@ -1,0 +1,37 @@
+@php
+$video = get_field( 'academy_post_video' );
+
+// YouTube video url
+$videoURL = $video;
+$urlArr = explode( '/', $videoURL );
+$urlArrNum = count( $urlArr );
+
+// Youtube video ID
+$youtubeVideoId = $urlArr[$urlArrNum - 1];
+
+// Generate youtube thumbnail url
+$thumbURL = 'http://img.youtube.com/vi/' . $youtubeVideoId . '/0.jpg';
+@endphp
+
+<div class="w-full md:w-1/2 px-3 mb-6">
+  <article @php post_class( 'p-4 bg-white flex flex-col w-full h-full' ) @endphp>
+
+    <div class="container-academy-embed">
+      <img class="lazyload" src="{{ $thumbURL }}" alt="Containers 101">
+      <a class="container-academy-embed__play" href="{{ $video }}" target="foobox"><span class="fas fa-play fa-lg text-white"></span></a>
+    </div>
+
+    <h3 class="text-lg">
+      <a href="{{ esc_url( get_permalink() ) }}" class="text-dark hover:text-primary">
+        {!! get_the_title() !!}
+      </a>
+    </h3>
+
+    <p class="text-body-light">{!! App::excerpt( 27 ) !!}</p>
+
+    <a href="{{ esc_url( get_permalink() ) }}" class="mt-auto">
+      {{ __( 'Learn More', 'codefresh' ) }} <i class="fas fa-long-arrow-right ml-2"></i>
+    </a>
+
+  </article>
+</div>

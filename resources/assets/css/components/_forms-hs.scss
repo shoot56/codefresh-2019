@@ -1,0 +1,141 @@
+.hs-form {
+  @apply py-8;
+}
+
+.hs-form-field {
+  @apply mb-6;
+}
+
+.hs-form .hs-form-field > label {
+  @apply block text-sm font-bold mb-1 #{!important};
+}
+
+/* Inputs (selectors for all inputs)  */
+.hs-form select {
+  @apply text-dark;
+
+  appearance: none;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTRweCIgaGVpZ2h0PSI5cHgiIHZpZXdCb3g9IjAgMCAxNCA5IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgICAgIDxnIGlkPSJSZXF1ZXN0LURlbW8tOC42IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTM4MS4wMDAwMDAsIC01MTEuMDAwMDAwKSIgZmlsbD0iIzI4Qjg5QSIgZmlsbC1ydWxlPSJub256ZXJvIj4gICAgICAgICAgICA8cGF0aCBkPSJNMTM5NC44MDkzNSw1MTIuMjI4MTQgQzEzOTQuOTU2Miw1MTIuMzc1MDIxIDEzOTQuOTU2Miw1MTIuNjEyNTA4IDEzOTQuODA5MzUsNTEyLjc1OTM4OSBMMTM4OC4yNjU2MSw1MTkuMzAzMTM1IEMxMzg4LjExODczLDUxOS40NTAwMTYgMTM4Ny44ODEyNCw1MTkuNDUwMDE2IDEzODcuNzM0MzYsNTE5LjMwMzEzNSBMMTM4MS4xOTA2MSw1MTIuNzU5Mzg5IEMxMzgxLjA0Mzc2LDUxMi42MTI1MDggMTM4MS4wNDM3Niw1MTIuMzc1MDIxIDEzODEuMTkwNjEsNTEyLjIyODE0IEwxMzgxLjgwOTM5LDUxMS42MDkzOTcgQzEzODEuOTU2MjQsNTExLjQ2MjUxNyAxMzgyLjE5Mzc1LDUxMS40NjI1MTcgMTM4Mi4zNDA2Myw1MTEuNjA5Mzk3IEwxMzg3Ljk5OTk4LDUxNy4yNTYyNjUgTDEzOTMuNjU5MzMsNTExLjYwOTM5NyBDMTM5My44MDYyMSw1MTEuNDYyNTE3IDEzOTQuMDQzNzMsNTExLjQ2MjUxNyAxMzk0LjE5MDU4LDUxMS42MDkzOTcgTDEzOTQuODA5MzUsNTEyLjIyODE0IFoiIGlkPSJjIj48L3BhdGg+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  line-height: 1.2 !important;
+  background-position: calc(100% - 20px) center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+.hs-form input[type="text"],
+.hs-form input[type="password"],
+.hs-form input[type="datetime"],
+.hs-form input[type="datetime-local"],
+.hs-form input[type="date"],
+.hs-form input[type="month"],
+.hs-form input[type="time"],
+.hs-form input[type="week"],
+.hs-form input[type="number"],
+.hs-form input[type="email"],
+.hs-form input[type="url"],
+.hs-form input[type="search"],
+.hs-form input[type="tel"],
+.hs-form input[type="color"],
+.hs-form input[type="file"],
+.hs-form textarea:not(#g-recaptcha-response),
+.hs-form select {
+  @apply block w-full py-2 px-2 leading-normal text-black bg-white border border-oxford-blue-200 rounded #{!important};
+
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  @screen lg {
+    @apply text-sm #{!important};
+  }
+
+  &:active,
+  &:focus {
+    border-color: theme("colors.primary.DEFAULT");
+    box-shadow: inset 0 0 0 1px theme("colors.primary.DEFAULT");
+    outline: none;
+  }
+
+  @include placeholder-style(theme("colors.body.light"));
+}
+
+/* Inputs in focus (selectors for all inputs when clicked)  */
+// .hs-form input[type="text"]:focus,
+// .hs-form input[type="password"]:focus,
+// .hs-form input[type="datetime"]:focus,
+// .hs-form input[type="datetime-local"]:focus,
+// .hs-form input[type="date"]:focus,
+// .hs-form input[type="month"]:focus,
+// .hs-form input[type="time"]:focus,
+// .hs-form input[type="week"]:focus,
+// .hs-form input[type="number"]:focus,
+// .hs-form input[type="email"]:focus,
+// .hs-form input[type="url"]:focus,
+// .hs-form input[type="search"]:focus,
+// .hs-form input[type="tel"]:focus,
+// .hs-form input[type="color"]:focus,
+// .hs-form input[type="file"]:focus,
+// .hs-form textarea:focus,
+// .hs-form select:focus {
+//   outline: none;
+//   box-shadow: 0 0 0 2px rgba($primary, 0.25);
+// }
+
+/* Error message (selector for validation messages) */
+.hs-form .hs-error-msgs {
+  @apply p-0 list-none p-0;
+
+  label {
+    @apply text-red text-sm mb-0;
+  }
+}
+
+.hs-form-required {
+  display: none;
+}
+
+/* Multi Column Form (selectors for fieldsets and field wrappers)
+========================================================================== */
+fieldset.form-columns-1 .hs-input {
+  width: 100% !important;
+}
+
+// fieldset.form-columns-2 .hs-input {
+//   @include media-breakpoint-down(sm) {
+//     width: 100% !important;
+//   }
+// }
+
+/* Submit buttons (selectors for all non-CTA buttons)
+========================================================================== */
+body .hs-button.primary {
+  @apply block mt-3 btn btn-primary;
+
+  width: calc(100%);
+}
+
+// body .hs-button.primary:hover {
+//   background-color: darken($primary, 7%);
+// }
+
+// body .hs-button.primary:focus {
+//   outline: none;
+//   box-shadow: 0 0 0 2px rgba($primary, 0.25);
+// }
+
+/* BL Fixes */
+
+// event-demo page
+
+.hs-form .form-columns-2 .hs-form-field > label {
+  text-align: left;
+}
+
+.hs-form .form-columns-2 .multi-container .hs-form-checkbox {
+  text-align: left;
+}
+
+.hs-form .form-columns-2 .hs-error-msgs {
+  text-align: left;
+}

@@ -1,0 +1,109 @@
+.contact {
+  &-row {
+    top: -50px;
+  }
+}
+
+// Contact options
+.contact-opts {
+  @apply my-4;
+
+  @screen lg {
+    margin-top: 0;
+    padding-left: 30px;
+  }
+
+  h4 {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  p {
+    @apply text-sm mb-0 mt-4 text-body-light;
+  }
+
+  a {
+    color: $dark;
+  }
+
+  &__img {
+    width: 90px;
+    height: auto;
+    margin-bottom: 8px;
+  }
+
+  &__item {
+    @apply py-2;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &.has-desc {
+      padding: 10px 0;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    padding-right: 25px;
+
+    &::after {
+      content: url("data:image/svg+xml,%0A%3Csvg width='8px' height='12px' viewBox='0 0 8 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Pages' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='homw-copy-9' transform='translate(-138.000000, -1676.000000)' fill='%23CED8D8' fill-rule='nonzero'%3E%3Cpath d='M145.054147,1682.43433 L139.740073,1687.74841 C139.483779,1688.00467 139.068283,1688.00467 138.812016,1687.74841 L138.192217,1687.12861 C137.936351,1686.87274 137.93587,1686.45807 138.191123,1686.20162 L142.402611,1681.97029 L138.191123,1677.73899 C137.93587,1677.48253 137.936351,1677.06787 138.192217,1676.812 L138.812016,1676.1922 C139.06831,1675.93593 139.483806,1675.93593 139.740073,1676.1922 L145.05412,1681.50627 C145.310414,1681.76254 145.310414,1682.17804 145.054147,1682.43433 Z' id='arrow-right'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      transition: right 0.2s ease;
+    }
+
+    &:hover::after {
+      right: 0;
+    }
+  }
+}
+
+.shape-footer {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  z-index: -1;
+  width: 200%;
+
+  @screen xl {
+    width: 150%;
+  }
+}
+
+// ******************************************
+// * Map
+// ******************************************
+.acf-map {
+  height: 120px;
+  margin-top: 0;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  @screen lg {
+    margin-left: 0;
+    margin-right: 0;
+    height: 320px;
+  }
+}
+
+// fixes potential theme css conflict
+.acf-map img {
+  max-width: inherit !important;
+}
+
+a[href^="http://maps.google.com/maps"],
+a[href^="https://maps.google.com/maps"],
+.gmnoprint a,
+.gmnoprint span,
+.gm-style-cc {
+  display: none !important;
+}
+
+.gmnoprint div {
+  background: none !important;
+}

@@ -1,0 +1,83 @@
+.signup-options {
+  @apply py-16;
+
+  @screen md {
+    @apply w-64;
+  }
+
+  &__title {
+    @apply font-bold text-white text-2xl text-center;
+
+    @screen md {
+      @apply text-left;
+    }
+  }
+
+  &__link {
+    @apply font-display text-sm text-center text-white;
+
+    @screen md {
+      @apply text-left;
+    }
+
+    a {
+      @apply text-white underline;
+    }
+  }
+
+  &__item {
+    @apply mb-3;
+
+    a {
+      @apply border border-gray2-999 py-3 px-6 block text-dark bg-white;
+
+      transition: background-color $transition-speed ease;
+
+      &:hover {
+        @apply bg-light;
+      }
+    }
+  }
+}
+
+.signup-feat-list {
+  @apply list-none p-0 mb-8;
+
+  @screen md {
+    @apply mb-10;
+  }
+
+  .signup-feat-list__item {
+    @apply font-display text-sm mb-6 tracking-wide;
+
+    @screen lg {
+      @apply text-lg;
+    }
+
+    img {
+      @apply inline-block w-8 mr-3;
+    }
+  }
+}
+
+.signup-integrate {
+  .signup-integrate__title {
+    @apply text-base mb-4 text-light;
+
+    @screen md {
+      @apply mb-6;
+    }
+  }
+
+  .signup-integrate__list {
+    @apply mb-6;
+
+    img {
+      @apply w-4 opacity-75 mx-1 inline-block;
+
+      @screen lg {
+        @apply w-6 opacity-75 mx-1;
+      }
+    }
+  }
+}

@@ -1,0 +1,430 @@
+$devops: #a900ff;
+$devops-secondary: #19a3ff;
+$devops-darkest: #0e1a2a;
+$devops-dark: #091321;
+
+.ops-text-light {
+  color: rgba($white, 0.6) !important;
+}
+
+.ops-text-grad {
+  background: $devops-secondary linear-gradient(to right, $devops 0%, $devops-secondary 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.devops-title {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.devopscember__btn {
+  display: inline-block;
+  border: 2px solid $devops;
+  color: $devops-secondary;
+  background-color: $devops-darkest;
+  padding: 10px 23px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: theme("fontFamily.display");
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: $box-shadow;
+
+  &:hover {
+    background-color: $devops;
+    color: $white !important;
+    text-decoration: none;
+    border: 2px solid $devops;
+  }
+}
+
+.devopscember__btn--lg {
+  @extend .devopscember__btn;
+
+  font-size: 22px;
+}
+
+.page-template-lp-devopscember {
+  background-color: $devops-darkest;
+}
+
+// ******************************************
+// * Hero
+// ******************************************
+.devopscember-hero-wrap {
+  position: relative;
+  background: $devops-darkest;
+  background-image: url("../images/lp/devopscember/bg.svg");
+  background-position: center bottom;
+  background-size: 300%;
+  background-repeat: no-repeat;
+
+  @screen md {
+    background-size: 200%;
+  }
+
+  @screen xl {
+    background-size: 150%;
+  }
+
+  @media (min-width: 1600px) {
+    background-size: 100%;
+  }
+}
+
+.devopscember__hero-img {
+  max-width: 550px;
+  width: 100%;
+  height: auto;
+}
+
+body.page-template-lp-devopscember-signup,
+body.page-template-lp-devopscember {
+  a {
+    color: $devops-secondary;
+
+    &:hover {
+      color: $devops;
+    }
+  }
+}
+
+.devops-header {
+  @apply mx-auto py-4;
+
+  max-width: 1580px;
+
+  &__logo img {
+    width: 55px;
+    height: auto;
+  }
+
+  @screen lg {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  &__link {
+    @extend .ops-text-light;
+
+    font-family: theme("fontFamily.display");
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: $white !important;
+      text-decoration: underline;
+    }
+  }
+
+  li {
+    padding: 0 20px;
+    font-weight: bold;
+
+    @screen lg {
+      font-size: 18px;
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      a {
+        @extend .devopscember__btn;
+
+        color: $devops-secondary !important;
+      }
+    }
+  }
+}
+
+.devopscember__hero {
+  .devopscember__subtitle {
+    color: #c8b027;
+    font-size: 18px;
+
+    @screen md {
+      font-size: 20px;
+    }
+
+    @screen lg {
+      max-width: 610px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+// ******************************************
+// * Info
+// ******************************************
+.devopscember-info {
+  background-color: $devops-dark;
+  padding: 70px 0;
+
+  &__item {
+    @apply rounded-lg;
+
+    background-color: $devops-darkest;
+    padding: 25px;
+    width: 100%;
+    color: $white;
+
+    @screen md {
+      padding: 40px;
+    }
+  }
+
+  .devopscember__rules {
+    @apply rounded-lg;
+
+    background-color: $devops-darkest;
+    padding: 25px;
+
+    @screen md {
+      padding: 40px;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// ******************************************
+// * Projects
+// ******************************************
+.devopscember__projects {
+  padding: 0 0 70px;
+  background-color: $devops-dark;
+
+  &__card {
+    @apply rounded-lg;
+
+    background-color: $devops-darkest;
+    min-height: 100%;
+    position: relative;
+    color: rgba($white, 0.6);
+    padding: 5px;
+
+    @screen md {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__card__header {
+    background-color: $devops-darkest;
+    padding: 13px 20px;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+  }
+
+  &__star {
+    margin-top: 10px;
+
+    @screen md {
+      margin-top: 0;
+    }
+  }
+
+  &__card__body {
+    padding: 20px;
+  }
+
+  .devops-project__footer {
+    padding: 15px;
+
+    @screen md {
+      padding: 20px;
+    }
+  }
+
+  .devops-project__link {
+    @apply rounded-lg;
+
+    margin: 0 auto;
+    display: block;
+    font-family: theme("fontFamily.display");
+    font-size: 15px;
+    padding: 8px 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $white;
+    text-decoration: underline;
+
+    svg {
+      color: $white;
+    }
+  }
+}
+
+// ******************************************
+// * In Association
+// ******************************************
+.in-association-wrap {
+  padding: 2px 0;
+  background: $devops-secondary linear-gradient(to right, $devops 0%, $devops-secondary 100%);
+}
+
+.devopscember__in-association {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: $devops-dark;
+
+  &__logos {
+    img {
+      @apply align-middle mt-4 mx-3 w-32 h-auto mx-auto;
+
+      @screen md {
+        @apply inline-block mx-3;
+      }
+    }
+  }
+}
+
+// ******************************************
+// * Footer
+// ******************************************
+.devops-footer-wrap {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/lp/devopscember/bg.svg");
+    background-position: center bottom;
+    background-size: 300%;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+    z-index: -1;
+
+    @screen md {
+      background-size: 200%;
+    }
+
+    @screen xl {
+      background-size: 150%;
+    }
+
+    @media (min-width: 1600px) {
+      background-size: 100%;
+    }
+  }
+}
+
+.devops-footer {
+  padding: 50px 0 30px;
+
+  &__nav-item {
+    margin: 0 10px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+    display: inline-block;
+  }
+
+  &__link {
+    @apply rounded-lg;
+
+    color: $white !important;
+    display: inline-block;
+    line-height: 1.4;
+    font-family: theme("fontFamily.display");
+    padding: 20px;
+    height: auto;
+    width: 300px;
+    background-color: $devops;
+
+    @screen md {
+      padding: 30px;
+      height: 153px;
+      width: 153px;
+    }
+
+    &:hover {
+      background-color: $devops-secondary;
+    }
+  }
+}
+
+// ******************************************
+// * Signup
+// ******************************************
+body.page-template-lp-devopscember-signup {
+  max-width: 100% !important;
+  padding: 0 !important;
+  background: $devops-dark linear-gradient(to top, $devops-dark, $devops-darkest);
+
+  // ******************************************
+  // * Form
+  // ******************************************
+  .gform_wrapper input[type="email"],
+  .gform_wrapper input[type="date"],
+  .gform_wrapper input[type="datetime"],
+  .gform_wrapper input[type="datetime-local"],
+  .gform_wrapper input[type="month"],
+  .gform_wrapper input[type="number"],
+  .gform_wrapper input[type="password"],
+  .gform_wrapper input[type="search"],
+  .gform_wrapper input[type="tel"],
+  .gform_wrapper input[type="text"],
+  .gform_wrapper input[type="time"],
+  .gform_wrapper input[type="week"],
+  .gform_wrapper input[type="url"],
+  .gform_wrapper select,
+  .gform_wrapper textarea {
+    border-color: lighten($white, 40%);
+    color: $white;
+    border-radius: 0;
+    background: transparent;
+
+    @include placeholder-style(rgba($dark, 0.6));
+
+    &:active,
+    &:focus {
+      background: transparent;
+      color: $white;
+      border-color: $devops-secondary;
+      box-shadow: inset 0 0 0 1px $devops-secondary;
+    }
+  }
+
+  .gform_wrapper .button {
+    background-color: $devops;
+    border-color: $devops;
+
+    &:hover {
+      background-color: $devops-secondary;
+      border-color: $devops-secondary;
+    }
+  }
+}
+
+.devops-singup {
+  line-height: 1.4;
+  color: rgba($white, 0.6);
+  font-family: theme("fontFamily.display");
+}
+
+.devops-form-wrap {
+  @apply rounded-lg;
+
+  background-color: $devops-darkest;
+  padding: 25px;
+  width: 100%;
+  color: $white;
+
+  @screen md {
+    padding: 40px;
+  }
+}

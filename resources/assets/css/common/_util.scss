@@ -1,0 +1,537 @@
+@layer utilities {
+  .row {
+    @apply flex flex-wrap -mx-4;
+  }
+
+  .col {
+    @apply px-4;
+  }
+
+  .equal-h {
+    @apply flex flex-col h-full w-full;
+  }
+
+  .is-h3 {
+    @apply text-2xl #{!important};
+
+    @screen md {
+      @apply text-4xl #{!important};
+    }
+  }
+
+  .img-fill {
+    @apply absolute top-0 left-0 w-full h-full object-cover bg-center;
+  }
+
+  .hero-title-gradient {
+    h1 {
+      @apply bg-clip-text text-transparent bg-gradient-to-r from-green-light to-blue;
+
+      @screen xl {
+        @apply text-6xl;
+      }
+    }
+  }
+
+  .bg-ph {
+    height: auto;
+    width: 100%;
+    background: linear-gradient(-90deg, #f4fcfa 0%, #e8f7f2 50%, #f4fcfa 100%);
+    background-size: 400% 400%;
+    animation: pulseBg 1.2s ease-in-out infinite;
+  }
+
+  .align-sub {
+    vertical-align: sub;
+  }
+
+  .full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .grad-light-t-b {
+    background: $bg-grad-t-b;
+  }
+
+  .grad-light-b-t {
+    background: $bg-grad-b-t;
+  }
+
+  .bg-green-alpha {
+    background-color: rgba(#54e4a8, 0.21);
+  }
+
+  .grid-gap {
+    @apply gap-4;
+  }
+
+  .img-full {
+    @apply absolute top-0 left-0 w-full h-full object-cover;
+  }
+
+  .skew {
+    transform: skewY($skewY);
+  }
+
+  .feature-image {
+    @screen lg {
+      max-width: none;
+      width: 130%;
+    }
+  }
+
+  .section-spacer {
+    @apply my-16;
+
+    @screen lg {
+      @apply my-48;
+    }
+  }
+
+  .section-t-spacer {
+    @apply mt-16;
+
+    @screen md {
+      @apply mt-48;
+    }
+  }
+
+  .section-b-spacer {
+    @apply mb-16;
+
+    @screen md {
+      @apply mb-48;
+    }
+  }
+
+  @screen lg {
+    .section-half-p-r {
+      @apply pr-16;
+    }
+
+    .section-half-p-l {
+      @apply pl-16;
+    }
+  }
+
+  .section-masked {
+    position: relative;
+    height: 1600px;
+    overflow: hidden;
+  }
+
+  .circuit-right {
+    margin-top: -36px;
+
+    svg {
+      @apply ml-auto;
+
+      width: 747px;
+      height: auto;
+      transform: translateX(20px);
+
+      @screen md {
+        transform: translateX(240px);
+      }
+    }
+  }
+
+  .circuit-left {
+    margin-bottom: -18px;
+    z-index: -2;
+
+    svg {
+      @apply mr-auto;
+
+      height: auto;
+      width: 350px;
+      transform: translateX(-140px);
+    }
+
+    @screen lg {
+      margin-bottom: -33px;
+
+      svg {
+        width: 630px;
+      }
+    }
+  }
+
+  .bg-clip-text {
+    -webkit-background-clip: text !important;
+
+    @apply inline-block;
+  }
+
+  .text-line-decor {
+    @apply relative;
+
+    &::before {
+      content: "";
+      height: 2px;
+      width: 76px;
+
+      @apply absolute bottom-0 left-0 rounded-lg bg-gradient-to-r from-blue to-green-light transform -translate-x-8 translate-y-2;
+    }
+  }
+
+  .justify-self-end {
+    justify-self: end;
+  }
+
+  .new-extra-bg {
+    height: 35%;
+  }
+
+  .bg-gradient-radial-primary {
+    background-image: radial-gradient(at top, lighten($green, 20%), $green 60%);
+  }
+
+  .bg-gradient-radial-blue {
+    background-image: radial-gradient(
+      at top,
+      lighten(#99e5fa, 10%),
+      #99e5fa 60%
+    );
+  }
+
+  .bg-gradient-radial-purple {
+    background-image: radial-gradient(
+      at top,
+      lighten(#9ab6fe, 10%),
+      #9ab6fe 60%
+    );
+  }
+
+  .bg-gradient-radial-yellow {
+    background-image: radial-gradient(
+      at top,
+      lighten(#fae299, 10%),
+      #fae299 60%
+    );
+  }
+
+  .quotes {
+    background-image: url(../images/icons/quotes.svg);
+  }
+
+  .bg-shape {
+    background-image: url(../images/testimonial-shape.svg);
+  }
+
+  .bg-pipelines-mirrored {
+    background-image: url(../images/bg/pipelines-mirrored.svg);
+  }
+
+  .styled-content {
+    ul {
+      @apply list-none mb-8 p-0;
+
+      li {
+        position: relative;
+        padding-left: 24px;
+        margin-top: 12px;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 12px;
+          border-radius: 50%;
+          transform: translateY(-50%);
+        }
+
+        &::before {
+          background: rgba($primary, 0.2);
+          left: 0;
+          width: 14px;
+          height: 14px;
+        }
+
+        &::after {
+          @apply bg-primary;
+
+          left: 4px;
+          width: 6px;
+          height: 6px;
+        }
+      }
+    }
+  }
+
+  .list-styled {
+    @apply list-none p-0;
+
+    li {
+      position: relative;
+      padding-left: 24px;
+      margin-top: 12px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 12px;
+        border-radius: 50%;
+        transform: translateY(-50%);
+      }
+
+      &::before {
+        background: rgba($primary, 0.3);
+        left: 0;
+        width: 14px;
+        height: 14px;
+      }
+
+      &::after {
+        @apply bg-primary;
+
+        left: 4px;
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+
+  .cf-title {
+    @apply relative pb-4 mb-8;
+
+    &::before {
+      height: 5px;
+      bottom: 0;
+      content: "";
+
+      @apply absolute w-16 bg-primary;
+    }
+  }
+
+  .title-related {
+    @apply m-0 overflow-hidden relative max-w-full;
+
+    &::after {
+      content: "";
+      width: 100vw;
+      height: 2px;
+      background-color: darken($light, 8%);
+      right: 50%;
+      transform: translate(50%, 50%);
+      position: absolute;
+      top: 27px;
+      z-index: -1;
+    }
+
+    h3 {
+      @apply text-primary;
+
+      font-size: 18px;
+      width: auto;
+      text-align: center;
+      margin: 15px auto;
+      position: relative;
+      overflow: visible;
+      z-index: 5;
+      line-height: 1.4;
+      display: table;
+      padding: 0 10px;
+      background: $white;
+    }
+  }
+
+  .signup-business-use {
+    background-image: url(../images/signup/business-use.svg);
+  }
+
+  .signup-personal-use {
+    background-image: url(../images/signup/personal-use.svg);
+  }
+
+  .signup-phone-code {
+    background-image: url(../images/signup/phone-code.svg);
+  }
+
+  .HoverArrow {
+    @apply inline-block align-baseline;
+
+    transform: translateX(3px);
+    position: relative;
+    margin-left: 5px;
+    stroke-width: 2;
+    fill: none;
+    stroke: currentcolor;
+  }
+
+  .HoverArrow__linePath {
+    opacity: 0;
+  }
+
+/* START BLYON UTILITIES */
+
+  @responsive {
+
+    .full-vh-header {
+      min-height: calc(100vh - 74px);
+    }
+
+    .mt-header {
+      margin-top: 74px;
+    }
+
+    .btn-bl {
+      @apply inline-block px-6 py-3 font-display font-bold text-center leading-none cursor-pointer transition-all duration-200 border border-transparent;
+      border-radius: 50px;
+      outline: none;
+      text-transform: capitalize;
+    }
+
+    .btn-bl.block {
+      display: block;
+    }
+
+    .btn-bl-primary {
+      @apply bg-nk-orange-argo text-white;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply bg-nk-orange-burnt text-white;
+      }
+    }
+
+    .btn-bl-nk-primary {
+      @apply bg-nk-primary text-white;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply bg-nk-primary-dark text-white;
+      }
+    }
+
+    .btn-bl-secondary-light {
+      @apply border-gray-400 text-white;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply bg-white text-primary;
+      }
+    }
+
+    .btn-bl-secondary-dark {
+      @apply text-nk-orange-argo;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply text-nk-orange-burnt border-transparent;
+      }
+    }
+
+    .btn-bl-primary-outline {
+      @apply bg-transparent text-nk-orange-argo border border-nk-orange-argo;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply bg-nk-orange-burnt text-white border-nk-orange-burnt;
+      }
+    }
+
+    .btn-bl-white-outline {
+      @apply bg-transparent text-white border border-white;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply bg-nk-orange-burnt text-white border-nk-orange-burnt;
+      }
+    }
+
+    .btn-bl-nk-primary-outline {
+      @apply bg-transparent text-nk-primary border border-nk-primary;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply bg-nk-primary-dark text-white border-nk-primary-dark;
+      }
+    }
+
+    .btn-bl-nk-gray3point5-outline {
+      @apply bg-transparent text-nk-gray3point5 border-nk-gray3point5;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply bg-nk-gray3point5 text-white border-nk-gray3point5;
+      }
+    }
+
+    .btn-bl-primary-text {
+      @apply bg-transparent text-nk-orange-argo border-transparent px-0;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply bg-transparent text-nk-orange-burnt border-transparent;
+      }
+    }
+
+    .btn-bl-white-text {
+      @apply bg-transparent text-white border-transparent px-0;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply bg-transparent text-white border-transparent;
+      }
+    }
+
+    .btn-bl-body-text {
+      @apply bg-transparent text-oxford-blue-500 border-transparent px-0;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply bg-transparent text-oxford-blue-500 border-transparent;
+      }
+    }
+
+    .bl-fas {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+    }
+
+    .bl-fa-chevron-right:after {
+      @apply inline-block ml-2;
+      content: "";
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 900;
+    }
+
+    .bg-split-dark-medium {
+      background: linear-gradient(0deg, #3b5065 50%, #002139 50%);
+    }
+
+    .bg-split-dark-medium-blue {
+      background: linear-gradient(0deg, #294158 50%, #002139 50%);
+    }
+
+    .bg-split-light-medium {
+      background: linear-gradient(0deg, #3b5065 50%, #e6eaed 50%);
+    }
+
+    .bg-split-dark-light {
+      background: linear-gradient(0deg, #e6eaed 50%, #002139 50%);
+    }
+
+    .bg-split-horizontal-dark-light {
+      background: linear-gradient(270deg, #ffffff 50%, #002139 50%);
+    }
+
+    .bg-split-horizontal-marine-light {
+      background: linear-gradient(270deg, #ffffff 50%, #0a6376 50%);
+    }
+
+  }
+
+}

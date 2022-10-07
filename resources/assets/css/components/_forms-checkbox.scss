@@ -1,0 +1,25 @@
+.hs-form-checkbox,
+.ginput_container_checkbox,
+.ginput_container_consent {
+  input {
+    @apply mr-1;
+  }
+
+  .gfield_consent_label {
+    @apply text-sm;
+  }
+}
+
+.ginput_container_checkbox {
+  label {
+    @apply block;
+  }
+}
+
+.hs-form .multi-container {
+  padding-left: 0;
+}
+
+.multi-container .hs-form-checkbox {
+  display: block;
+}

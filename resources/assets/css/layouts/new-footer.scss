@@ -1,0 +1,42 @@
+.footer.new-footer {
+  .footer-sidebar {
+    @apply col-span-1 mr-0;
+
+    @screen md {
+      @apply text-left w-auto pl-6 #{!important};
+    }
+
+    h3 {
+      @apply text-white;
+    }
+
+    ul {
+      @apply list-none p-0 mb-12;
+    }
+
+    li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    a {
+      @apply text-green-100;
+
+      &:hover {
+        @apply text-primary;
+      }
+    }
+  }
+
+  .logo {
+    svg,
+    path {
+      fill: $white;
+    }
+
+    svg {
+      height: 20px;
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+<div class="cap-wheel-before">{!! get_field('cap_wheel_before') !!}</div>
+
+<div class="grid md:grid-cols-3">
+  <div class="md:relative">
+    <div id="cap-wheel-source" class="flex flex-wrap content-start max-w-xs md:max-w-none mx-auto md:mx-0">
+      <div id="cap-00"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-00.png')" loading="lazy"></div>
+      <div id="cap-01"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-01.png')" loading="lazy"></div>
+      <div id="cap-02"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-02.png')" loading="lazy"></div>
+      <div id="cap-03"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-03.png')" loading="lazy"></div>
+      <div id="cap-04"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-04.png')" loading="lazy"></div>
+      <div id="cap-05"><img data-target="workflows" src="@asset('images/lp/cap/cap-wheel-05.png')" data-original="@asset('images/lp/cap/cap-wheel-05.png')" data-replacement="@asset('images/lp/cap/cap-wheel-workflows.png')" loading="lazy"></div>
+      <div id="cap-06"><img data-target="cd" src="@asset('images/lp/cap/cap-wheel-06.png')" data-original="@asset('images/lp/cap/cap-wheel-06.png')" data-replacement="@asset('images/lp/cap/cap-wheel-cd.png')" loading="lazy"></div>
+      <div id="cap-07"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-07.png')" loading="lazy"></div>
+      <div id="cap-08"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-08.png')" loading="lazy"></div>
+      <div id="cap-09"><img data-target="events" src="@asset('images/lp/cap/cap-wheel-09.png')" data-original="@asset('images/lp/cap/cap-wheel-09.png')" data-replacement="@asset('images/lp/cap/cap-wheel-events.png')" loading="lazy"></div>
+      <div id="cap-10"><img data-target="rollouts" src="@asset('images/lp/cap/cap-wheel-10.png')" data-original="@asset('images/lp/cap/cap-wheel-10.png')" data-replacement="@asset('images/lp/cap/cap-wheel-rollouts.png')" loading="lazy"></div>
+      <div id="cap-11"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-11.png')" loading="lazy"></div>
+      <div id="cap-12"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-12.png')" loading="lazy"></div>
+      <div id="cap-13"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-13.png')" loading="lazy"></div>
+      <div id="cap-14"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-14.png')" loading="lazy"></div>
+      <div id="cap-15"><img data-target="complete-devops" src="@asset('images/lp/cap/cap-wheel-15.png')" loading="lazy"></div>
+    </div>
+  </div>
+  <div id="cap-wheel-destination" class="p-8 md:col-span-2 md:-ml-28 md:pl-36 bg-white shadow-lg rounded-lg self-start">
+    <div class="cap-wheel-list-item" id="complete-devops">
+      <strong class="block text-2xl mb-4">The Codefresh Argo Platform</strong>
+      <p>Conquer DevOps with a solution that combines the best of the open source with our expertise as software delivery specialists.</p>
+      <strong class="block mb-4">Benefits</strong>
+      <ul class="mb-6">
+        <li>GitOps platform built from the ground up for progressive delivery</li>
+        <li>Manage your Argo instances and deployments at scale</li>
+        <li>Enterprise ready Argo runtime with simple bootstrapping</li>
+        <li>Unified user interface that cleanly brings the Argo toolset together</li>
+        <li>Unrivaled workflow insights and deployment analytics</li>
+        <li>Award winning enterprise support with a huge open source community</li>
+      </ul>
+      <em class="italic font-bold">Select a quadrant on the left to learn more about Argo features.</em>
+    </div>
+    <div class="cap-wheel-list-item hidden" id="workflows">
+      <strong class="block text-2xl mb-4">Workflows</strong>
+      <p>A cloud-scale supercomputer at your fingertips that provides the most powerful container-native workflow engine built for unlimited scale. It provides a seamless experience for operating parallel jobs with complex dependencies between tasks. Argo Workflows is cloud agnostic and was designed for flexibility within your unique Kubernetes environments.</p>
+    </div>
+    <div class="cap-wheel-list-item hidden" id="cd">
+      <strong class="block text-2xl mb-4">Argo CD</strong>
+      <p>The #1 GitOps continuous delivery technology for Kubernetes. Streamline your software delivery lifecycle with declarative configuration for secure and repeatable deployments. Argo CD will continuously monitor for configuration drift to keep your process auditable and easily allow you to identify and remediate potential problems.</p>
+    </div>
+    <div class="cap-wheel-list-item hidden" id="events">
+      <strong class="block text-2xl mb-4">Events</strong>
+      <p>The most comprehensive event-driven framework for Kubernetes. Tap into 20+ event sources to trigger or progress the tasks in your workflows. Argo Events has the capability to manage everything from the simplest events to real-time or multi-source events giving you the tools to set up a workflow stream that meets the demands of your enterprise.</p>
+    </div>
+    <div class="cap-wheel-list-item hidden" id="rollouts">
+      <strong class="block text-2xl mb-4">Rollouts</strong>
+      <p>Benefit from the power of progressive delivery with Argo Rollouts. Native support for advanced deployment capabilities like blue-green, canary, experimental releases, and more give you the control and flexibility you need for your cloud-native apps. Integrate directly with ingress controllers and service meshes for fine grained traffic control as part of your release process.</p>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+!function(){
+
+  var capWheelSources = document.querySelectorAll('#cap-wheel-source img');
+
+  var capWheelFunction = function()
+  {
+    var capWheelReplacementData = event.target.getAttribute('data-replacement');
+    var capWheelSourceData = event.target.getAttribute('data-original');
+    var capWheelTargetElement = event.target.getAttribute('data-target');
+    var capWheelTargetId = '#' + capWheelTargetElement;
+    var capWheelTargetObject = document.querySelector(capWheelTargetId);
+
+    // Hide or show the destination copy elements
+    var capWheelTargetArray = ['#complete-devops', '#workflows', '#cd', '#events', '#rollouts'];
+    for(loopcountB=0;loopcountB<capWheelTargetArray.length;loopcountB++)
+    {
+      document.querySelector(capWheelTargetArray[loopcountB]).style.display = 'none';
+    };
+    capWheelTargetObject.style.display = 'block';
+
+    // Change the source image
+    for(loopcountC=0;loopcountC<capWheelSources.length;loopcountC++)
+    {
+      if(capWheelSources[loopcountC].getAttribute('data-original'))
+      {
+        capWheelSources[loopcountC].src = capWheelSources[loopcountC].getAttribute('data-original');
+      };
+    };
+
+    if(capWheelReplacementData)
+    {
+      event.target.src = capWheelReplacementData;
+    };
+
+  };
+
+  // For all of the source elements
+  for(loopcountA=0;loopcountA<capWheelSources.length;loopcountA++)
+  {
+    capWheelSources[loopcountA].addEventListener('click', function(event)
+    {
+      capWheelFunction();
+    });
+    capWheelSources[loopcountA].addEventListener('mouseover', function(event)
+    {
+      capWheelFunction();
+    });
+    capWheelSources[loopcountA].addEventListener('mouseout', function(event)
+    {
+      capWheelFunction();
+    });
+  };
+}();
+</script>
+
+<div class="cap-wheel-after">{!! get_field('cap_wheel_after') !!}</div>

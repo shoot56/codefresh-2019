@@ -1,0 +1,124 @@
+.event-video {
+  @apply relative overflow-hidden mb-10 py-6;
+
+  @screen md {
+    padding: 50px 0;
+  }
+
+  &::before {
+    content: "";
+
+    @apply absolute w-full h-full z-0 top-0 bottom-0 left-0 right-0 bg-oxford-blue-50 opacity-75;
+  }
+
+  &::after {
+    content: "";
+
+    @apply absolute text-2xl text-center text-primary align-middle w-full;
+
+    top: 50%;
+    transform: translateY(-50%);
+    filter: blur(3px);
+  }
+
+  &__bg {
+    @apply absolute w-full h-full top-0 bottom-0 left-0 right-0 bg-cover bg-center bg-no-repeat;
+
+    z-index: -1;
+    filter: blur(1rem);
+  }
+
+  &__loading {
+    @apply absolute w-full h-full z-10 top-0 bottom-0 left-0 right-0 text-lg text-primary;
+    @apply hidden #{!important};
+
+    background-color: rgba(#fff, 0.6);
+    transition: all 400ms ease;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--active {
+      display: block !important;
+    }
+  }
+
+  &__video {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__form {
+    position: relative;
+    z-index: 9;
+
+    h1 {
+      font-weight: normal;
+
+      @screen lg {
+        line-height: 3.5rem;
+      }
+    }
+  }
+
+  &__upcoming {
+    @extend .event-video__form;
+
+    min-height: 258px;
+
+    @screen md {
+      min-height: 395px;
+    }
+  }
+
+  &__ended {
+    @extend .event-video__upcoming;
+  }
+}
+
+// ******************************************
+// * Event details
+// ******************************************
+.webinar-share {
+  &::before {
+    content: "";
+
+    @apply bg-light absolute w-16 h-1 left-0;
+
+    bottom: -15px;
+  }
+
+  .addtoany_list {
+    @apply mt-3 #{!important};
+  }
+
+  @include share-styled(38px, 28px, 345px);
+}
+
+// Webcasts On Demand
+.webcasts_on_demand,
+.events_main {
+  padding-top: 30px;
+  padding-bottom: 170px;
+
+  @screen lg {
+    padding-bottom: 300px;
+  }
+}
+
+.webinar-calendly {
+  .calendly-inline-widget {
+    max-height: 385px;
+    min-width: 1px !important;
+  }
+}
+
+.form__webinar--ideas_wrapper {
+  @screen lg {
+    padding-right: 16px !important;
+  }
+}

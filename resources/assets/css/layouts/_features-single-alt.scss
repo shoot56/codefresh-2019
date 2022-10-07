@@ -1,0 +1,84 @@
+.s-feat-alt-support {
+  margin-bottom: 8%;
+  padding-top: 20px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    left: -25%;
+    width: 150%;
+    height: 150%;
+    background: inherit;
+    transform: rotate(-3deg);
+    z-index: -1;
+    transform-origin: 100% 0;
+    bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 280%;
+    background: inherit;
+    z-index: -1;
+    bottom: 0;
+
+    @screen lg {
+      height: 380%;
+    }
+  }
+}
+
+.s-feat-alt-img {
+  position: relative;
+
+  .img-main {
+    position: relative;
+    z-index: 1;
+  }
+
+  .img-circut-1,
+  .img-circut-2 {
+    position: absolute;
+    z-index: 0;
+  }
+
+  .img-circut-1 {
+    top: 29%;
+    left: -30%;
+  }
+
+  .img-circut-2 {
+    top: 30%;
+    right: -33%;
+  }
+}
+
+.with-dotted-bg {
+  @apply relative;
+
+  &__main {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__dotted {
+    position: absolute;
+    bottom: 15px;
+
+    @screen md {
+      bottom: -20px;
+    }
+
+    &#{&}--right {
+      right: -30px;
+    }
+
+    &#{&}--left {
+      left: -30px;
+    }
+  }
+}

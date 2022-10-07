@@ -1,0 +1,36 @@
+.codefresh-review {
+  p {
+    @apply inline;
+  }
+}
+
+// .flickity-resize .review-cell {
+//   @apply w-full;
+
+//   display: flex;
+//   align-items: stretch;
+//   min-height: 100%;
+// }
+
+.reviews-bg {
+  @apply relative;
+
+  &::before {
+    content: "";
+    transform: skewY(-10deg);
+    bottom: -200px;
+    height: 60%;
+
+    @apply absolute -z-2 left-0 w-full bg-oxford-blue-50;
+  }
+
+  &::after {
+    content: "";
+    transform: skewY(25deg);
+    bottom: -400px;
+    left: -30%;
+    height: 80%;
+
+    @apply absolute -z-2 w-full bg-gradient-to-l from-oxford-blue-50;
+  }
+}

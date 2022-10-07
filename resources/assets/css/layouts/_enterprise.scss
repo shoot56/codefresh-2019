@@ -1,0 +1,22 @@
+.ent-feats {
+  @screen lg {
+    &:first-child {
+      border-right: 2px solid rgba($primary, 0.2);
+      border-bottom: 2px solid rgba($primary, 0.2);
+    }
+
+    &:nth-child(2) {
+      border-bottom: 2px solid rgba($primary, 0.2);
+    }
+
+    &:nth-child(3) {
+      border-right: 2px solid rgba($primary, 0.2);
+      border-bottom: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+      border-bottom: 0;
+    }
+  }
+}

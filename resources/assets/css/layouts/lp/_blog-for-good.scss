@@ -1,0 +1,36 @@
+.bfg-section {
+  h2 {
+    @screen md {
+      @apply mb-8 text-6xl;
+    }
+  }
+}
+
+.bfg-support {
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.bfg-form {
+  background-image: url("../images/cf-pattern-light.svg");
+
+  &::before {
+    content: "";
+
+    @apply absolute bottom-0 left-0 w-full h-40 bg-white;
+  }
+
+  &::after {
+    content: "";
+
+    @apply absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-b from-light to-transparent;
+  }
+
+  h3 {
+    @apply mb-6;
+  }
+}

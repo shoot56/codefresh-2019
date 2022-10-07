@@ -1,0 +1,141 @@
+.comment-list {
+  @apply list-none p-0;
+}
+
+.comment-list ol {
+  list-style: none;
+}
+
+.comment-form p {
+  @apply mb-4;
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+  @apply block w-full py-2 px-2 leading-normal bg-white border border-body-light rounded-none #{!important};
+
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  @screen lg {
+    @apply text-sm #{!important};
+  }
+
+  &:active,
+  &:focus {
+    border-color: theme("colors.primary.DEFAULT");
+    box-shadow: inset 0 0 0 1px theme("colors.primary.DEFAULT");
+    outline: none;
+  }
+
+  @include placeholder-style(theme("colors.body.light"));
+}
+
+.comment-form input[type="submit"] {
+  @apply btn btn-primary btn-sm;
+}
+
+// Reply
+.comment-respond {
+  @apply mt-8;
+}
+
+/* stylelint-disable */
+// Comments
+ol.comment-list {
+  @apply list-none mb-3 p-0;
+
+  li {
+    footer.comment-meta {
+      @apply mb-4;
+    }
+
+    &.comment {
+      @apply p-4 mb-5 rounded-lg;
+
+      @screen md {
+        @apply p-6;
+      }
+
+      div {
+        &.vcard {
+          @apply font-display font-bold text-sm;
+
+          cite.fn {
+            @apply font-light;
+          }
+
+          img {
+            &.avatar,
+            &.avatar-32,
+            &.photo {
+              @apply float-left mb-3 mr-3 rounded-full w-8;
+            }
+          }
+
+          span.says {
+            @apply hidden;
+          }
+        }
+
+        &.comment-metadata {
+           @apply text-xs font-light;
+
+           a {
+             @apply text-body-light;
+           }
+        }
+      }
+
+      p {
+        @apply text-base leading-normal;
+      }
+
+      div.reply {
+        @apply pl-10;
+
+        a {
+          @apply bg-primary rounded my-3 px-3 py-2 text-white leading-none inline-block text-sm;
+        }
+      }
+
+      ol.children {
+        @apply mt-3 pl-10;
+
+        li {
+          &.depth-2 {
+            @apply mb-3 ml-6;
+          }
+
+          &.depth-3 {
+            @apply mb-3 ml-6;
+          }
+
+          &.depth-4 {
+            @apply mb-3 ml-6;
+          }
+
+          &.depth-5 {
+            @apply mb-3 ml-6;
+          }
+        }
+      }
+    }
+
+    .comment-content {
+      @apply pl-10;
+      word-wrap: break-word;
+    }
+
+    &.even {
+      @apply bg-oxford-blue-50;
+    }
+
+    &.odd {
+      @apply bg-oxford-blue-50;
+    }
+  }
+}

@@ -1,0 +1,251 @@
+
+/*
+BRANDONL NOTE TO SELF
+
+Can do a vertical background color split using 2 color gradients.
+Relates to Homepage Figma mockup with 2 color split under the Marketplace.
+*/
+
+.lp2021b .header + .wrap {
+  padding-top: 74px;
+}
+
+.lp2021b .content + .full-width .bg-oxford-blue,
+.lp2021b .footer.bg-oxford-blue {
+  @apply bg-nk-blue-midnight;
+}
+
+.separator-container {
+  min-height: 160px;
+  position: relative;
+}
+
+.separator-container img {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 50%;
+  min-width: 1216px;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+svg.sep-qd {
+  left: 50%;
+  min-width: 1216px;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+@-moz-document url-prefix() { 
+  /* Fixing a bug in Firefox with how our swoosh svg are rendered on QD designs 2022-07 */
+  svg.sep-qd {
+    left: unset;
+    transform: unset;
+  }
+}
+
+.lp2021b .container .buttons a {
+  @apply mb-8 md:mr-4;
+}
+
+.lp2021b .container .buttons a:nth-child(1) {
+  @apply btn-bl btn-bl-primary bl-fas bl-fa-chevron-right mr-0;
+}
+
+.lp2021b .container .buttons a:nth-child(2) {
+  @apply btn-bl btn-bl-secondary-dark bl-fas bl-fa-chevron-right mr-0;
+}
+
+.hero-2021b {
+  @apply pt-28 pb-28;
+}
+
+.hero-2021b.has-separator {
+  @apply pt-36 pb-1;
+}
+
+.hero-2021b p:not([class]) {
+  @apply text-lg;
+}
+
+/* detailsList */
+
+.detailsList details {
+  @apply p-6 border-b-2 border-nk-gray2;
+}
+
+.detailsList summary::-webkit-details-marker {
+  display: none;
+}
+
+.detailsList summary {
+  @apply font-bold font-display text-2xl;
+  cursor: pointer;
+  list-style: none
+}
+
+.detailsList details[open] i { 
+  transform: rotate(180deg);
+}
+
+.detailsList .summary-content {
+  @apply mt-4;
+}
+
+/* Particles JS */
+
+#particles-js{
+  background-color: transparent;
+  background-image: none;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position:absolute;
+  width: 100%;
+}
+
+/* G2 Reviews javascript plugin */
+:root div[class^="HeaderContainer__Inner"] {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+:root div[class^="HeaderWriteReviewButton__Component"] button {
+  background-color: rgba(239,108,52) !important;
+}
+
+:root div[class^="HeaderWriteReviewButton__Component"] button:active,
+:root div[class^="HeaderWriteReviewButton__Component"] button:focus,
+:root div[class^="HeaderWriteReviewButton__Component"] button:hover {
+  background-color: rgb(229,80,60) !important;
+}
+
+:root div[class^="ReviewBackground"] {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+:root a[class^="ReviewLinkContainer__Container"] {
+  display: block !important;
+  margin: 0 auto 16px auto;
+}
+
+:root div[class^="ReviewAvatar__Container"] {
+  margin: 0 auto;
+}
+
+:root div[class^="ReviewAvatar__Container"] + div {
+  margin: 0 auto;
+}
+
+:root span[class^="ReviewAuthorName__Container"] {
+  text-align: center;
+}
+
+:root span[class^="ReviewAuthorName__Container"] + div {
+  display: block;
+  text-align: center;
+}
+
+:root div [class^="RatingItemFilledSvg"] svg {
+  filter: invert(46%) sepia(70%) saturate(1966%) hue-rotate(144deg) brightness(98%) contrast(94%);
+}
+
+:root div[class^="ReviewDate__Container"] {
+  display: none;
+}
+
+:root div[class^="ReviewText__Container"] {
+  text-align: center;
+}
+
+:root div[class^="ReviewText__Title"] {
+  margin-bottom: 10px;
+  min-height: 4.2em;
+  text-align: center;
+}
+
+:root div[class^="SimpleShortener"] {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+:root div[class^="ReviewText__Control"] {
+  margin: 0 auto;
+}
+
+:root a[class*="StyledReviewPostedOn"] {
+  display: none !important;
+}
+
+/* Display Posts Shortcode plugin */
+.display-posts-listing {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6;
+
+  .listing-item {
+    @apply shadow-nk-qd1 bg-white rounded-lg overflow-hidden p-8;
+
+    .image {
+      @apply inline-block mb-8 -mx-8 -mt-8;
+      font-size: 0;
+      line-height: 0;
+    }
+
+    .title {
+      @apply block font-display font-bold text-xl text-black mb-0;
+      &:active,
+      &:focus,
+      &:hover {
+        @apply text-black;
+      }
+    }
+
+    .excerpt {
+      @apply block mt-4;
+    }
+
+    .excerpt-more {
+      @apply btn-bl-primary-text font-bold font-display text-lg mt-4 bl-fas bl-fa-chevron-right w-full;
+    }
+  }
+
+}
+
+
+/* Plugin override */
+.fbx-modal .fbx-social {
+  display: none;
+}
+
+:root .enlighter-btn-website {
+  display: none !important;
+}
+
+:root .tablepress-responsive-stack-phone tbody td {
+  white-space: normal;
+}
+
+img:not(.not-auto):not(.wp-post-image):not(.separator-container img) {
+  width: auto;
+}
+
+a.text-white:active,
+a.text-white:focus,
+a.text-white:hover, {
+  color: #ffffff;
+}
+
+a .text-nk-orange-argo,
+a:active .text-nk-orange-argo,
+a:focus .text-nk-orange-argo,
+a:hover .text-nk-orange-argo {
+  color: #ef6c34;
+}
+
+summary {
+  cursor: pointer;
+}

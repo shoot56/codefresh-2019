@@ -1,0 +1,274 @@
+.hero {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-top: $header-offset;
+
+  // Default
+  &#{&}--default {
+    @apply mb-0;
+
+    .hero__content {
+      padding: 20px 0 40px;
+
+      @screen md {
+        padding: 80px 0;
+      }
+    }
+
+    .runner-hero {
+      h1 {
+        @apply text-4xl leading-tight;
+
+        @screen lg {
+          @apply text-4xl;
+        }
+      }
+
+      p {
+        @apply text-body-light;
+
+        @screen md {
+          @apply text-xl;
+        }
+      }
+    }
+  }
+
+  // Open Office Hours
+  &.hero--ooh {
+    h1 {
+      @apply text-2xl;
+
+      @screen md {
+        @apply text-5xl;
+      }
+    }
+  }
+
+  // Home
+  &#{&}--home {
+    @apply mb-0;
+
+    .hero__content {
+      @screen md {
+        padding: 80px 0 20px;
+      }
+    }
+  }
+
+  // Blog
+  &#{&}--blog {
+    @apply bg-oxford-blue-50;
+
+    .hero__content {
+      padding: 20px 0 40px;
+
+      @screen md {
+        padding: 60px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  // Features page
+  &#{&}--feats {
+    @apply bg-oxford-blue-50;
+
+    margin-bottom: 0;
+
+    .hero__content {
+      padding: 0 0 15px;
+
+      @screen md {
+        padding: 60px 0 20px;
+      }
+    }
+  }
+
+  // Single feature page
+  &#{&}--s-feat {
+    .hero__content {
+      padding: 20px 0 40px;
+
+      @screen md {
+        padding: 80px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  // Single feature alt page
+  &#{&}--s-feat-alt {
+    @apply bg-oxford-blue-50;
+
+    .hero__content {
+      padding: 20px 0 40px;
+
+      @screen md {
+        padding: 80px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  // Enterprise page
+  &#{&}--ent {
+    .hero__content {
+      padding: 20px 0 40px;
+
+      @screen md {
+        padding: 80px 0;
+      }
+    }
+  }
+
+  // About page
+  &#{&}--about {
+    @apply grad-light-b-t mb-0 overflow-hidden;
+
+    .hero__content {
+      padding: 20px 0 40px;
+
+      @screen md {
+        @apply py-16;
+      }
+    }
+  }
+
+  // Careers page
+  &#{&}--careers {
+    @apply relative bg-white;
+
+    background-image: url("../images/pattern-circle.png");
+    background-repeat: no-repeat;
+    background-position: 22% 190%;
+    background-size: 930px;
+
+    @screen md {
+      background-position: calc(50% + 385px) 130%;
+    }
+
+    @screen lg {
+      background-position: calc(50% - 690px) 130%;
+      background-size: 1100px;
+    }
+
+    @screen xl {
+      background-position: calc(50% - 690px) 230%;
+    }
+
+    .hero__content {
+      padding: 20px 0 40px;
+
+      @screen md {
+        @apply py-8;
+      }
+    }
+  }
+
+  // Careers single page
+  &#{&}--s-career {
+    @apply bg-gradient-to-t from-light to-transparent mb-0;
+
+    .hero__content {
+      padding: 20px 0 40px;
+
+      @screen md {
+        @apply py-24;
+      }
+    }
+  }
+
+  // Events
+  // &#{&}--events {
+  //   .hero__content {
+  //     padding: 20px 0 40px;
+
+  //     @screen md {
+  //       padding: 60px 0;
+  //       text-align: center;
+  //     }
+  //   }
+  // }
+
+  // Webcasts on-demand
+  &#{&}--webcasts-ondemand {
+    @apply bg-oxford-blue-50;
+
+    .hero__content {
+      padding: 20px 0 40px;
+
+      @screen md {
+        padding: 60px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  // Form Solo
+  &#{&}--s-form {
+    @apply bg-oxford-blue-50;
+
+    .hero__content {
+      padding: 20px 0 40px;
+
+      @screen md {
+        padding: 60px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  // Container academy
+  &#{&}--container-academy {
+    @apply bg-oxford-blue-50;
+
+    .hero__content {
+      padding: 20px 0 40px;
+      text-align: center;
+
+      @screen md {
+        padding: 60px 0;
+      }
+    }
+  }
+
+  // Container academy single
+  &#{&}--s-container-academy {
+    @apply bg-oxford-blue-50;
+
+    .hero__content {
+      padding: 20px 0 40px;
+
+      @screen md {
+        padding: 60px 0;
+      }
+    }
+  }
+
+  // Default
+  .hero__content {
+    padding: 20px 0 40px;
+
+    @screen md {
+      padding: 80px 0;
+    }
+  }
+
+  // Image background
+  .hero-bg {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: -1;
+    width: 200%;
+
+    @screen xl {
+      width: 150%;
+    }
+  }
+}

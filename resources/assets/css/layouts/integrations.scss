@@ -1,0 +1,67 @@
+.is-hiding {
+  position: absolute;
+  display: inline-block;
+  top: 0.2em;
+  left: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity linear 0.4s, transform linear 0.4s;
+  transform: translateY(110%);
+}
+
+.is-showing {
+  transition: opacity linear 0.4s;
+  position: relative;
+  top: -1px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rotating-words {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  overflow: hidden;
+  vertical-align: middle;
+  transition: width 0.3s;
+
+  &::after {
+    @apply rounded-md;
+
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 0;
+    height: 4px;
+    background-color: $primary;
+    transition: width 0.25s -0.1s;
+  }
+
+  &.is-loading::after {
+    width: 100%;
+    transition: width 2.5s;
+  }
+}
+
+.integrations-animated {
+  svg {
+    @include horizontal-align();
+
+    width: 160%;
+    height: auto;
+
+    @screen md {
+      width: 110%;
+    }
+
+    @screen lg {
+      width: auto;
+    }
+
+    @media (min-width: 2000px) {
+      width: 1700px;
+    }
+  }
+}

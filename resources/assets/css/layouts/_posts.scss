@@ -1,0 +1,125 @@
+// ******************************************
+// * Author
+// ******************************************
+.entry-author-top {
+  &__img {
+    @apply absolute;
+
+    top: -1.5rem;
+
+    img {
+      @apply rounded-full p-0 mr-4 w-12 h-12 object-cover;
+    }
+  }
+
+  .author {
+    @apply text-gray-500 text-xs font-display font-bold mt-10;
+  }
+}
+
+.entry-author {
+  img {
+    @apply w-8 h-8 mr-2 rounded-full shadow;
+  }
+}
+
+// ******************************************
+// * Content
+// ******************************************
+.single-post {
+  .main {
+    @apply mx-auto;
+    overflow-x: hidden;
+
+    article .entry-content {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        @apply mb-6 mt-10;
+
+        &::before {
+          @apply block h-10 mt-10;
+
+          visibility: hidden;
+          content: "";
+        }
+      }
+
+      p {
+        @apply leading-relaxed;
+      }
+
+      a {
+        @apply text-primary;
+
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+        word-break: break-all;
+        word-break: break-word;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+
+        &:hover {
+          @apply text-dark;
+        }
+      }
+
+      ul {
+        @apply list-styled;
+      }
+
+      li {
+        @apply leading-relaxed;
+      }
+
+      ol {
+
+        li {
+          @apply relative pl-3 mt-4;
+        }
+      }
+
+      figure {
+        @apply max-w-full my-12;
+      }
+    }
+  }
+
+  &.single-post .main,
+  &.single-container-academy .main {
+    max-width: 700px;
+  }
+}
+
+// ******************************************
+// * Author box
+// ******************************************
+.avatar {
+  @apply rounded-full p-0 mr-4 w-16 object-cover;
+}
+
+// ******************************************
+// * Share
+// ******************************************
+.share-custom-title {
+  @apply title-related;
+
+  @include share-styled();
+}
+
+// ******************************************
+// * Comments
+// ******************************************
+.comment-notes-before {
+  @apply text-sm block mb-4;
+}
+
+.comment-respond {
+  @apply title-related;
+}

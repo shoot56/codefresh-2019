@@ -1,0 +1,45 @@
+.cf-video-wrap {
+  @apply relative overflow-hidden rounded-xl shadow-img;
+}
+
+.cf-video-btn {
+  @apply btn text-center absolute top-0 bottom-0 left-0 right-0 m-auto z-10 rounded-xl;
+
+  height: 80px;
+  width: 100px;
+  background-color: rgba($primary, 1);
+  padding: 22px 24px;
+  animation: pulse-button 2s ease-out infinite;
+
+  i {
+    font-size: 38px;
+  }
+}
+
+@keyframes pulse-button {
+  0% {
+    box-shadow: 0 0 0 0 rgba($primary, 0.9);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba($primary, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba($primary, 0);
+  }
+}
+
+// Demo page
+.demoVideo {
+  position: relative;
+  width: 600px;
+}
+
+// ************************************************
+// * Video.js - https://github.com/videojs/video.js
+// ************************************************
+.vjs-poster,
+.video-js {
+  background-color: #fff !important;
+}

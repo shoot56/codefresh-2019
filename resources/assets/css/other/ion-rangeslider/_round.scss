@@ -1,0 +1,153 @@
+.irs--round {
+  $top: 36px;
+  $bottom: 21px;
+  $line_height: 9px;
+  $handle_width: 30px;
+  $handle_height: 30px;
+
+  $line_color: #dee4ec;
+  $bar_color: $primary;
+  $handle_color_1: $primary;
+  $handle_color_2: $white;
+  $handle_color_3: #f0f6ff;
+  $minmax_text_color: $dark;
+  $minmax_bg_color: rgba(0, 0, 0, 0.1);
+  $label_color_1: $primary;
+  $label_color_2: $white;
+  $grid_color_1: #dedede;
+  $grid_color_2: silver;
+
+  height: 50px;
+
+  &.irs-with-grid {
+    height: 65px;
+  }
+
+  .irs-line {
+    top: $top;
+    height: $line_height;
+    background-color: $line_color;
+    border-radius: 25px;
+  }
+
+  .irs-bar {
+    top: $top;
+    height: $line_height;
+    background-color: $bar_color;
+
+    &--single {
+      border-radius: $line_height 0 0 $line_height;
+    }
+  }
+
+  .irs-shadow {
+    height: 4px;
+    bottom: $bottom;
+    background-color: fade($line_color, 50%);
+  }
+
+  .irs-handle {
+    border: 1px solid $primary;
+    top: 25px;
+    width: $handle_width;
+    height: $handle_height;
+    transition: transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(darken($primary, 30%), 0.5);
+    background-color: $handle_color_2;
+    border-radius: $handle_width;
+
+    &.state_hover,
+    &:hover {
+      background-color: $white;
+    }
+
+    &:hover {
+      cursor: grab;
+    }
+
+    &.state_hover {
+      transform: scale(1.2);
+      cursor: grabbing;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  .irs-min,
+  .irs-max {
+    font-size: 14px;
+    line-height: 1;
+    top: 0;
+    padding: 3px 5px;
+    background-color: rgba($dark, 0.05);
+    color: $dark;
+    border-radius: $line_height;
+  }
+
+  .irs-from,
+  .irs-to,
+  .irs-single {
+    font-size: 14px;
+    line-height: 1;
+    text-shadow: none;
+    padding: 3px 5px;
+    background-color: $label_color_1;
+    color: $label_color_2;
+    border-radius: $line_height;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -6px;
+      left: 50%;
+      width: 0;
+      height: 0;
+      margin-left: -3px;
+      overflow: hidden;
+      border: 3px solid transparent;
+      border-top-color: $label_color_1;
+    }
+  }
+
+  .irs-single {
+    background-color: transparent;
+    top: 31px;
+    z-index: 41;
+    font-size: 13px;
+    color: darken($primary, 15%);
+    cursor: grab;
+
+    &::before {
+      border-top-color: transparent;
+      display: none;
+
+      &:hover {
+        cursor: grab;
+      }
+
+      &:active {
+        cursor: grabbing;
+      }
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  .irs-grid {
+    height: 25px;
+
+    &-pol {
+      background-color: $grid_color_1;
+    }
+
+    &-text {
+      color: $grid_color_2;
+      font-size: 13px;
+    }
+  }
+}

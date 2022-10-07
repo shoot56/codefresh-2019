@@ -1,0 +1,299 @@
+// ******************************************
+// * Switch
+// ******************************************
+.switch-button {
+  @apply bg-light mx-auto ml-4;
+
+  width: 210px;
+  height: 30px;
+  position: relative;
+  text-align: center;
+  will-change: transform;
+  margin: 0 auto 15px;
+  overflow: hidden;
+  border-radius: 25px;
+  cursor: pointer;
+
+  @screen lg {
+    margin: 0;
+    float: right;
+  }
+
+  button {
+    @apply text-primary text-xs text-primary font-bold;
+
+    display: inline-block;
+    background: none;
+    width: 49%;
+    height: 100%;
+    position: relative;
+    border: 0;
+    transition: color 0.3s ease;
+    padding-bottom: 2px;
+
+    &:hover {
+      @apply text-dark;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .active {
+    @apply text-dark bg-primary absolute;
+
+    border-radius: 25px;
+    left: 1px;
+    top: 1px;
+    width: 49%;
+    height: calc(100% - 2px);
+    z-index: -1;
+    transition: left 0.3s ease-out;
+
+    &-case,
+    &-case:hover {
+      @apply text-white;
+    }
+  }
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+  }
+}
+
+// ******************************************
+// * Plan
+// ******************************************
+.plan-title {
+  @apply text-dark font-bold text-center;
+
+  padding-top: 5px;
+  margin-bottom: 13px;
+
+  @screen lg {
+    @apply text-left;
+  }
+}
+
+.plan {
+  @apply mt-20 mx-auto pb-4;
+
+  &__item {
+    @apply shadow-xl rounded-lg bg-white h-full relative flex flex-col w-full m-auto p-8;
+
+    max-width: 500px;
+  }
+
+  &__title {
+    @apply font-bold text-center mb-4;
+
+    @screen lg {
+      @apply text-left;
+    }
+  }
+
+  &__steps {
+    @apply font-display text-sm;
+
+    #totalSteps-basic,
+    #totalSteps-pro {
+      @apply text-primary font-bold;
+    }
+  }
+
+  &__range-list {
+    @apply list-none p-0;
+  }
+
+  &__range-item {
+    @apply mt-4;
+  }
+
+  &__range-label {
+    @apply relative font-display text-body-light flex justify-between text-center text-sm font-bold z-10;
+
+    margin-bottom: -18px;
+  }
+
+  &__resources {
+    font-size: 13px;
+    font-weight: normal;
+    text-align: right;
+    padding-left: 60px;
+
+    @screen md {
+      padding-left: 0;
+    }
+
+    &-1 {
+      @apply text-body;
+
+      display: block;
+      text-transform: uppercase;
+    }
+
+    &-2 {
+      @apply text-body-light;
+
+      display: block;
+      line-height: 1.2;
+    }
+  }
+
+  &__value {
+    @apply font-bold font-display text-primary;
+
+    font-size: 45px;
+    line-height: 36px;
+    position: relative;
+    display: inline-block;
+  }
+
+  &__dollar-sign {
+    @apply text-primary;
+
+    font-weight: normal;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 18px;
+    top: -2px;
+    left: -10px;
+    position: absolute;
+  }
+
+  &__billing {
+    @apply text-sm text-body-light;
+  }
+
+  &__price {
+    @apply border-b border-light;
+
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    text-align: center;
+
+    @screen lg {
+      text-align: left;
+    }
+
+    &.is-free {
+      .plan__value {
+        @apply text-primary;
+      }
+
+      .plan__dollar-sign,
+      .plan__billing {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__contact {
+    height: 43px;
+
+    a {
+      @apply text-primary font-bold;
+
+      font-size: 23px;
+    }
+  }
+
+  &__feats {
+    @apply list-none p-0 font-display mb-8;
+  }
+
+  &__feats-item {
+    @apply border-b border-light;
+
+    font-size: 14px;
+    padding: 3px 0;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__featsBlock {
+    h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    p {
+      @apply text-sm;
+    }
+  }
+
+  &__range {
+    @apply mb-8;
+
+    &#{&}--contact {
+      @screen lg {
+        margin-top: 30px;
+      }
+
+      span {
+        @apply font-display font-bold text-sm text-primary;
+      }
+    }
+  }
+}
+
+// ******************************************
+// * Ribon
+// ******************************************
+.ribbon {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
+
+  span {
+    @apply text-white bg-primary shadow-lg;
+
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 20px;
+    transform: rotate(45deg);
+    width: 100px;
+    display: block;
+    background: linear-gradient(lighten($primary, 10%) 0%, $primary 100%);
+    position: absolute;
+    top: 19px;
+    right: -21px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 100%;
+      z-index: -1;
+      border-left: 3px solid theme("colors.primary.DEFAULT");
+      border-right: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      border-top: 3px solid theme("colors.primary.DEFAULT");
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 100%;
+      z-index: -1;
+      border-left: 3px solid transparent;
+      border-right: 3px solid theme("colors.primary.DEFAULT");
+      border-bottom: 3px solid transparent;
+      border-top: 3px solid theme("colors.primary.DEFAULT");
+    }
+  }
+}

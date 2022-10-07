@@ -1,0 +1,12 @@
+.product-hero-gallery {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.product-hero-gallery.is-hidden {
+  display: none;
+}
+
+.product-hero-gallery.flickity-enabled {
+  opacity: 1;
+}

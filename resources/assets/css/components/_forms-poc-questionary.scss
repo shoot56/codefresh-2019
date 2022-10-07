@@ -1,0 +1,199 @@
+/* stylelint-disable no-descending-specificity */
+.form-poc-questionary_wrapper {
+  @apply bg-white;
+
+  .form-poc-questionary {
+    ul.gform_fields {
+      li.gfield {
+        padding: 35px 15px !important;
+        border: 1px solid lighten($dark, 70%);
+        border-bottom: 0;
+        margin: 0 !important;
+
+        @screen md {
+          padding: 40px 70px !important;
+        }
+
+        /** Radio Compact */
+        &.level-docker,
+        &.level-kubernetes {
+          ul.gfield_radio {
+            text-align: center;
+            margin: 0;
+            position: relative;
+            padding-bottom: 20px;
+
+            @screen md {
+              padding-bottom: 0;
+            }
+
+            &::before,
+            &::after {
+              @apply text-body-light;
+
+              position: absolute;
+              font-size: 14px;
+              top: 49px;
+
+              @screen md {
+                top: 18px;
+              }
+            }
+
+            &::before {
+              content: "no deployment";
+              left: 0;
+
+              @screen md {
+                left: 10px;
+              }
+
+              @screen lg {
+                left: 35px;
+              }
+            }
+
+            &::after {
+              content: "full adoption";
+              right: 0;
+
+              @screen md {
+                right: 28px;
+              }
+
+              @screen lg {
+                right: 53px;
+              }
+            }
+
+            li {
+              width: auto;
+              margin: 10px 4px 0 4px !important;
+              display: inline-block;
+              z-index: 1;
+
+              &:first-child {
+                margin-left: 0 !important;
+              }
+
+              &:last-child {
+                margin-right: 0 !important;
+              }
+
+              label {
+                padding: 5px 13px !important;
+                height: 40px;
+
+                @screen md {
+                  padding: 7px 15px !important;
+                }
+
+                &::before,
+                &::after {
+                  display: none !important;
+                }
+              }
+
+              input[type=radio]:checked + label {
+                @apply bg-primary text-white;
+              }
+            }
+          }
+        }
+
+        /** Radio inline on medium and up screen sizes */
+        @screen md {
+          &.people-involved,
+          &.hours-spent {
+            ul.gfield_radio {
+              text-align: center;
+              margin: 0;
+
+              li {
+                width: auto;
+                margin: 10px 4px 0 4px !important;
+                display: inline-block;
+                z-index: 1;
+
+                &:first-child {
+                  margin-left: 0 !important;
+                }
+
+                &:last-child {
+                  margin-right: 0 !important;
+                }
+              }
+            }
+          }
+        }
+
+        /** Checkbox */
+        &.current-tools,
+        &.usage-scenario,
+        &.functions-involved {
+          .ginput_container_checkbox {
+            display: table;
+            margin: 0 auto !important;
+
+            ul.gfield_checkbox {
+              max-width: 100%;
+
+              li {
+                width: auto;
+              }
+            }
+          }
+        }
+
+        /** Date */
+        @screen md {
+          &.starting-date {
+            text-align: center;
+
+            .ginput_container_date {
+              display: inline-block;
+              position: relative;
+
+              img {
+                position: absolute;
+                right: 16px;
+                top: 14px;
+              }
+
+              input.datepicker {
+                margin: 0 !important;
+              }
+            }
+          }
+        }
+      }
+
+      /** Labels */
+      label.gfield_label {
+        @apply text-dark font-display;
+
+        font-weight: bold !important;
+        margin-bottom: 15px;
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    .gform_footer {
+      padding: 30px 15px;
+      margin: 0;
+      width: 100%;
+      text-align: center;
+      border: 1px solid lighten($dark, 70%);
+      border-radius: 0 0 5px 5px;
+
+      @screen md {
+        padding: 30px 70px;
+      }
+
+      input[type="submit"] {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

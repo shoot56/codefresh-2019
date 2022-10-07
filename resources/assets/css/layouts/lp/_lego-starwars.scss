@@ -1,0 +1,104 @@
+body.page-template-lp-lego-starwars {
+  @apply bg-dark-700;
+}
+
+.lpLegoStarWars {
+  @apply text-white text-center my-6 relative z-10;
+
+  @screen md {
+    @apply text-left;
+  }
+
+  .lpLegoStarWars__title {
+    @apply my-10 text-3xl;
+  }
+
+  .lpLegoStarWars__logo {
+    @apply my-10 mx-auto block h-auto w-3/5;
+
+    @screen md {
+      @apply my-10 mx-0;
+    }
+  }
+
+  .lpLegoStarWars__img {
+    @apply max-w-full h-auto;
+
+    @screen xl {
+      width: 130%;
+    }
+  }
+}
+
+.starsWrap {
+  @apply absolute top-0 left-0 z-0;
+}
+
+@function generate-random-stars($screen-width, $color, $density) {
+  $h-shadow: random($screen-width);
+  $v-shadow: random($screen-width);
+
+  $stars: "#{$h-shadow}px #{$v-shadow}px #{$color}";
+
+  @for $i from 2 through $density {
+    $h-shadow: random($screen-width);
+    $v-shadow: random($screen-width);
+
+    $stars: "#{$stars}, #{$h-shadow}px #{$v-shadow}px #{$color}";
+  }
+
+  @return unquote($stars);
+}
+
+@mixin stars-content($screen-width, $color, $density, $speed, $delay) {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: generate-random-stars($screen-width, $color, $density);
+  animation-name: glowing-stars;
+  animation-duration: $speed + s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-delay: $delay + s;
+}
+
+//Change colors for multi-colors star groups
+#stars-group-1 {
+  @include stars-content(3000, #fff, 200, 3, 0);
+}
+
+#stars-group-2 {
+  @include stars-content(3000, #fff, 200, 3, 1);
+}
+
+#stars-group-3 {
+  @include stars-content(3000, #fff, 200, 3, 2);
+}
+
+#stars-group-4 {
+  @include stars-content(3000, #fff, 200, 3, 3);
+}
+
+#stars-group-5 {
+  @include stars-content(3000, #fff, 200, 3, 4);
+}
+
+#stars-group-6 {
+  @include stars-content(3000, #fff, 200, 3, 5);
+}
+
+@keyframes glowing-stars {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

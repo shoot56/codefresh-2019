@@ -1,0 +1,16 @@
+// Single
+.careers-sidebar-inner {
+  @apply -mt-4;
+
+  @screen lg {
+    margin-top: -230px;
+  }
+}
+
+.type-meet-a-codefresher .meet-a-codefresher-label {
+  display: none;
+}
+
+.bg-white.type-meet-a-codefresher {
+  background: transparent;
+}

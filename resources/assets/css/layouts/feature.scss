@@ -1,0 +1,9 @@
+body.template-feature {
+  main {
+    @apply my-20;
+
+    @screen md {
+      @apply my-32;
+    }
+  }
+}

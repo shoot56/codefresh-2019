@@ -1,0 +1,22 @@
+body.split-minimal-2021a {
+  @apply h-screen;
+  overflow-y: auto;
+}
+
+body.split-minimal-2021a,
+body.signup2021a {
+  @apply bg-gradient-to-t;
+  @apply from-nk-blue-midnight;
+  @apply to-nk-blue-marine;
+  @apply min-h-screen;
+}
+
+.signup2021a hr {
+  @apply bg-dark-600;
+  border-width: 0;
+  height: 1px;
+}
+
+.split-minimal-2021a .hs-form .hs-error-msgs label {
+  color: #ffffff;
+}

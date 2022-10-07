@@ -1,0 +1,7 @@
+.codefresh-step {
+  @apply transition-transform duration-100 ease-linear;
+
+  &:hover {
+    transform: scale(1.12);
+  }
+}

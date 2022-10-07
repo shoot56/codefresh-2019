@@ -1,0 +1,4 @@
+@component('components.hero-wrapper', ['class' => 'hero--container-academy text-center'])
+  <i class="fas fa-graduation-cap fa-2x text-primary"></i>
+  <h1 class="mb-1">{{ __('Container Academy', 'codefresh') }}</h1>
+@endcomponent

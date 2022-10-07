@@ -1,0 +1,84 @@
+.asymm {
+  min-height: 100vh;
+
+  @screen md {
+    padding-top: 70px;
+  }
+
+  // * Header
+  &-header {
+    @apply bg-oxford-blue py-4 w-full mb-6;
+
+    @screen md {
+      @apply py-6 fixed top-0 left-0 mb-0;
+    }
+
+    @at-root body.no-header {
+      @apply bg-oxford-blue;
+    }
+
+    &--login {
+      display: none;
+
+      a {
+        @include link-color($dark, $primary);
+      }
+
+      @screen md {
+        @apply my-6 block;
+
+        padding-left: calc(1440px * (1 / 24));
+      }
+    }
+  }
+
+  // * Left side
+  &-aside {
+    @apply bg-white -mx-3;
+
+    @screen md {
+      @apply fixed top-0 right-0 mx-0 h-full;
+
+      width: 45%;
+      min-height: 100vh;
+    }
+
+    &__inner {
+      @apply flex flex-col h-full mr-auto;
+
+      max-width: 480px;
+    }
+
+    &__content {
+      @apply flex flex-col my-auto px-3 overflow-y-auto;
+
+      @screen md {
+        padding-left: calc(1440px * (1 / 24));
+        padding-right: calc(1440px * (1 / 24));
+      }
+    }
+  }
+
+  // * Right side
+  &-content {
+    @apply text-white relative;
+
+    @screen md {
+      @apply w-5/12;
+    }
+
+    &__title {
+      @apply font-bold text-primary text-2xl;
+    }
+
+    &__subtitle {
+      @apply mb-12;
+
+      max-width: 300px;
+    }
+  }
+}
+
+body.page-calendly {
+  @apply bg-oxford-blue-50;
+}

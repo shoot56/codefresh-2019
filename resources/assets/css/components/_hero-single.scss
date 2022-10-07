@@ -1,0 +1,12 @@
+.hero-post {
+  @apply top-0 bottom-0 left-0 right-0;
+}
+
+@screen md {
+  .extra-bg {
+    @apply absolute -mt-8 bg-oxford-blue-50 h-full -z-1;
+
+    right: 0;
+    width: 70vw;
+  }
+}

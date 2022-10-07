@@ -1,0 +1,78 @@
+.ginput_container_radio {
+  position: relative;
+  display: block;
+
+  ul.gfield_radio {
+    width: 100% !important;
+
+    li {
+      display: block;
+
+      label {
+        @apply text-body-light relative block border border-light;
+
+        padding: 10px 40px 10px 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0;
+        cursor: pointer;
+
+        &::after,
+        &::before {
+          content: "";
+
+          @apply rounded bg-oxford-blue-50;
+
+          position: absolute;
+          right: 11px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 20px;
+          height: 20px;
+        }
+
+        &::before {
+          top: 0;
+          transform: translateY(50%);
+          background-color: transparent;
+          transition:
+            0.1s width cubic-bezier(0.075, 0.82, 0.165, 1) 0s,
+            0.3s height cubic-bezier(0.075, 0.82, 0.165, 1.4) 0.1s;
+          z-index: 2;
+          overflow: hidden;
+          background-repeat: no-repeat;
+          background-size: 12px;
+          background-position: center;
+          width: 0;
+          height: 0;
+          background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNS4zIDEzLjIiPiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE0LjcuOGwtLjQtLjRhMS43IDEuNyAwIDAgMC0yLjMuMUw1LjIgOC4yIDMgNi40YTEuNyAxLjcgMCAwIDAtMi4zLjFMLjQgN2ExLjcgMS43IDAgMCAwIC4xIDIuM2wzLjggMy41YTEuNyAxLjcgMCAwIDAgMi40LS4xTDE1IDMuMWExLjcgMS43IDAgMCAwLS4yLTIuM3oiIGRhdGEtbmFtZT0iUGZhZCA0Ii8+PC9zdmc+);
+        }
+      }
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+    position: absolute;
+    width: 100%;
+    appearance: none;
+
+    &:checked + label {
+      @apply border-primary text-primary;
+
+      &::after {
+        @apply bg-primary;
+      }
+
+      &::before {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  input[type="text"] {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}

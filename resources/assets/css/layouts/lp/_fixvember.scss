@@ -1,0 +1,515 @@
+/* stylelint-disable */
+$fix-green: #03ff7d;
+$fix-green-dark: #103036;
+
+.text-fix-green {
+  color: $fix-green;
+}
+
+.fixvember__btn {
+  display: inline-block;
+  border: 2px solid $fix-green;
+  color: $fix-green;
+  padding: 10px 23px;
+  border-radius: 4px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $fix-green;
+    color: $fix-green-dark;
+    text-decoration: none;
+    border: 2px solid $fix-green;
+  }
+}
+
+.fixvember__btn--lg {
+  @extend .fixvember__btn;
+  font-size: 22px;
+}
+
+.page-template-lp-fixvember {
+  background: $fix-green-dark url("../images/lp/fixvember/noisy.png") repeat;
+}
+
+// #Hero
+.fixvember__hero__wrapper {
+  background: $fix-green-dark url("../images/lp/fixvember/fixvember.png")
+    no-repeat center bottom;
+  background-size: 160%;
+  min-height: calc(100vh - 10px);
+  position: relative;
+  z-index: 0;
+
+  @media only screen and (min-height: 800px) {
+    background-size: 230%;
+  }
+
+  @screen md {
+    background-size: 100%;
+  }
+
+  @screen lg {
+    background-size: 60%;
+  }
+
+  @screen xl {
+    background-size: 57%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/lp/fixvember/noisy.png") repeat;
+    z-index: -1;
+  }
+}
+
+.fixvember__header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .fixvember__logo {
+    padding-top: 5px;
+  }
+
+  @screen lg {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .fixvember-nav li {
+    padding: 0 20px;
+    font-weight: bold;
+
+    @screen lg {
+      font-size: 18px;
+    }
+
+    a {
+      color: rgba($white, 0.6);
+
+      &:hover {
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      a {
+        @extend .fixvember__btn;
+      }
+    }
+  }
+}
+
+.fixvember__hero {
+  .fixvember__title {
+    margin-top: 70px;
+    margin-bottom: 7px;
+
+    @media (max-width: 750px) {
+      img {
+        margin-bottom: 5px;
+        width: 90%;
+      }
+    }
+
+    @screen md {
+      margin-top: 60px;
+    }
+
+    @screen xl {
+      margin-top: 70px;
+    }
+
+    @media screen and (min-width: 1680px) {
+      margin-top: 130px;
+
+      img {
+        width: 800px;
+      }
+    }
+  }
+
+  .fixvember__subtitle {
+    color: #c8b027;
+    font-size: 18px;
+
+    @screen md {
+      font-size: 20px;
+    }
+
+    @screen lg {
+      max-width: 610px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+// #Info
+.fixvember__info {
+  background-color: $fix-green-dark;
+  border-top: 1px solid $fix-green;
+  padding: 70px 0;
+
+  .fixvember__info__break {
+    margin: 30px 0;
+    width: 100%;
+    height: 3px;
+    border-top: 3px solid darken($fix-green-dark, 2%);
+
+    @screen md {
+      border-top: 0;
+    }
+  }
+
+  .fixvember__info__item:last-child .fixvember__info__break {
+    border-top: 0;
+  }
+
+  h3 {
+    font-weight: 900;
+  }
+
+  p {
+    font-weight: 300;
+  }
+
+  .fixvember__rules {
+    background-color: darken($fix-green-dark, 2%);
+    padding: 30px;
+    border-radius: 11px;
+
+    p {
+      font-weight: normal;
+    }
+  }
+}
+
+// #Projects
+.fixvember__projects {
+  background: #f2f2f2 url("../images/lp/fixvember/noisy.png") repeat;
+  padding: 70px 0;
+
+  h1 {
+    color: $fix-green-dark;
+  }
+
+  .col-12 {
+    margin-bottom: 30px;
+  }
+
+  .fixvember__projects__card {
+    background-color: $white;
+    border-radius: 11px;
+    box-shadow: 0 3px 5px rgba($dark, 0.15);
+    min-height: 100%;
+    position: relative;
+
+    .fixvember__projects__card__header {
+      background-color: $fix-green-dark;
+      padding: 13px 20px;
+      border-top-left-radius: 11px;
+      border-top-right-radius: 11px;
+
+      .fixvember__projects__name {
+        font-size: 20px;
+        color: lighten($primary, 10%);
+        margin-bottom: 0;
+
+        &:hover {
+          text-decoration: underline;
+          color: lighten($primary, 20%);
+        }
+      }
+
+      .fixvember__projects__star {
+        margin-top: 10px;
+
+        @screen md {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .fixvember__projects__card__body {
+      padding: 20px 20px 75px;
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+    .fixvember__projects__card__footer {
+      margin: 20px auto 20px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      a {
+        margin: 0 auto;
+        display: inline-block;
+        font-weight: bold;
+        color: $fix-green-dark;
+        border: 2px solid $fix-green-dark;
+        border-radius: 25px;
+        padding: 9px 17px;
+        letter-spacing: 1px;
+        font-weight: bold;
+
+        svg {
+          margin-left: 7px;
+        }
+
+        &:hover {
+          background-color: $fix-green-dark;
+          color: lighten($primary, 10%);
+        }
+      }
+    }
+  }
+}
+
+// #In Association
+.fixvember__in-association {
+  hr {
+    border-bottom: 2px solid rgba($fix-green-dark, 0.1);
+    max-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+  }
+
+  .fixvember__in-association__logos {
+    padding-bottom: 30px;
+
+    img {
+      @apply mx-auto;
+
+      vertical-align: middle;
+      margin-top: 15px;
+      width: 180px;
+
+      @media (max-width: 400px) {
+        margin-top: 17px;
+      }
+
+      @screen md {
+        @apply inline-block;
+      }
+
+      &:first-child {
+        width: 200px;
+
+        @screen md {
+          @apply mr-5;
+        }
+      }
+    }
+  }
+}
+
+// #Footer
+.fixvember__footer {
+  padding: 30px 0;
+
+  .fixvember__footer__logo img {
+    margin: 0 auto 20px;
+    padding-top: 5px;
+    display: block;
+
+    @screen lg {
+      margin: 0;
+    }
+  }
+
+  .fixvember__footer__nav li {
+    @apply mb-4;
+
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+
+    @screen lg {
+      display: inline-block;
+    }
+
+    a {
+      @extend .fixvember__btn;
+      width: 100%;
+      text-align: center;
+
+      @screen lg {
+        min-width: 190px;
+      }
+
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+// #SignUp
+body.page-template-lp-fixvember-signup {
+  background: $fix-green-dark url("../images/lp/fixvember/noisy.png") repeat;
+
+  .text-primary {
+    color: $fix-green;
+
+    &:hover {
+      color: darken($fix-green, 10%);
+    }
+  }
+
+  .fixvember__logo {
+    margin: auto;
+  }
+
+  // # Gravity Form
+  .cf__form__fixvember {
+    padding: 5px;
+    border-radius: 11px;
+    width: 100% !important;
+
+    @screen lg {
+      padding: 20px;
+      margin: 0 0 0 auto !important;
+    }
+
+    ul {
+      li {
+        padding: 0 !important;
+        margin-bottom: 0;
+
+        &:first-of-type {
+          margin-top: 0 !important;
+        }
+
+        .gfield_label {
+          font-size: 1rem !important;
+          margin-bottom: 5px !important;
+          padding-top: 0 !important;
+          text-transform: initial !important;
+          color: $white;
+
+          .gfield_required {
+            color: #e05a7e;
+            font-size: 16px;
+          }
+        }
+
+        .ginput_container input,
+        .ginput_container select {
+          padding: 10px !important;
+          border-radius: 4px;
+          line-height: 1.5;
+          background-color: #fff;
+          height: 48px;
+          border: 0;
+          overflow: visible !important;
+          transition: box-shadow 200ms ease;
+          color: $dark;
+
+          &:focus {
+            outline: none;
+            box-shadow: inset 0 0 0 2px $fix-green;
+          }
+
+          &::-webkit-input-placeholder {
+            color: #717171;
+          }
+
+          &::-moz-placeholder {
+            color: #717171;
+          }
+
+          &:-ms-input-placeholder {
+            color: #717171;
+          }
+
+          &:-moz-placeholder {
+            color: #717171;
+          }
+        }
+
+        .ginput_container select {
+          @apply text-body-light appearance-none;
+
+          background-size: 12px;
+          background-position: calc(100% - 20px) center;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .gform_footer {
+      padding: 15px 0 0 !important;
+
+      input[type="submit"] {
+        display: block;
+        background-color: $fix-green;
+        width: 100% !important;
+        padding: 15px 0 !important;
+        margin: 0;
+        color: $fix-green-dark;
+        font-size: 18px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: all 0.25s ease-out;
+        text-transform: none !important;
+
+        &:hover {
+          background-color: darken($fix-green, 5%);
+
+          @screen lg {
+            box-shadow: 0 6px 17px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+          }
+        }
+
+        @screen lg {
+          &::after {
+            transition: all 0.25s ease-out;
+          }
+
+          &:hover::after {
+            transform: translateY(2px);
+          }
+        }
+      }
+    }
+
+    // Validation
+    .gfield_error {
+      background-color: transparent !important;
+      border: none !important;
+
+      .gfield_label {
+        color: #e05a7e;
+      }
+
+      input,
+      select,
+      textarea {
+        border: 2px solid #e05a7e !important;
+        opacity: 1;
+      }
+    }
+
+    .validation_error {
+      color: #e05a7e !important;
+      border-top: 2px solid #e05a7e !important;
+      border-bottom: 2px solid #e05a7e !important;
+    }
+  }
+}

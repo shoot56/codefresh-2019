@@ -1,0 +1,79 @@
+/* stylelint-disable */
+.ea__content--header {
+  padding-top: 15px;
+
+  .ea__logo {
+    svg {
+      transition: fill 400ms ease;
+      fill: rgba(#fff, 0.6);
+
+      &:hover {
+        fill: rgba(#fff, 0.9);
+      }
+    }
+  }
+}
+
+.text-ea-green {
+  color: $primary !important;
+}
+
+.ea__wrapper--left {
+  @apply bg-oxford-blue;
+
+  padding: 0 15px;
+
+  @screen lg {
+    min-height: 100vh;
+    flex: 0 0 50%;
+    background-image: url("../images/lp/early-access/laptop-bg.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 61%;
+  }
+}
+
+.ea__wrapper--right {
+  @apply bg-white;
+
+  padding: 0 15px;
+
+  .ea__form {
+    p {
+      @apply text-dark;
+    }
+  }
+
+  @screen lg {
+    min-height: 100vh;
+    flex: 0 0 50%;
+
+    .ea__content {
+      max-width: 400px;
+    }
+
+    .row {
+      height: 100%;
+    }
+  }
+}
+
+.ea__content {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 30px 0;
+  color: $white;
+
+  h1 {
+    font-weight: bold;
+    font-size: 36px;
+
+    @screen lg {
+    font-size: 49px;
+    }
+  }
+}
+
+.ea__tag {
+  @apply font-display rounded-lg px-3 py-1 font-bold uppercase text-sm tracking-wider bg-primary text-dark;
+}

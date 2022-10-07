@@ -1,0 +1,149 @@
+/** Hero */
+.nav-features {
+  @apply -mx-4 overflow-x-hidden whitespace-nowrap;
+
+  @screen md {
+    @apply mx-0;
+  }
+
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  ul {
+    @apply list-none mb-6 py-3 px-4 overflow-x-auto;
+
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+
+    /* stylelint-disable */
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none;  // IE 10+
+    /* stylelint-enable */
+
+    @screen md {
+      @apply mb-10;
+    }
+
+    @screen lg {
+      @apply bg-light flex text-center mx-auto px-3 rounded-lg;
+
+      max-width: 839px;
+    }
+  }
+
+  li {
+    margin-bottom: 0;
+    flex: 0 1 auto;
+    display: inline-block;
+    margin-right: 10px;
+
+    @screen lg {
+      margin-right: 20px;
+      text-align: center;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      @apply block text-sm text-primary border border-primary py-2 px-3 rounded-lg;
+
+      &:hover {
+        @apply text-light bg-primary;
+      }
+    }
+  }
+}
+
+.cf-feat-header {
+  @apply bg-light text-primary font-bold font-display tracking-wider uppercase rounded-lg text-xs inline-block mb-3 py-2 px-3;
+}
+
+.cf-feat__title {
+  font-size: 16px;
+
+  &#{&}--orange {
+    color: #fc6e50;
+  }
+
+  &#{&}--yellow {
+    color: #f3a216;
+  }
+
+  &#{&}--green {
+    @apply text-primary;
+  }
+}
+
+.enterprise-ready {
+  &::after {
+    content: "";
+
+    @apply absolute top-0 left-0 w-full;
+
+    height: 400px;
+    background: linear-gradient(to bottom, $light, rgba($light, 0));
+    z-index: -1;
+  }
+}
+
+.cf-run {
+  @apply inline-block mb-4 px-4 py-3 bg-light font-bold text-body-light rounded;
+}
+
+.actions-template-cards-top {
+  animation: actions-starter-workflows-mobile linear infinite reverse both;
+  animation-duration: 50s;
+
+  @screen lg {
+    animation: actions-starter-workflows linear infinite reverse both;
+    animation-duration: 100s;
+  }
+}
+
+.actions-template-cards-bottom {
+  animation: actions-starter-workflows-mobile linear infinite both;
+  animation-duration: 50s;
+
+  @screen lg {
+    animation: actions-starter-workflows linear infinite both;
+    animation-duration: 100s;
+  }
+}
+
+.actions-template-cards-top,
+.actions-template-cards-bottom {
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes actions-starter-workflows-mobile {
+  0% {
+    transform: translateX(-10%);
+  }
+
+  to {
+    transform: translateX(-3284px);
+  }
+}
+
+@keyframes actions-starter-workflows {
+  0% {
+    transform: translateX(-10%);
+  }
+
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+/** feature item component */
+.feature-item {
+  svg {
+    height: 36px;
+    width: auto;
+  }
+}

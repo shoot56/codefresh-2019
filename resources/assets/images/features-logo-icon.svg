@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="609px" height="461px" viewBox="0 0 609 461" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>features-logo-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Features" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.119999997">
+        <g id="Desktop-Version" transform="translate(-295.000000, -7363.000000)">
+            <g id="features-logo-icon" transform="translate(295.000000, 7363.000000)">
+                <path d="M317.25,98.7827915 C377.397382,168.384825 401.951772,261.513137 383.850557,351.381107 C478.264763,314.058259 514.891387,251.480444 526.036486,188.90263 C526.036486,188.90263 558.219799,70.3162118 608.25,21.0228013 C509.392484,36.3996204 499.401173,-2.04242732 317.25,98.8801131" id="Path" fill="url(#linearGradient-1)"></path>
+                <path d="M166.614208,220.293987 C146.918964,159.719371 112.955942,104.714725 67.5604946,59.8720279 C67.5604946,59.8720279 204.557481,95.7270422 283.428603,350.31713 C209.009883,327.956462 177.255939,254.833668 166.467426,220.293987 M336.123515,386.902885 L336.123515,386.902885 C338.325253,374.723872 374.629454,251.569692 302.706036,151.555638 C182.271007,18.6582479 0.75,0 0.75,0 C36.1735065,68.2024728 37.2988389,131.874353 76.0004875,261.702631 C122.897492,396.110219 295.929578,405.171404 308.748582,405.414985 C320.368862,423.683504 347.009883,448.28511 407.998006,461 L414.75,428.993554 C362.128479,418.032442 342.87551,397.863997 336.270298,386.756737" id="Shape" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

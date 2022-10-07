@@ -1,0 +1,186 @@
+// Card deck
+@mixin card-deck-column-count($count: 1) {
+  flex: 0 0 calc(100% / #{$count} - 1rem * 2);
+}
+
+// Link color
+@mixin link-color($color, $hover) {
+  color: $color;
+
+  &:hover {
+    color: $hover;
+  }
+}
+
+// Heavy font weight
+@mixin font-heavy {
+  font-weight: 900;
+  letter-spacing: 0.26px;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Styles AddToAny share buttons
+@mixin share-styled($size: 42px, $icon-size: 32px, $max-width: 380px) {
+  .addtoany_shortcode {
+    .a2a_kit.a2a_kit_size_32.addtoany_list a span {
+      @apply bg-oxford-blue text-sm rounded-full #{!important};
+
+      width: $size;
+      height: $size;
+      transition: all $transition-speed ease !important;
+
+      svg {
+        height: $icon-size;
+        margin-top: 5px;
+      }
+
+      &:hover {
+        @apply bg-primary opacity-100 #{!important};
+      }
+    }
+
+    .addtoany_list {
+      @apply flex justify-between w-full mx-auto my-8;
+
+      @screen md {
+        max-width: $max-width;
+      }
+    }
+  }
+}
+
+// Styles field placeholders
+@mixin placeholder-style($color, $font-weight: normal, $font-style: normal) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+// CSS Grid mixin with flexbox fallback for IE and Edge
+@mixin grid($columns, $fr: 1, $min_height: 100px, $max_height: auto, $gutter_x: 16px, $gutter_y: 16px) {
+  display: grid;
+  grid-template-columns: repeat($columns, #{$fr}fr);
+  grid-auto-rows: minmax($min_height, $max_height);
+  grid-column-gap: $gutter_x;
+  grid-row-gap: $gutter_y;
+
+  // For browser versions that do not support CSS grid
+  @supports not (display: grid) {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    > div {
+      $grid_width: 100% / $columns;
+
+      width: calc(#{$grid_width} - #{$gutter_x});
+      margin-right: $gutter_x;
+      margin-bottom: $gutter_y;
+
+      &:nth-child(#{$columns}n+#{$columns}) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Internet Explorer
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    > div {
+      $grid_width: 100% / $columns;
+
+      width: calc(#{$grid_width} - #{$gutter_x});
+      margin-right: $gutter_x;
+      margin-bottom: $gutter_y;
+
+      &:nth-child(#{$columns}n+#{$columns}) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Edge
+  @supports (-ms-ime-align: auto) {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    > div {
+      $grid_width: 100% / $columns;
+
+      width: calc(#{$grid_width} - #{$gutter_x});
+      margin-right: $gutter_x;
+      margin-bottom: $gutter_y;
+
+      &:nth-child(#{$columns}n+#{$columns}) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Positioning
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-style: preserve-3d;
+}
+
+@mixin horizontal-align {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-style: preserve-3d;
+}
+
+@mixin centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transform-style: preserve-3d;
+}
+
+@mixin reset-text() {
+  // font-family: $font-family-base;
+  // We deliberately do NOT reset font-size or word-wrap.
+  font-style: normal;
+  // font-weight: $font-weight-normal;
+  // line-height: $line-height-base;
+  text-align: left; // Fallback for where `start` is not supported
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+}
