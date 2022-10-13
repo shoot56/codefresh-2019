@@ -1,0 +1,2 @@
+(self.webpackChunkcodefresh=self.webpackChunkcodefresh||[]).push([[706],{2897:function(n,e,t){"use strict";var u=t(9755),c=t.n(u);wp.customize("blogname",(function(n){n.bind((function(n){return c()(".brand").text(n)}))}))}},function(n){"use strict";n.O(0,[898],(function(){return e=2897,n(n.s=e);var e}));n.O()}]);
+//# sourceMappingURL=customizer.js.map
