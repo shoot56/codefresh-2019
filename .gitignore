@@ -28,5 +28,3 @@ wp-config.php
 backup.sql
 
 dist/*
-node_modules/*
-vendor/*
