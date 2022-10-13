@@ -3,8 +3,7 @@
 /.vscode
 #
 .cache-loader
-# dist
-node_modules
+
 npm-debug.log
 yarn-error.log
 compilation-stats.json
@@ -27,3 +26,7 @@ wp-config.php
 /wp-content/mu-plugins/kinsta-mu-plugins/
 # Backup
 backup.sql
+
+dist/*
+node_modules/*
+vendor/*
