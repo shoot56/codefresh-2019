@@ -27,4 +27,4 @@ wp-config.php
 # Backup
 backup.sql
 
-dist/*
+
