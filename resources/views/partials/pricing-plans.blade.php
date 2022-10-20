@@ -164,7 +164,7 @@ var scrollToAndOpenFaqItem = function(faqId)
     <div class="text-center">
       <div class="text-white inline-block mx-auto">
         <div class="text-3xl font-display font-bold mt-4 mb-4">All plans include</div>
-        <div class="text-base all-include-list pricing-plans grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="text-base all-include-list pricing-plans all-include-plans">
           <div>Centralized management of Argo, Git, logins, and secrets</div>
           <div>Unified interface for code-to-cloud visibility</div>
           <div>Argo component intercompatibility testing</div>

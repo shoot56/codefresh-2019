@@ -129,6 +129,14 @@
     @apply px-6;
   }
 }
+.all-include-plans {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  @screen md {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
 /*=====Testimonial Trio=====*/
 
