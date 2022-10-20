@@ -17,9 +17,14 @@
       url("#{$src}.woff") format("woff"), url("#{$src}.ttf") format("truetype");
   }
 }
+html {
+  padding-bottom: 0 !important;
+}
 body {
   position: relative;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 @include fontFace("lato", "../fonts/lato-300", 300);
