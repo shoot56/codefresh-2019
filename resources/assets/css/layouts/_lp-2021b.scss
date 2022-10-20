@@ -298,7 +298,14 @@ svg.sep-qd {
 }
 
 /* Compare Charts */
-
+.compare-chart .compare-price-logo {
+  width: 100%;
+  height: 20px;
+  object-fit: contain;
+  @screen md {
+    height: 40px;
+  }
+}
 @media (max-width: 768px) {
   .compare-chart-wrap {
     overflow-x: auto;
