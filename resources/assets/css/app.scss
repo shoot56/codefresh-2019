@@ -19,6 +19,10 @@
 }
 html {
   padding-bottom: 0 !important;
+  &.om-position-floating-bottom.bg-oxford-blue-600,
+  &.om-position-floating-top.bg-oxford-blue-600 {
+    transition: none !important;
+  }
 }
 body {
   position: relative;
