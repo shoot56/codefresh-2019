@@ -80,8 +80,10 @@ $current_url = $current_url = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST
                                         region: "na1", 
                                         portalId: "5054647", 
                                         formId: "9ea297bf-a824-43ac-a8b5-291054085091", 
-                                        onFormReady: function($form) {
-                                            populateFormUrl();
+                                        onFormReady: function($form) { 
+                                            let elem = document.querySelector('form input[name="form_url"]'); 
+                                            elem.value = document.location.href; 
+                                            elem.dispatchEvent(new Event('input', { bubbles: true }));
                                         },
                                         redirectUrl: "<?php echo $current_url; ?>&video=1"
                                     });
@@ -92,8 +94,10 @@ $current_url = $current_url = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST
                                         region: "na1", 
                                         portalId: "5054647", 
                                         formId: "9ea297bf-a824-43ac-a8b5-291054085091", 
-                                        onFormReady: function($form) {
-                                            populateFormUrl();
+                                        onFormReady: function($form) { 
+                                            let elem = document.querySelector('form input[name="form_url"]'); 
+                                            elem.value = document.location.href; 
+                                            elem.dispatchEvent(new Event('input', { bubbles: true }));
                                         },
                                         redirectUrl: "<?php echo $current_url; ?>?video=1"
                                     });
