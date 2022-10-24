@@ -1,0 +1,55 @@
+.hs-form.hs-form-9ea297bf-a824-43ac-a8b5-291054085091 {
+    .hs-button.primary {
+        width: auto;
+        background: #ff7a59;
+        border-color: #ff7a59;
+        color: #ffffff;
+        font-size: 12px;
+        line-height: 12px;
+        font-family: arial, helvetica, sans-serif;
+        border-radius: 3px;
+    }
+    
+    .hs-input:-moz-placeholder{
+        color:#bfbfbf;
+    }
+    .hs-input::-webkit-input-placeholder{
+        color:#bfbfbf;
+    }
+    .hs-input {
+        display: inline-block;
+        width: 90%;
+        max-width: 500px;
+        height: 40px;
+        padding: 9px 10px !important;
+        font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+        font-size: 16px !important;
+        font-weight: 400;
+        line-height: 22px !important;
+        border: 1px solid #cbd6e2;
+        box-sizing: border-box;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        border-radius: 3px;
+    }
+    .hs-input:not([type=file]) {
+        background-color: #f5f8fa !important;
+    }
+    select.is-placeholder{
+        color:#bfbfbf !important;
+    }
+    select.is-placeholder:focus{
+        color:#33475b !important;
+    }
+    .hs-input:focus{
+        outline:none;
+        border-color:rgba(82,168,236,.8) !important;
+        box-shadow: none;
+    }
+    .hs-button, .hs-form-field input[type=date], .hs-form-field input[type=email], .hs-form-field input[type=number], .hs-form-field input[type=phone], .hs-form-field input[type=tel], .hs-form-field input[type=text], .hs-form-field textarea {
+        -webkit-appearance: none;
+	    -moz-appearance: none;
+    }
+    
+}
