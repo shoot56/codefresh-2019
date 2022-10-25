@@ -67,7 +67,7 @@ $current_url = $current_url = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST
                     </div>
 
                     {{-- Form --}}
-                    <div class="w-full lg:w-1/2 xl:w-2/5 px-4 lg:flex items-center">
+                    <div class="w-full lg:w-1/2 xl:w-2/5 px-4 lg:flex">
                         <div class="webinar__form">
                             @if ( strtotime( $event_start ) < strtotime( $date_now ) && get_field( 'on_demand' ) ) {{-- Event is active --}}
 
