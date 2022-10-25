@@ -588,6 +588,7 @@ svg.sep-qd {
 
 img:not(.not-auto):not(.wp-post-image):not(.separator-container img) {
   width: auto;
+  object-fit: contain;
 }
 
 a.text-white:active,
