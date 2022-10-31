@@ -22,11 +22,11 @@ mix
     processCssUrls: false,
     postCss: [ require( 'tailwindcss' ) ],
   } );
-
+mix
+  .scripts( ['resources/assets/js/more.js'], 'dist/js/more.js' );
 mix
   .js( 'resources/assets/js/main.js', 'js' ).vue()
   .js( 'resources/assets/js/lottie-player.js', 'js' )
-  .js( 'resources/assets/js/more.js', 'js' )
   .js( 'resources/assets/js/pages/home.js', 'js' )
   .js( 'resources/assets/js/pages/case-studies.js', 'js' )
   .js( 'resources/assets/js/pages/contact-us.js', 'js' )
@@ -37,7 +37,6 @@ mix
   .js( 'resources/assets/js/customizer.js', 'js' )
   .autoload( { jquery: [ '$', 'window.jQuery' ] } )
   .extract();
-
 mix
   .copyDirectory( 'resources/assets/images', 'dist/images' )
   .copyDirectory( 'resources/assets/fonts', 'dist/fonts' )

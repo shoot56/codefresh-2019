@@ -1,6 +1,7 @@
 
 // ===== DEFINITIONS
 
+
 var consoleLogsEnable = false;
 const blUrlDomainAndPathOnly = (window.location.origin).concat(window.location.pathname);
 const blQueryString = window.location.search;
@@ -427,154 +428,285 @@ function animateValue ( id, start, end, duration ) {
     }
   }, stepTime );
 }
+(function($){
+  
+  document.addEventListener( 'DOMContentLoaded', () => {
+    const GFBtns = document.querySelectorAll( selectors.GFBtn );
+    const mobileMenuTrigger = document.querySelector( selectors.mobileMenuTrigger );
+    const mobileMenu = document.querySelector( selectors.mobileMenu );
 
-document.addEventListener( 'DOMContentLoaded', () => {
-  const GFBtns = document.querySelectorAll( selectors.GFBtn );
-  const mobileMenuTrigger = document.querySelector( selectors.mobileMenuTrigger );
-  const mobileMenu = document.querySelector( selectors.mobileMenu );
+    /**
+     * Global vars
+     */
+    let isTop = true;
+    let newsletterPopupDismissed = false;
+    let winX;
+    let posY;
 
-  /**
-   * Global vars
-   */
-  let isTop = true;
-  let newsletterPopupDismissed = false;
-  let winX;
-  let posY;
+    const winHeight = $( document ).height();
+    const newsletterPopup = $( '.modal' );
+    const $_WINDOW = $( window );
+    const calcX = () => winX = $_WINDOW.width();
+    const calcY = () => posY = $_WINDOW.scrollTop();
 
-  const winHeight = $( document ).height();
-  const newsletterPopup = $( '.modal' );
-  const $_WINDOW = $( window );
-  const calcX = () => winX = $_WINDOW.width();
-  const calcY = () => posY = $_WINDOW.scrollTop();
+    /**
+     * Tooltips
+     */
+    $( selectors.tooltip ).each( function () {
+      $( this ).tooltip( {
+        trigger: 'manual',
+        html: true,
+      } );
 
-  /**
-   * Tooltips
-   */
-  $( selectors.tooltip ).each( function () {
-    $( this ).tooltip( {
-      trigger: 'manual',
-      html: true,
-    } );
+      $( this ).on( 'mouseenter', function () {
+        $( this ).tooltip( classes.show );
 
-    $( this ).on( 'mouseenter', function () {
-      $( this ).tooltip( classes.show );
+        $( '.tooltip' ).on( 'mouseleave', function () {
+          $( this ).tooltip( classes.hide );
+        } );
+      } );
 
-      $( '.tooltip' ).on( 'mouseleave', function () {
-        $( this ).tooltip( classes.hide );
+      $( this ).on( 'mouseleave', function () {
+        setTimeout( function () {
+          if ( !$( '.tooltip:hover' ).length ) {
+            $( selectors.tooltip ).tooltip( classes.hide );
+          }
+        }, 300 );
       } );
     } );
 
-    $( this ).on( 'mouseleave', function () {
-      setTimeout( function () {
-        if ( !$( '.tooltip:hover' ).length ) {
-          $( selectors.tooltip ).tooltip( classes.hide );
-        }
-      }, 300 );
-    } );
-  } );
-
-  /**
-   * Nav Mobile.
-   */
-  if ( mobileMenuTrigger ) {
-    mobileMenuTrigger.addEventListener( 'click', toggleMobileMenu.bind( this, mobileMenuTrigger, mobileMenu ) );
-  }
-
-  /**
-   * Accordion.
-   */
-  $( '.accordionBtn' ).on( 'click', function ( e ) {
-    e.preventDefault();
-
-    var $this = $( this );
-
-    if ( $this.next().hasClass( classes.show ) ) {
-      $this.next().removeClass( classes.show );
-      $this.next().slideUp( 350 );
-    } else {
-      $this.parent().parent().find( 'li .accordionItem' ).removeClass( classes.show );
-      $this.parent().parent().find( 'li .accordionItem' ).slideUp( 350 );
-      $this.next().toggleClass( classes.show );
-      $this.next().slideToggle( 350 );
+    /**
+     * Nav Mobile.
+     */
+    if ( mobileMenuTrigger ) {
+      mobileMenuTrigger.addEventListener( 'click', toggleMobileMenu.bind( this, mobileMenuTrigger, mobileMenu ) );
     }
-  } );
 
-  /**
-   * Animate number.
-   */
-  /*
-  if ( $( '#count' ).length ) {
-    animateValue( 'count', 100000, 100000000, 1000 );
-  }
-  */
+    /**
+     * Accordion.
+     */
+    $( '.accordionBtn' ).on( 'click', function ( e ) {
+      e.preventDefault();
 
-  /**
-   * Fill hidden fields, only triggers if HubSpot form exists.
-   */
-  /*
-  if ( jQuery( '.hbspt-form' ) ) {
-    jQuery.getJSON( 'https://ipinfo.io?token=1ac9095e2f9aa7', function ( data ) {
-      const region = data.region;
+      var $this = $( this );
 
-      // Fill hidden fields
-      const inputs = [ 'country', 'region' ];
-
-      inputs.forEach( function ( i ) {
-        switch ( i ) {
-          case 'country':
-            jQuery( '.hs-' + i + ' div input' ).val(
-              countryCodeToName( data[ i ], allCountriesName )
-            );
-            break;
-          case 'region':
-            jQuery( '.hs-' + i + '__c div input' ).val( regionFormat( region ) );
-            break;
-          default:
-            jQuery( '.hs-' + i + ' div input' ).val( data[ i ] );
-        }
-      } );
+      if ( $this.next().hasClass( classes.show ) ) {
+        $this.next().removeClass( classes.show );
+        $this.next().slideUp( 350 );
+      } else {
+        $this.parent().parent().find( 'li .accordionItem' ).removeClass( classes.show );
+        $this.parent().parent().find( 'li .accordionItem' ).slideUp( 350 );
+        $this.next().toggleClass( classes.show );
+        $this.next().slideToggle( 350 );
+      }
     } );
-  }
-  */
 
-  /**
-   * Gravity forms.
-   */
-  if ( GFBtns.length ) {
-    GFBtns.forEach( btn => btn.addEventListener( 'click', GFLoading ) );
-  }
+    /**
+     * Animate number.
+     */
+    /*
+    if ( $( '#count' ).length ) {
+      animateValue( 'count', 100000, 100000000, 1000 );
+    }
+    */
 
-  /**
-   * Blog posts.
-   */
-  const newsletterClose = $( '.modal-close' );
+    /**
+     * Fill hidden fields, only triggers if HubSpot form exists.
+     */
+    /*
+    if ( jQuery( '.hbspt-form' ) ) {
+      jQuery.getJSON( 'https://ipinfo.io?token=1ac9095e2f9aa7', function ( data ) {
+        const region = data.region;
 
-  if ( newsletterPopup.length ) {
-    ( () => {
+        // Fill hidden fields
+        const inputs = [ 'country', 'region' ];
 
-      calcX();
-
-      if ( !newsletterPopupDismissed ) {
-        $( window ).scroll( () => {
-
-          if ( winX >= 960 ) {
-
-            calcY();
-
-            if ( posY >= ( winHeight * 0.1 ) && isTop ) {
-              isTop = false;
-              newsletterPopup.addClass( 'modal--show' );
-            }
+        inputs.forEach( function ( i ) {
+          switch ( i ) {
+            case 'country':
+              jQuery( '.hs-' + i + ' div input' ).val(
+                countryCodeToName( data[ i ], allCountriesName )
+              );
+              break;
+            case 'region':
+              jQuery( '.hs-' + i + '__c div input' ).val( regionFormat( region ) );
+              break;
+            default:
+              jQuery( '.hs-' + i + ' div input' ).val( data[ i ] );
           }
         } );
-      }
-    } )();
-  }
+      } );
+    }
+    */
 
-  if ( newsletterClose.length ) {
-    newsletterClose.on( 'click', () => {
-      newsletterPopup.removeClass( 'modal--show' );
-      newsletterPopupDismissed = true;
-    } );
+    /**
+     * Gravity forms.
+     */
+    if ( GFBtns.length ) {
+      GFBtns.forEach( btn => btn.addEventListener( 'click', GFLoading ) );
+    }
+
+    /**
+     * Blog posts.
+     */
+    const newsletterClose = $( '.modal-close' );
+
+    if ( newsletterPopup.length ) {
+      ( () => {
+
+        calcX();
+
+        if ( !newsletterPopupDismissed ) {
+          $( window ).scroll( () => {
+
+            if ( winX >= 960 ) {
+
+              calcY();
+
+              if ( posY >= ( winHeight * 0.1 ) && isTop ) {
+                isTop = false;
+                newsletterPopup.addClass( 'modal--show' );
+              }
+            }
+          } );
+        }
+      } )();
+    }
+
+    if ( newsletterClose.length ) {
+      newsletterClose.on( 'click', () => {
+        newsletterPopup.removeClass( 'modal--show' );
+        newsletterPopupDismissed = true;
+      } );
+    }
+    secondaryNavMagicLine();
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  } );
+  // secondary-nav BEGIN
+  function secondaryNavMagicLine() {
+    var leftPos, newWidth, $magicLine;
+    let header_height = 180;
+
+
+    $('.secondary-nav-inner ul.hidden').append("<li class='secondary-nav-line' id='magic-line'></li>");
+    $magicLine = $('#magic-line');
+
+
+    // $magicLine.width($('.active').width())
+    //   .css('left', $('.active .btn-bl.btn-bl-white-text').position().left)
+    //   .data('origLeft', $magicLine.position().left)
+    //   .data('origWidth', $magicLine.width());
+
+    $('a[href^="#"]').click(function() {
+      var $this = $(this);
+      $this.parent().addClass('active').siblings().removeClass('active');
+      $magicLine
+        .data('origLeft', $this.position().left)
+        .data('origWidth', $this.parent().width());
+      
+      var target = $(this).attr('href');
+      console.log(target);
+      // var indent = $('.object-header').height();
+      var indent = header_height - 2;
+      // $.scrollToSection(target, -indent);
+      // return false;
+    });
+
+    
+    navScroll();
+    function navScroll(){
+      var block = $('.section-slide');
+      var navHeight = header_height;
+      var _t;
+      var $this;
+      $(window).scroll(function(){
+        var _delta = -navHeight;
+        var _sections = [];
+        var wS = $(window).scrollTop();
+        block.each(function(){
+          _sections.push($(this).offset().top+_delta);
+        });
+        if(wS < $('.secondary-nav-inner').offset().top) {
+          console.log('less than')
+          $magicLine.css({
+            "left": 0,
+            "width": 0
+          });
+        } else {
+          $.each(_sections, function(i, val){
+            if (i>0){
+              if (i==_sections.length-1){
+                if (wS>=val){
+                  //$('.menu__item').removeClass('active');
+                  //$('.menu__item').eq(i).addClass('active');
+                  var $this = $('.menu__item').eq(i).find('a');
+  
+                  $magicLine.css({
+                    "left": $this.position().left,
+                    "width": $this.parent().width()
+                  });
+                }
+              } else {
+                if ((wS>=val)&&(wS<_sections[i+1])){
+                  //$('.menu__item').removeClass('active');
+                  //$('.menu__item').eq(i).addClass('active');
+                  var $this = $('.menu__item').eq(i).find('a');
+                  $magicLine.css({
+                    "left": $this.position().left,
+                    "width": $this.parent().width()
+                  });
+                }
+              }
+            } else {
+              if ((wS>=0)&&(wS<_sections[i+1])){
+                //$('.menu__item').removeClass('active');
+                //$('.menu__item').eq(i).addClass('active');
+                var $this = $('.menu__item').eq(i).find('a');
+                $magicLine.css({
+                  "left": $this.position().left,
+                  "width": $this.parent().width()
+                });
+              }
+            }
+          });
+        }
+      });
+    }
   }
-} );
+}(jQuery));
+
+
+
+
+jQuery.scrollToSection = function (target, offset, speed, container) {
+    if (isNaN(target)) {
+        if (!(target instanceof jQuery))
+            target = jQuery(target);
+        target = parseInt(target.offset().top);
+    }
+    container = container || "html, body";
+    if (!(container instanceof jQuery))
+        container = jQuery(container);
+    speed = speed || 500;
+    offset = offset || 0;
+    container.animate({
+        scrollTop: target + offset
+    }, speed);
+};

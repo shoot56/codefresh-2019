@@ -535,3 +535,11 @@
   }
 
 }
+
+
+.secondary-nav-line {
+  position: absolute;
+  bottom: 0;
+  border-top: 2px solid #fff;
+  transition: all 0.2s ease 0s;
+}

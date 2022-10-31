@@ -1,7 +1,6 @@
 {
     "/js/main.js": "/js/main.js?id=92dc7360879398bd5d23",
     "/js/lottie-player.js": "/js/lottie-player.js?id=43f3f5ad44ef5494c509",
-    "/js/more.js": "/js/more.js?id=ce03a90c3301b24bd24c",
     "/js/home.js": "/js/home.js?id=f2584c50c873ab8d94b3",
     "/js/case-studies.js": "/js/case-studies.js?id=4945e9a13eacf14dc708",
     "/js/contact-us.js": "/js/contact-us.js?id=4cb7b88b60eeeed606f5",
@@ -12,8 +11,9 @@
     "/js/customizer.js": "/js/customizer.js?id=400307f0715657246746",
     "/js/manifest.js": "/js/manifest.js?id=ff97e9a50fe6ab5cf06e",
     "/css/fontawesome.css": "/css/fontawesome.css?id=e25fdc69101275116ceb",
-    "/css/app.css": "/css/app.css?id=73a997afb045ba59a3df",
+    "/css/app.css": "/css/app.css?id=559f49d45a75b69e016b",
     "/js/vendor.js": "/js/vendor.js?id=4f4993f225b3928d1256",
+    "/js/more.js": "/js/more.js?id=b6d6e978f06f1bfff722",
     "/images/5-star-rating.svg": "/images/5-star-rating.svg?id=ed692d0376c479b9f5bb",
     "/images/Advanced-Kubernetes.png": "/images/Advanced-Kubernetes.png?id=eebf78cb703d07f3feef",
     "/images/arrow-in-circle.png": "/images/arrow-in-circle.png?id=4c81773666503a64adf3",

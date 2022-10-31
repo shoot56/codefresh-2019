@@ -13,3 +13,4 @@ import '../../../node_modules/bootstrap/js/src/tooltip';
 // import './pages/home';
 import './pages/pricing';
 
+import './custom.js';
