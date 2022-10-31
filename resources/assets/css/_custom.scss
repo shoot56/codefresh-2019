@@ -1,0 +1,29 @@
+.secondary-nav-line {
+    position: absolute;
+    bottom: 0;
+    border-top: 2px solid #fff;
+    transition: all 0.2s ease 0s;
+}
+.nav-secondary {
+    position: relative;
+    height: 60px;
+    top: 0;
+    &__float-nav {
+        padding:0;
+        margin:0;
+        list-style:none;
+        position: relative;
+        overflow: hidden;
+        li {
+            .secondary-nav-inner & {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .nav-secondary-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+    }
+}

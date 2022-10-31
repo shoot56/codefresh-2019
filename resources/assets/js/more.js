@@ -579,7 +579,9 @@ function animateValue ( id, start, end, duration ) {
         newsletterPopupDismissed = true;
       } );
     }
-    secondaryNavMagicLine();
+    if($('.nav-secondary__float-nav').length){
+      secondaryNavMagicLine();
+    }
 
 
 
@@ -605,14 +607,8 @@ function animateValue ( id, start, end, duration ) {
     let header_height = 180;
 
 
-    $('.secondary-nav-inner ul.hidden').append("<li class='secondary-nav-line' id='magic-line'></li>");
+    $('.nav-secondary__float-nav').append("<li class='secondary-nav-line' id='magic-line'></li>");
     $magicLine = $('#magic-line');
-
-
-    // $magicLine.width($('.active').width())
-    //   .css('left', $('.active .btn-bl.btn-bl-white-text').position().left)
-    //   .data('origLeft', $magicLine.position().left)
-    //   .data('origWidth', $magicLine.width());
 
     $('a[href^="#"]').click(function() {
       var $this = $(this);
@@ -622,11 +618,7 @@ function animateValue ( id, start, end, duration ) {
         .data('origWidth', $this.parent().width());
       
       var target = $(this).attr('href');
-      console.log(target);
-      // var indent = $('.object-header').height();
       var indent = header_height - 2;
-      // $.scrollToSection(target, -indent);
-      // return false;
     });
 
     
