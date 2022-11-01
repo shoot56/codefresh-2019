@@ -585,27 +585,11 @@ function animateValue ( id, start, end, duration ) {
 
 
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   } );
   // secondary-nav BEGIN
   function secondaryNavMagicLine() {
     var leftPos, newWidth, $magicLine;
     let header_height = 180;
-
 
     $('.nav-secondary__float-nav').append("<li class='secondary-nav-line' id='magic-line'></li>");
     $magicLine = $('#magic-line');
@@ -636,7 +620,6 @@ function animateValue ( id, start, end, duration ) {
           _sections.push($(this).offset().top+_delta);
         });
         if(wS < $('.secondary-nav-inner').offset().top) {
-          console.log('less than')
           $magicLine.css({
             "left": 0,
             "width": 0
@@ -646,8 +629,6 @@ function animateValue ( id, start, end, duration ) {
             if (i>0){
               if (i==_sections.length-1){
                 if (wS>=val){
-                  //$('.menu__item').removeClass('active');
-                  //$('.menu__item').eq(i).addClass('active');
                   var $this = $('.menu__item').eq(i).find('a');
   
                   $magicLine.css({
@@ -657,8 +638,6 @@ function animateValue ( id, start, end, duration ) {
                 }
               } else {
                 if ((wS>=val)&&(wS<_sections[i+1])){
-                  //$('.menu__item').removeClass('active');
-                  //$('.menu__item').eq(i).addClass('active');
                   var $this = $('.menu__item').eq(i).find('a');
                   $magicLine.css({
                     "left": $this.position().left,
@@ -668,8 +647,6 @@ function animateValue ( id, start, end, duration ) {
               }
             } else {
               if ((wS>=0)&&(wS<_sections[i+1])){
-                //$('.menu__item').removeClass('active');
-                //$('.menu__item').eq(i).addClass('active');
                 var $this = $('.menu__item').eq(i).find('a');
                 $magicLine.css({
                   "left": $this.position().left,
