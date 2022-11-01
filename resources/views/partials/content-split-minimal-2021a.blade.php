@@ -15,7 +15,7 @@
         <div class="flex flex-wrap mb-8">
           @if ( get_field('show_logos') )
             <div class="w-full text-center @if ( get_field('one_column') ) @else md:text-left @endif text-sm font-display font-bold uppercase tracking-wider mb-4">You're in Good Company</div>
-            <div class="filter brightness-0 invert opacity-70">
+            <div class="filter split-minimal-logos brightness-0 invert opacity-70">
               @include('partials.new.featured-case-studies-static-logos')
             </div>
           @endif
