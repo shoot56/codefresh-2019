@@ -2,7 +2,7 @@
   <div class="asymm-header bg-nk-blue-marine md:bg-split-horizontal-marine-light z-50">
     <div class="container">
       <div class="">
-        <a class="bg-nk-blue-marine" href="{{ esc_url( site_url() ) }}"><img class="filter brightness-0 invert" src="@asset('images/logo.svg')" alt="Codefresh"></a>
+        <a class="bg-nk-blue-marine" href="{{ esc_url( site_url() ) }}"><img width="148" height="24" class="filter brightness-0 invert h-auto w-32 not-auto" src="@asset('images/logo.svg')" alt="Codefresh"></a>
       </div>
     </div>
   </div>
