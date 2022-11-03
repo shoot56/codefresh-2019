@@ -248,6 +248,11 @@ svg.sep-qd {
   margin: 0 20px;
   width: calc(100% / 3 - 40px);
 }
+.homepageHeroSplide .splide__sr {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+}
 :root .splide__pagination__page.is-active,
 :root button.splide__pagination__page {
   background: none;
