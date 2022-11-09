@@ -15,7 +15,7 @@
         @php the_content() @endphp
         <div class="flex flex-wrap mb-8">
           <div class="w-full text-center md:text-left text-sm font-display font-bold uppercase tracking-wider mb-4">You're in Good Company</div>
-          <div class="text-center md:text-left filter brightness-0 invert opacity-70">
+          <div class="split-minimal-logos filter brightness-0 invert opacity-70">
             @include('partials.new.featured-case-studies-static-logos')
           </div>
           <div class="mt-6 flex flex-wrap w-full justify-center md:justify-start">
