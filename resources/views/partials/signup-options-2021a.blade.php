@@ -5,7 +5,7 @@
     <li class="signup-options__item max-w-2xs mx-auto md:mx-0">
       <a href="{{ esc_url( $GLOBALS['APP_URL_AUTH_GITHUB'] ) }}">
       <img class="mr-2 fa-fw inline-block align-sub" src="@asset('images/signup/github.svg')" alt="Github">
-      Sign up with Github
+      Sign up with GitHub
     </a>
     </li>
     <li class="signup-options__item max-w-2xs mx-auto md:mx-0">

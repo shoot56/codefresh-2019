@@ -11,7 +11,7 @@
     <div class="signup-options__link">or <a href="#">sign in to your account</a></div>
       <ul class="list-unstyled my-2 text-center text-md-left">
         <li class="signup-options__item">
-          <a href="#"><img class="mr-1 fa-fw" src="@asset('images/signup/github.svg')" alt="Github">Sign up with Github</a>
+          <a href="#"><img class="mr-1 fa-fw" src="@asset('images/signup/github.svg')" alt="Github">Sign up with GitHub</a>
         </li>
         <li class="signup-options__item">
           <a href="#"><img class="mr-1 fa-fw" src="@asset('images/signup/bitbucket.svg')" alt="Bitbucket">Sign up with Bitbucket</a>
