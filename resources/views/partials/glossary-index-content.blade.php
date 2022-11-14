@@ -11,10 +11,10 @@
       }else{
         $pp_page = 6;
       }
-      $term_id = $_GET['topic_id'];
-      $term_by_id = get_term_by( 'id', $term_id, 'topics');
-      if($term_by_id){
-        $filter_head = $term_by_id->name;
+      $term_slug = $_GET['topic'];
+      $term_by_slug = get_term_by( 'slug', $term_slug, 'topics');
+      if($term_by_slug){
+        $filter_head = $term_by_slug->name;
       }else{
         $filter_head = 'All';
       }
@@ -29,12 +29,12 @@
       'posts_per_page' => $pp_page,
       'paged' => $paged
       ];
-      if(!empty($term_id )){
+      if(!empty($term_slug )){
         $args['tax_query'] = [
         [
         'taxonomy' => 'topics',
-        'field' => 'id',
-        'terms' => $term_id,
+        'field' => 'slug',
+        'terms' => $term_slug,
         ]
         ];
       }
@@ -49,7 +49,7 @@
       @endphp
 
       <h2>@php echo $filter_head @endphp articles</h2>
-      @if($terms && !$term_id)
+      @if($terms && !$term_slug)
       @if($paged < 2)
       @foreach($terms as $term)
       @if(get_field('cluster_featured_image',$term))
@@ -105,7 +105,7 @@
       @endforeach
       @endif
       @else 
-      @php $term = get_term_by('id', $term_id, 'topics') @endphp
+      @php $term = get_term_by('slug', $term_slug, 'topics') @endphp
       @if(get_field('cluster_featured_image',$term))
       <div class="glossary-index-callout">
         <div class="callout-left">
