@@ -35,6 +35,43 @@
             <?php /* General content ends */?>
             @endif
 
+            @if (get_row_layout() == 'additional_guides')
+            <?php /* Additional Guides starts */?>
+            
+            <section class="additional-guides">
+              <div class="additional-guides">
+                <?php if (get_sub_field( 'block_title' )): ?>
+                  <h2><?php the_sub_field( 'block_title' ); ?></h2>
+                <?php endif; ?>
+                <?php $columns = get_sub_field( 'columns' ); ?>
+                <?php if ( have_rows( 'guides_list' ) ) : ?>
+                  <div class="additional-guides-list additional-guides-list--<?php echo $columns; ?>">
+                    <?php while ( have_rows( 'guides_list' ) ) : the_row(); ?>
+                    <?php $title = get_sub_field( 'title' ); ?>
+                    <div class="additional-guides-list__item">
+                      <div class="additional-guides-list__head">
+                          <?php if ( $title ) : ?>
+                            <h3 class="additional-guides-list__title">
+                              <a href="<?php echo esc_url( $title['url'] ); ?>" target="<?php echo esc_attr( $title['target'] ); ?>"><?php echo esc_html( $title['title'] ); ?></a>
+                            </h3>
+                          <?php endif; ?>
+                          <?php if (get_sub_field( 'subtitle' )): ?>
+                            <div class="additional-guides-list__subtitle"><?php the_sub_field( 'subtitle' ); ?></div>
+                          <?php endif; ?>
+                        </div>
+                        <div class="additional-guides-list__content">
+                          <?php the_sub_field( 'content' ); ?>
+                        </div>
+                      </div>
+                    <?php endwhile; ?>
+                  </div>
+                <?php endif; ?>
+              </div>
+            </section>
+            <?php /* Additional Guides ends */?>
+            @endif
+
+
 
             @if (get_row_layout() == 'video_block')
                   <?php /* video layout */?>
