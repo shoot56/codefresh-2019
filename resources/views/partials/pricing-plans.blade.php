@@ -137,7 +137,7 @@ var scrollToAndOpenFaqItem = function(faqId)
           <li class="plan-callout">Includes <em>Team</em> features, PLUS:</li>
           <li>
             <span class="inline-block mr-2">@svg('icons/checkmark-nk-orange-argo')</span>
-            Up to unlimited data retention
+            6 month data retention
           </li>
           <li>
             <span class="inline-block mr-2">@svg('icons/checkmark-nk-orange-argo')</span>
