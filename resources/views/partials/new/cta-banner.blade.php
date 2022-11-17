@@ -11,7 +11,7 @@
 
         <div class="">
           @component( 'components.button', [ 'type' => 'primary', 'url' => site_url('codefresh-signup'), 'class' => '' ] )
-          {{ __('Start Free Trial', 'codefresh') }}
+          {{ __('Sign Up', 'codefresh') }}
           @endcomponent
         </div>
       </div>
