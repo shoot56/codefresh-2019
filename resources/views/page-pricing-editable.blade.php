@@ -5,19 +5,31 @@
 @extends('layouts.containerless', ['bodyClass' => 'bg-nk-silver'])
 
 @section('content')
-  <div class="bg-gradient-to-b from-nk-blue-marine to-nk-blue-midnight has-separator relative">
-    
-  </div>
-  <div class="separator-container bg-nk-silver">
-    <img src="/wp-content/themes/codefresh-2019/dist/images/nk/sep-blue-midnight.svg">
-  </div>
-  <div class="wrap container">
-    
-  </div>
   
-  <div class="separator-container bg-nk-blue-midnight">
-    <img src="/wp-content/themes/codefresh-2019/dist/images/nk/sep-silver.svg">
-  </div>
+  <section class="price-promo-section">
+    <div class="price-promo-section__bg">
+        <img src="" alt="">
+    </div>
+    <div class="container">
+        <div class="price-promo-section__head">
+            <div class="price-promo-section__title"></div>
+            <div class="price-promo-section__subtitle"></div>
+        </div>
+        <div class="price-promo-section__frame">
+            <div class="pricing-columns">
+                <div class="pricing-columns__item pricing-item">
+                    <div class="pricing-item__name"></div>
+                    <div class="pricing-item__description">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  
+  
+  
   <div class="bg-nk-blue-midnight text-white">
     <div class="container pb-16">
       <h2 class="text-2xl pt-2 -mb-10 text-center mx-auto">Frequently Asked Questions</h2>
