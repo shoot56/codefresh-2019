@@ -25,19 +25,19 @@ var scrollToAndOpenFaqItem = function(faqId)
 
   <div class="pricing-hero-text mt-20 mb-12 text-center">
     <h1 class="text-3xl text-white mb-2">Deploy more and fail less. Flexible pricing for every DevOps team.</h1>
-    <p class="text-lg text-white mb-0">Sign up now, upgrade anytime. Every new account gets a 14-day trial of our Enterprise plan.</p>
+    <p class="text-lg text-white mb-0">Sign up now, upgrade anytime.</p>
   </div>
 
   <div class="plan-list inline-flex flex-wrap text-center text-black">
 
     <div class="plan-list-item plan-basic">
       <div class="plan-card bg-white border-t-8 border-nk-gray3point5">
-        <div class="plan-title font-medium text-nk-gray3point5">Free</div>
+        <div class="plan-title font-medium text-nk-gray3point5">Community</div>
         <?php // <div class="plan-starting-from underline">Starting From</div> ?>
         <div class="price-wrapper">
           <span class="price-delimiter"></span>
           <span class="price-amount"></span>
-          <span class="price-frequency">Community Edition</span>
+          <span class="price-frequency">&nbsp;</span>
         </div>
         <ul class="plan-feature-list">
           <li>
@@ -67,7 +67,7 @@ var scrollToAndOpenFaqItem = function(faqId)
         </ul>
         <div class="plan-button">
           <a href="/codefresh-signup/" class="btn-bl btn-bl-nk-gray3point5-outline block">
-            Get Started
+            Sign Up
           </a>
         </div>
       </div>
@@ -110,7 +110,7 @@ var scrollToAndOpenFaqItem = function(faqId)
         </ul>
         <div class="plan-button">
           <a href="/codefresh-signup/" class="btn-bl btn-bl-nk-primary-outline block">
-            Start Trial
+            Sign Up
           </a>
         </div>
       </div>
