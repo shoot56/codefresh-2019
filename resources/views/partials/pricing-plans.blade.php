@@ -37,7 +37,7 @@ var scrollToAndOpenFaqItem = function(faqId)
         <div class="price-wrapper">
           <span class="price-delimiter"></span>
           <span class="price-amount"></span>
-          <span class="price-frequency">&nbsp;</span>
+          <span class="price-frequency">Free</span>
         </div>
         <ul class="plan-feature-list">
           <li>
@@ -91,7 +91,7 @@ var scrollToAndOpenFaqItem = function(faqId)
             <span class="inline-block mr-2">@svg('icons/checkmark')</span>
             Up to 2 Argo Runtimes
           </li>
-          <li class="plan-callout">Includes <em>Free</em> features, PLUS:</li>
+          <li class="plan-callout">Includes <em>Community</em> features, PLUS:</li>
           <li>
             <span class="inline-block mr-2">@svg('icons/checkmark')</span>
             1 month data retention
