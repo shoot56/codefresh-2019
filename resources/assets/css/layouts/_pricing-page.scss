@@ -1,0 +1,221 @@
+.price-promo-section {
+    color: #fff;
+    padding: 10rem 0 0;
+    position: relative;
+    margin-bottom: 160px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: 160px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height='400' viewBox='0 0 1441 394' fill='none'%3E%3Cpath d='M789 212C372.2 212 89.333 333.333 0 394V0h1441c-43.67 70.667-235.2 212-652 212Z' fill='%23002139'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: contain;
+    }
+    &__bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        max-height: 780px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    &__head {
+        text-align: center;
+        margin: 0 0 3rem;
+    }
+    &__title {
+        margin: 0 0 .5rem;
+        font-size: 1.875rem;
+        line-height: 1.25;
+        @apply font-display;
+    }
+    &__subtitle {
+        font-size: 1.125rem;
+        line-height: 1.25;
+        margin: 0;
+    }
+    .container {
+        position: relative;
+    }
+}
+.pricing-columns {
+    display: grid;
+    grid-gap: 1.75rem 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 0 2.75rem;
+    @screen lg {
+        grid-template-columns: repeat(var(--colCounter), 1fr);
+    }
+}
+.pricing-item {
+    background-color: #fff;
+    padding: 1rem;
+    border-top: 8px solid var(--planColor);
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    &__name {
+        @apply font-display;
+        @apply text-4xl;
+        @apply mb-6;
+        @apply mt-0;
+        color: var(--planColor);
+    }
+    &__price {
+        margin: 0 0 1.5rem;
+        @apply font-display;
+        line-height: 1.25;
+        font-size: 1.125rem;
+        &-currency {
+            font-size: 1.875rem;
+        }
+        &-value {
+            font-size: 1.5rem;
+        }
+        p {
+            display: inline;
+            margin: 0;
+        }
+        a {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+    &__description {
+        margin: 0 0 1rem;
+        font-size: 1.125rem;
+        line-height: 1.25;
+        ul {
+            padding:0;
+            margin:0 0 1.5rem;
+            list-style:none;
+            display: grid;
+            grid-gap: 1rem;
+            li {
+                padding: 0 0 0 24px;
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    background-color: var(--planColor);
+                    -webkit-mask-image: url("data:image/svg+xml,%3Csvg class='' width='14' height='11' viewBox='0 0 14 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.44912 8.42069L1.13019 5.10176L0 6.22399L4.44912 10.6731L14 1.12223L12.8778 0L4.44912 8.42069Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+                    mask-image: url("data:image/svg+xml,%3Csvg class='' width='14' height='11' viewBox='0 0 14 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.44912 8.42069L1.13019 5.10176L0 6.22399L4.44912 10.6731L14 1.12223L12.8778 0L4.44912 8.42069Z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%; 
+                    top: 7px;
+                    left: 0;
+                    width: 14px;
+                    height: 11px;
+                }
+            }
+        }
+        p {
+            margin: 0 0 1rem;
+        }
+    }
+
+    &__button {
+        margin-top: auto;
+        .btn-bl-outline {
+            border-color: var(--planColor);
+            border-width: 1px;
+            color: var(--planColor);
+            &:hover {
+                background-color: var(--planColor);
+                color: #fff;
+            }
+        }
+    }
+}
+.plans-include {
+    margin: 0;
+    &__title {
+        text-align: center;
+        margin: 0 0 1rem;
+        font-size: 1.875rem;
+        line-height: 1.25;
+        font-weight: bold;
+        @apply font-display;
+    }
+}
+.plans-include-list {
+    font-size: 1rem;
+	line-height: 1.25;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    @screen md {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    &__item {
+        flex: 1 1 0%;
+        font-size: 1rem;
+        line-height: 1.25;
+        padding: 1.5rem;
+        --tw-text-opacity: 1;
+        color: rgba(255,255,255,var(--tw-text-opacity));
+        background: hsla(0,0%,100%,.2);
+        text-align: center;
+    }
+}
+.pricing-customers {
+    padding: 5rem 0 2.5rem;
+    &__head {
+        margin: 0 0 3rem;
+        text-align: center;
+    }
+    &__title {
+        margin: 0 0 .5rem;
+        font-size: 1.875rem;
+	    line-height: 1.25;
+        color: #000;
+    }
+    &__description {
+        max-width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+    }
+}
+.pricing-testimonial {
+    display: grid;
+    grid-gap: 3rem;
+    @screen md {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__item {
+        padding: 2rem;
+    }
+}
+
+.faq-section {
+    position: relative;
+    margin-top: 160px;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: 160px;
+        background-color: #002139;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height='400' viewBox='0 0 1441 394' fill='none'%3E%3Cpath d='M789 212C372.2 212 89.333 333.333 0 394V0h1441c-43.67 70.667-235.2 212-652 212Z' fill='%23f4f8f8'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: contain;
+    }
+}
