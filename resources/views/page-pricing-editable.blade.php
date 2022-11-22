@@ -5,6 +5,9 @@
 @extends('layouts.containerless', ['bodyClass' => 'bg-nk-silver'])
 
 @section('content')
+
+
+
 <?php if ( have_rows( 'promo_section' ) ) : ?>
 	<?php while ( have_rows( 'promo_section' ) ) : the_row(); ?>
 		<?php $section_backgroung_image = get_sub_field( 'section_backgroung_image' ); ?>
@@ -41,8 +44,14 @@
                     </div>
                     <div class="pricing-item__button">
                       <?php if ( $plan_button ) : ?>
-                        <?php the_sub_field( 'button_style' ); ?>
-                        <a class="btn-bl block" href="<?php echo esc_url( $plan_button['url'] ); ?>" target="<?php echo esc_attr( $plan_button['target'] ); ?>"><?php echo esc_html( $plan_button['title'] ); ?></a>
+                        <?php 
+                          if(get_sub_field( 'button_style' ) == 'outline') {
+                            $buttonStyle = 'btn-bl-outline';
+                          } else {
+                            $buttonStyle = 'btn-bl-primary';
+                          }
+                        ?>
+                        <a class="btn-bl block <?php echo $buttonStyle; ?>" href="<?php echo esc_url( $plan_button['url'] ); ?>" target="<?php echo esc_attr( $plan_button['target'] ); ?>"><?php echo esc_html( $plan_button['title'] ); ?></a>
                       <?php endif; ?>
                     </div>
                 </div>
@@ -76,16 +85,22 @@
 		
     <section class="pricing-customers">
       <div class="container">
-        <div class="pricing-customers__head">
-          <div class="pricing-customers__title"><?php the_sub_field( 'section_title' ); ?></div>
-          <div class="pricing-customers__description"><?php the_sub_field( 'section_description' ); ?></div>
+        <div class="pricing-customers__head text-oxford-blue">
+          <?php if (get_sub_field( 'section_title' )): ?>
+            <h2 class="pricing-customers__title"><?php the_sub_field( 'section_title' ); ?></h2>
+          <?php endif; ?>
+          <?php if (get_sub_field( 'section_description' )): ?>
+            <div class="pricing-customers__description text-lg"><?php the_sub_field( 'section_description' ); ?></div>
+          <?php endif; ?>
         </div>
         <?php if ( have_rows( 'testimonial_list' ) ) : ?>
           <div class="pricing-testimonial">
             <?php while ( have_rows( 'testimonial_list' ) ) : the_row(); ?>
-              <div class="pricing-testimonial__item">
-                <div class="pricing-testimonial__content"><?php the_sub_field( 'testimonial_text' ); ?></div>
-                <div class="pricing-testimonial__author"><?php the_sub_field( 'testimonial_author' ); ?></div>
+              <div class="pricing-testimonial__item shadow-lg bg-white">
+                <div class="pricing-testimonial__content mb-4 text-base"><?php the_sub_field( 'testimonial_text' ); ?></div>
+                <?php if (get_sub_field( 'testimonial_author' )): ?>
+                  <div class="pricing-testimonial__author text-sm"><?php the_sub_field( 'testimonial_author' ); ?></div>
+                <?php endif; ?>
               </div>
             <?php endwhile; ?>
           </div>
@@ -99,11 +114,61 @@
 <?php endif; ?>
   
   
-  <div class="bg-nk-blue-midnight text-white">
+  <div class="bg-nk-blue-midnight text-white faq-section">
     <div class="container pb-16">
       <h2 class="text-2xl pt-2 -mb-10 text-center mx-auto">Frequently Asked Questions</h2>
-      
+      <section class="faq">
+        <?php 
+        $faq_posts = get_posts( array(
+          'numberposts' => -1,
+          'orderby'     => 'date',
+          'order'       => 'ASC',
+          'post_type'   => 'faq',
+        ) );
+        ?>
+        <?php if ($faq_posts): ?>
+          <ul class="accordion list-none p-0 my-16 mx-auto max-w-3xl" id="faq">
+            <?php global $post; ?>
+            <?php foreach( $faq_posts as $post ):?>
+              <?php setup_postdata( $post ); ?>
+                <li id="post-@php the_id() @endphp" class="border-b-2 border-light">
+                  <button class="accordionBtn flex items-center text-left py-5 px-4 w-full shadow-none bg-transparent font-normal md:text-xl focus:outline-none" type="button">
+                    @php the_title() @endphp
+                    <i class="fas fa-chevron-down fa-xs ml-auto"></i>
+                  </button>
+          
+                  <div class="accordionItem hidden px-4">
+                    @php the_content() @endphp
+                  </div>
+                </li>
+            <?php endforeach; ?>
+          </ul>
+        <?php else:?>
+          <div class="alert alert-warning">
+            {{ __('Sorry, no results were found.', 'codefresh') }}
+          </div>
+        <?php endif; ?>
+  
+        <?php wp_reset_postdata(); ?>
+      </section>
+
     </div>
   </div>
+  <script type="text/javascript">
+  var scrollToAndOpenFaqItem = function(faqId) {
+    var faqIdName = 'post-' + faqId;
+    var faqOpenButton = '#' + faqIdName + ' .accordionItem';
+    document.querySelector(faqOpenButton).style.display = 'block';
+    document.getElementById(faqIdName).scrollIntoView({behavior: 'smooth'});
+  }
+
+  const scrollbtn = document.querySelector('.scroll-to-faq');
+  scrollbtn.addEventListener("click", function() {
+    let target = this.dataset.target;
+    scrollToAndOpenFaqItem(target);
+  });
+
+
+  </script>
   @include('partials.new.cta-banner')
 @endsection
