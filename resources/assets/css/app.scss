@@ -93,10 +93,10 @@ body {
     &::before {
       content: '';
       position: absolute;
-      top: 0;
+      top: -50px;
       left: 0;
       width: 100vw;
-      height: 100px;
+      height: 150px;
       background-color: #002139;
     }
   }
