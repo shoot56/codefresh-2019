@@ -91,14 +91,16 @@ body {
 // GROW-807 fix white bar for optinmonster
 html {
   body {
-    &::before {
-      content: '';
-      position: absolute;
-      top: -70px;
-      left: 0;
-      width: 100vw;
-      height: 140px;
-      background-color: #002139;
+    &:not(.split-minimal-2021a) {
+      &::before {
+        content: '';
+        position: absolute;
+        top: -70px;
+        left: 0;
+        width: 100vw;
+        height: 140px;
+        background-color: #002139;
+      }
     }
   }
 }
