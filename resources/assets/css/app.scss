@@ -89,7 +89,9 @@ body {
 }
 
 .om-position-floating-bottom {
+  background-color: #002139;
   body {
+    
     &::before {
       content: '';
       position: absolute;
