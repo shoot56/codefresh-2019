@@ -66,8 +66,10 @@
                   <div class="plans-include-list">
                     <?php while ( have_rows( 'include_list' ) ) : the_row(); ?>
                     <div class="plans-include-list__item">
+                      <div class="plans-include-list__item-text">
                         <?php the_sub_field( 'text' ); ?>
                       </div>
+                    </div>
                     <?php endwhile; ?>
                   </div>
                 <?php endif; ?>
@@ -112,6 +114,163 @@
     </section>
 	<?php endwhile; ?>
 <?php endif; ?>
+
+<div class="testimonials">
+  <div class="container md:grid grid-cols-1 gap-0 relative z-10">
+
+    <h2 class="text-3xl mb-8 text-center">Trusted and Powered by Codefresh</h2>
+  
+    <div class="relative">
+    
+      <div class="md:w-4/5 mx-auto">
+    
+        <div class="items-center" demo="tabs" role="tablist">
+    
+          <input name="tabs" type="radio" id="tab-1" aria-labelledby="tab-label-1" aria-roledescription="tab" checked="">
+          <label role="tab" for="tab-1" id="tab-label-1" aria-hidden="true"><img src="/wp-content/themes/codefresh-2019/dist/images/bl/logos/logo-kandji-color.svg"></label>
+    
+          <input name="tabs" type="radio" id="tab-2" aria-labelledby="tab-label-2" aria-roledescription="tab">
+          <label role="tab" for="tab-2" id="tab-label-2" aria-hidden="true"><img src="/wp-content/themes/codefresh-2019/dist/images/bl/logos/logo-recurly-color.svg"></label>
+    
+          <input name="tabs" type="radio" id="tab-3" aria-labelledby="tab-label-3" aria-roledescription="tab">
+          <label role="tab" for="tab-3" id="tab-label-3" aria-hidden="true"><img src="/wp-content/themes/codefresh-2019/dist/images/bl/logos/logo-crux-color.svg"></label>
+    
+          <input name="tabs" type="radio" id="tab-4" aria-labelledby="tab-label-4" aria-roledescription="tab">
+          <label role="tab" for="tab-4" id="tab-label-4" aria-hidden="true"><img src="/wp-content/themes/codefresh-2019/dist/images/bl/logos/logo-pismo-color.svg"></label>
+    
+          <a class="btn-bl btn-bl-primary-text align-middle bl-fas bl-fa-chevron-right" href="/case-studies/" id="tab-label-5" aria-hidden="true">See all case studies</a>
+    
+          <div role="tabpanel" aria-labelledby="tab-label-1">
+            <div class="md:grid grid-cols-2">
+              <div class="md:inline-block align-top text-white bg-gradient-to-r from-oxford-blue to-nk-blue-marine p-10 rounded-lg relative z-20 shadow-nk-qd2">
+                <p class="text-2xl font-bold font-display mb-6">"I would describe Codefresh as the holy grail of CICD solutions. It's Kubernetes focused and uses GitOps."</p>
+                <p class="text-lg font-bold font-display mb-1">Bryan Lokey</p>
+                <p class="text-sm mb-6">Director of Engineering, Kandji</p>
+                <p class="mb-0"><a class="btn-bl btn-bl-white-text bl-fas bl-fa-chevron-right" href="/case-studies/kandji/">View the Case Study</a></p>
+              </div>
+              <div class="hidden md:inline-block align-top bg-nk-gray1 text-center rounded-lg relative z-10 md:top-10 md:-left-10">
+                <a href="javascript:void(0)" onclick="lightbox_open('videoTestimonial1', 'light1', 'fade1');" class="inline-block rounded" style="background-position:center; background-size:cover; height:100%; position:relative; width:100%; background-image:url(https://cfprod.local:65499/wp-content/uploads/2022/06/kandji-codefresh-testimonial2.jpg);"><i class="absolute bottom-8 right-8 fas fa-3x fa-play-circle text-white bg-nk-blue-marine rounded-full"></i></a>
+              </div>
+            </div>
+          </div>
+    
+          <div role="tabpanel" aria-labelledby="tab-label-2">
+            <div class="md:grid grid-cols-2">
+              <div class="md:inline-block align-top text-white bg-gradient-to-r from-oxford-blue to-nk-blue-marine p-10 rounded-lg relative z-20 shadow-nk-qd2">
+                <p class="text-2xl font-bold font-display mb-6">"We had more Jenkins errors in a week than we have Codefresh in a year."</p>
+                <p class="text-lg font-bold font-display mb-1">Stacey Snyder</p>
+                <p class="text-sm mb-6">Senior Director of Engineering, Recurly</p>
+                <p class="mb-0"><a class="btn-bl btn-bl-white-text bl-fas bl-fa-chevron-right" href="/case-studies/recurly/">View the Case Study</a></p>
+              </div>
+              <div class="hidden md:inline-block align-top bg-nk-gray1 text-center rounded-lg relative z-10 md:top-10 md:-left-10">
+                <a href="javascript:void(0)" onclick="lightbox_open('videoTestimonial2', 'light2', 'fade2');" class="inline-block rounded" style="background-position:center; background-size:cover; height:100%; position:relative; width:100%; background-image:url(https://cfprod.local:65499/wp-content/uploads/2022/06/recurly-codefresh-testimonial.jpg);"><i class="absolute bottom-8 right-8 fas fa-3x fa-play-circle text-white bg-nk-blue-marine rounded-full"></i></a>
+              </div>
+            </div>
+          </div>
+    
+          <div role="tabpanel" aria-labelledby="tab-label-3">
+            <div class="md:grid grid-cols-2">
+              <div class="md:inline-block align-top text-white bg-gradient-to-r from-oxford-blue to-nk-blue-marine p-10 rounded-lg relative z-20 shadow-nk-qd2">
+                <p class="text-2xl font-bold font-display mb-6">"We're saving about 40% and we're able to deploy all of our services through Codefresh."</p>
+                <p class="text-lg font-bold font-display mb-1">Joe Grabenstein</p>
+                <p class="text-sm mb-6">Senior Infrastructure Engineer, Crux</p>
+                <p class="mb-0"><a class="btn-bl btn-bl-white-text bl-fas bl-fa-chevron-right" href="/case-studies/crux/">View the Case Study</a></p>
+              </div>
+              <div class="hidden md:inline-block align-top bg-nk-gray1 text-center rounded-lg relative z-10 md:top-10 md:-left-10">
+                <a href="javascript:void(0)" onclick="lightbox_open('videoTestimonial3', 'light3', 'fade3');" class="inline-block rounded" style="background-position:center; background-size:cover; height:100%; position:relative; width:100%; background-image:url(https://cfprod.local:65499/wp-content/uploads/2022/06/crux-codefresh-testimonial.jpg);"><i class="absolute bottom-8 right-8 fas fa-3x fa-play-circle text-white bg-nk-blue-marine rounded-full"></i></a>
+              </div>
+            </div>
+          </div>
+    
+          <div role="tabpanel" aria-labelledby="tab-label-4">
+            <div class="md:grid grid-cols-2">
+              <div class="md:inline-block align-top text-white bg-gradient-to-r from-oxford-blue to-nk-blue-marine p-10 rounded-lg relative z-20">
+                <p class="text-2xl font-bold font-display mb-6">"Everything just worked out of the box"</p>
+                <p class="text-lg font-bold font-display mb-1">Renato Stoco</p>
+                <p class="text-sm mb-6">Principal Engineer, Pismo</p>
+                <p class="mb-0"><a class="btn-bl btn-bl-white-text bl-fas bl-fa-chevron-right" href="/case-studies/pismo/">View the Case Study</a></p>
+              </div>
+              <div class="hidden md:inline-block align-top bg-nk-gray1 text-center rounded-lg relative z-10 md:top-10 md:-left-10">
+                <a href="javascript:void(0)" onclick="lightbox_open('videoTestimonial4', 'light4', 'fade4');" class="inline-block rounded" style="background-position:center; background-size:cover; height:100%; position:relative; width:100%; background-image:url(https://cfprod.local:65499/wp-content/uploads/2022/06/pismo-codefresh-testimonial.jpg);"><i class="absolute bottom-8 right-8 fas fa-3x fa-play-circle text-white bg-nk-blue-marine rounded-full"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    
+      <div id="light1">
+        <a class="boxclose" id="boxclose" onclick="lightbox_close('videoTestimonial1', 'light1', 'fade1');"></a>
+        <video id="videoTestimonial1" width="640" controls>
+          <source src="https://res.cloudinary.com/codefresh/video/upload/f_auto,q_auto/mktg/video/case-studies/Codefresh_x_Kandji___Main_Video_120S_-_Captioned_Video_canif0.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div id="fade1" onClick="lightbox_close('videoTestimonial1', 'light1', 'fade1');"></div>
+    
+      <div id="light2">
+        <a class="boxclose" id="boxclose" onclick="lightbox_close('videoTestimonial2', 'light2', 'fade2');"></a>
+        <video id="videoTestimonial2" width="640" controls>
+          <source src="https://res.cloudinary.com/codefresh/video/upload/f_auto,q_auto/mktg/video/case-studies/Codefresh_x_Recurly___Main_Video_120S_-_Captioned_Version_wqv6kh.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div id="fade2" onClick="lightbox_close('videoTestimonial2', 'light2', 'fade2');"></div>
+    
+      <div id="light3">
+        <a class="boxclose" id="boxclose" onclick="lightbox_close('videoTestimonial3', 'light3', 'fade3');"></a>
+        <video id="videoTestimonial3" width="640" controls>
+          <source src="https://res.cloudinary.com/codefresh/video/upload/f_auto,q_auto/mktg/video/case-studies/Codefresh_x_Crux___Core_Testimonial___Captioned_h6czzc.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div id="fade3" onClick="lightbox_close('videoTestimonial3', 'light3', 'fade3');"></div>
+    
+      <div id="light4">
+        <a class="boxclose" id="boxclose" onclick="lightbox_close('videoTestimonial4', 'light4', 'fade4');"></a>
+        <video id="videoTestimonial4" width="640" controls>
+          <source src="https://res.cloudinary.com/codefresh/video/upload/f_auto,q_auto/mktg/video/case-studies/Codefresh_x_Pismo___Main_Video_60S_-_Captioned_Version_kwuzcu.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div id="fade4" onClick="lightbox_close('videoTestimonial4', 'light4', 'fade4');"></div>
+    
+    </div>
+  </div>
+</div>
+
+
+<style>
+
+</style>
+
+<script>
+function lightbox_open(videoIdToOpen, lightId, fadeId) {
+  var videoElementToOpen = document.getElementById(videoIdToOpen);
+  var lightElement = document.getElementById(lightId);
+  var fadeElement = document.getElementById(fadeId);
+  lightElement.style.display = 'block';
+  fadeElement.style.display = 'block';
+  videoElementToOpen.play();
+}
+function lightbox_close(videoIdToClose, lightId, fadeId) {
+  var videoElementToClose = document.getElementById(videoIdToClose);
+  var lightElement = document.getElementById(lightId);
+  var fadeElement = document.getElementById(fadeId);
+  lightElement.style.display = 'none';
+  fadeElement.style.display = 'none';
+  videoElementToClose.pause();
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
   <div class="bg-nk-blue-midnight text-white faq-section">

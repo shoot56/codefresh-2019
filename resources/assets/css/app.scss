@@ -91,7 +91,7 @@ body {
 // GROW-807 fix white bar for optinmonster
 html {
   body {
-    &:not(.split-minimal-2021a) {
+    &:not(.split-minimal-2021a):not(#tinymce) {
       &::before {
         content: '';
         position: absolute;

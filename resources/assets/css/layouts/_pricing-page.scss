@@ -169,6 +169,13 @@
         color: rgba(255,255,255,var(--tw-text-opacity));
         background: hsla(0,0%,100%,.2);
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &-text {
+            margin: auto;
+        }
     }
 }
 .pricing-customers {
