@@ -110,7 +110,7 @@
                     <?php $logo = get_sub_field( 'logo' ); ?>
                     <?php if ( $logo ) : ?>
                       
-                      <input name="tabs" type="radio" id="tab-<?php echo $count; ?>" aria-labelledby="tab-label-<?php echo $count; ?>" aria-roledescription="tab" checked="">
+                      <input name="tabs" type="radio" id="tab-<?php echo $count; ?>" aria-labelledby="tab-label-<?php echo $count; ?>" aria-roledescription="tab" <?php if ($count == 1): ?> checked="" <?php endif; ?>>
                       <label role="tab" for="tab-<?php echo $count; ?>" id="tab-label-<?php echo $count; ?>" aria-hidden="true"><img src="<?php echo esc_url( $logo['url'] ); ?>"></label>
                     <?php endif; ?>
                   <?php endwhile; ?>
