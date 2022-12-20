@@ -1,0 +1,140 @@
+.demo-promo-section {
+    background: radial-gradient(98.63% 74.68% at 1.46% 1.73%, #4DAAA7 0%, #2B6375 100%);
+    color: #fff;
+    padding: 180px 0 40px;
+    &__wrap {
+        display: grid;
+        grid-template-columns: 430px 1fr;
+        grid-gap: 70px;
+    }
+    &__visual {
+        position: relative;
+        &-img {
+            width: 668px;
+            // height: 683px;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: -20px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-position: right top;
+                object-fit: cover;
+                display: block;
+                border: 1px solid #B2FFE0;
+                box-shadow: 0px 2px 3px 3px rgba(95, 255, 191, 0.2);
+                border-radius: 8px;
+            }
+        }
+    }
+    &__label {
+        margin: 0;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        text-transform: uppercase;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 66px;
+        margin: 0 0 8px;
+    }
+    &__description {
+        margin: 0 0 40px;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 35px;
+    }
+    &__form {
+
+    }
+}
+.shadow-form {
+    padding: 40px 36px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.18);
+    border-radius: 8px;
+    color: #000;
+    font-size: 12px;
+    line-height: 1.2;
+    position: relative;
+    z-index: 3;
+    @apply font-display;
+    .hs-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0 38px;
+        padding: 0;
+    }
+    .hs-submit {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        .hs-button.primary {
+
+        }
+    }
+}
+
+.logos-section {
+    position: relative;
+    padding: 30px 0 130px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: -170px;
+        left: 0;
+        right: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='1440' height='430' viewBox='0 0 1440 430' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cg clip-path='url(%23clip0_301_4078)'%3E%3Cpath d='M763.765 46.8918C1132.16 -43.1309 1347.3 17.1378 1440 75.1382V455.963H737L0 468.963V60.4498C106.537 131.633 366.127 144.061 763.765 46.8918Z' fill='white'/%3E%3Cpath d='M864.468 275.003C465.786 464.908 121.504 380.695 0 317.446V493.462H1798.84L1881.23 43.6714L1798.84 12.4632L1747.04 1.22827L1701.47 -5.63754L1657.78 -11.8792L1600.98 -15L1547.5 121.963C1481 90.7547 1286.4 74.0222 864.468 275.003Z' fill='%23F9F9F9'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_301_4078'%3E%3Crect width='1440' height='430' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height: 430px;
+    }
+    .container {
+        position: relative;
+    }
+    &__title {
+        text-align: center;
+        margin: 0 0 39px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        text-transform: uppercase;
+    }
+    .partneers-logos {
+        display: flex;
+        flex-wrap: wrap;
+        gap:24px 75px;
+        justify-content: center;
+        align-items: center;
+        padding:0;
+        margin:0;
+        list-style:none;
+        img {
+            max-width: 160px;
+            max-height: 40px;
+        }
+    }
+}
+
+
+.reviews-g2-section {
+    background: linear-gradient(360deg, #4DAAA7 0%, #2B6375 100%);
+    padding: 100px 0;
+    color: #fff;
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        top: -107px;
+        left: 0;
+        right: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='1440' height='107' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M763.765 40.668C1132.16-39.043 1347.3 14.322 1440 65.678V773H0V52.673c106.537 63.029 366.127 74.034 763.765-12.005Z' fill='%232B6375'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h1440v107H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height: 107px;
+    }
+}
+

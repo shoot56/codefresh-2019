@@ -655,7 +655,7 @@
                 },
                 {
                     "key": "field_6390ccb5b8ae0",
-                    "label": "Author Post",
+                    "label": "Author Title",
                     "name": "author_post",
                     "type": "text",
                     "instructions": "",
@@ -768,5 +768,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670436882
+    "modified": 1671545812
 }
