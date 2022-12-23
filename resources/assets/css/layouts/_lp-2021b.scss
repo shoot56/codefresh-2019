@@ -594,7 +594,7 @@ svg.sep-qd {
   white-space: normal;
 }
 
-img:not(.not-auto):not(.wp-post-image):not(.separator-container img) {
+img:not(.not-auto):not(.wp-post-image):not(.separator-container img):not(.not-auto img) {
   width: auto;
   object-fit: contain;
 }
