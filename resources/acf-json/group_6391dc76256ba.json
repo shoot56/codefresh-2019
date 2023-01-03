@@ -91,6 +91,25 @@
                     "new_lines": ""
                 },
                 {
+                    "key": "field_63b4535afb918",
+                    "label": "Section Text content",
+                    "name": "section_text_content",
+                    "type": "wysiwyg",
+                    "instructions": "You can add text paragraph or bullet points",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "delay": 0,
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0
+                },
+                {
                     "key": "field_6391dced6adef",
                     "label": "Section Image",
                     "name": "section_image",
@@ -304,5 +323,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670599225
+    "modified": 1672762335
 }

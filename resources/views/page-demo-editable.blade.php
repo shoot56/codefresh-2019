@@ -21,6 +21,11 @@
                         <div class="demo-promo-section__label"><?php the_sub_field( 'section_label' ); ?></div>
                         <h1 class="demo-promo-section__title"><?php the_sub_field( 'section_title' ); ?></h1>
                         <h2 class="demo-promo-section__description"><?php the_sub_field( 'section_description' ); ?></h2>
+                        <?php if (get_sub_field( 'section_text_content' )): ?>
+                            <div class="demo-promo-section__content">
+                                <?php the_sub_field( 'section_text_content' ); ?>
+                            </div>
+                        <?php endif; ?>
                         <div class="demo-promo-section__form shadow-form">
                             <?php the_sub_field( 'section_form_code' ); ?>
                         </div>
