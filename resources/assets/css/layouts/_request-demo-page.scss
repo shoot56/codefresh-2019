@@ -121,7 +121,10 @@
         }
     }
     &__form {
-
+        min-height: 344px;
+        @screen md{
+            min-height: 382px;
+        }
     }
 }
 .shadow-form {
