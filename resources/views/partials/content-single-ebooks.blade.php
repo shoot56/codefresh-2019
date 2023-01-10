@@ -37,6 +37,16 @@
             @else
               {!! gravity_form( $form_id, false, false, false, '', false ) !!}
             @endif
+            <script>
+              window.addEventListener('message', event => {
+                if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmit') {
+                    dataLayer.push(
+                    {
+                      'event' : 'ebook_download'
+                    });
+                }
+              });
+            </script>
       </div>
 
     </div>
