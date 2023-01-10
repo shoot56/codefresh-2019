@@ -40,7 +40,7 @@
         [
             {
                 "param": "post_type",
-                "operator": "==",
+                "operator": "!=",
                 "value": "ebooks"
             }
         ]
@@ -53,6 +53,6 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "show_in_rest": false,
-    "modified": 1665657730
+    "show_in_rest": 0,
+    "modified": 1673371088
 }
