@@ -32,6 +32,9 @@ add_action('wp_enqueue_scripts', function () {
     if (is_front_page()) {
         wp_enqueue_script('codefresh/home.js', mix(asset_path('js/home.js')), ['jquery'], null, true);
     }
+    if (is_404()) {
+        wp_enqueue_style('codefresh/page404.css', mix(asset_path('css/page404.css')), false, null);
+    }
 
     if (is_page('contact-us')) {
         wp_enqueue_script('codefresh/contact-us.js', mix(asset_path('js/contact-us.js')), ['jquery'], null, true);

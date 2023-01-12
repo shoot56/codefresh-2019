@@ -18,6 +18,7 @@ mix
 mix
   .sass( 'resources/assets/css/app.scss', 'css' )
   .sass( 'resources/assets/css/fontawesome.scss', 'css' )
+  .sass( 'resources/assets/css/layouts/page404.scss', 'css' )
   .options( {
     processCssUrls: false,
     postCss: [ require( 'tailwindcss' ) ],
