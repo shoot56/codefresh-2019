@@ -1,5 +1,7 @@
 .header {
   @apply absolute top-0 left-0 z-70 w-full;
+  
+  opacity: 1;
 
   ul {
     @apply list-none p-0 mb-0;
